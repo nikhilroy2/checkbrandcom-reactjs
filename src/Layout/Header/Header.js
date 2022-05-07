@@ -364,7 +364,12 @@ function Header(props) {
   const [isNight, setIsNight] = useState(true);
   const NightModeHandle = () => {
     setIsNight(!isNight);
+    isNight
+      ? document.documentElement.classList.remove("night_mode_on")
+      : document.documentElement.classList.add("night_mode_on");
+    // after local storage night mode
   };
+
   return (
     <header id="Header" className="">
       <nav className="d-flex px-2 px-sm-3 py-1 bg_1d text-white align-items-center">

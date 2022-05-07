@@ -138,8 +138,11 @@ header#Header {
       transform: translateY(-50%);
       transition: 0.3s;
     }
-    &.light_mode::after {
-      right: calc(100% - 22px);
+    &.light_mode {
+      background: var(--text-5c)!important;
+      &::after {
+        right: calc(100% - 22px);
+      }
     }
   }
   // ............................night_mode_control ......End

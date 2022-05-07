@@ -170,6 +170,10 @@ header#Header .night_mode_control::after {
   transition: 0.3s;
 }
 
+header#Header .night_mode_control.light_mode {
+  background: var(--text-5c) !important;
+}
+
 header#Header .night_mode_control.light_mode::after {
   right: calc(100% - 22px);
 }
