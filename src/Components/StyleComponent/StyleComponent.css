@@ -1,0 +1,33 @@
+.nav_list_hover {
+  position: relative;
+}
+
+.nav_list_hover .hover_list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  padding-top: 25px;
+}
+
+.nav_list_hover .hover_list.hover_right {
+  left: auto;
+  right: 0px;
+}
+
+.nav_list_hover .hover_list.min_width {
+  width: 200px;
+}
+
+.nav_list_hover .hover_action:hover .hover_list {
+  opacity: 1;
+  pointer-events: visible;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+/*# sourceMappingURL=StyleComponent.css.map */

@@ -1,0 +1,31 @@
+// ..................This is for components styles global..........
+
+// nav list hover effect style
+.nav_list_hover {
+  position: relative;
+  .hover_list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    // hide trick;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    transform: translateY(50px);
+    padding-top: 25px;
+    &.hover_right{
+        left: auto;
+        right: 0px;
+    }
+    &.min_width {
+      width: 200px;
+    }
+  }
+  .hover_action:hover .hover_list {
+    opacity: 1;
+    pointer-events: visible;
+    transform: translateY(0px);
+  }
+}
+
+// ..................This is for components styles global..........End

@@ -1,0 +1,42 @@
+header#Header {
+  border-bottom: 1px solid var(--text-26);
+}
+
+header#Header .searchBox_wrapper {
+  position: relative;
+}
+
+header#Header .searchBox_wrapper i {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 35px;
+  opacity: 0.5;
+}
+
+header#Header .searchBox_wrapper input,
+header#Header .searchBox_wrapper input:focus {
+  background: var(--text-40);
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: var(--text-white);
+}
+
+header#Header .searchBox_wrapper input:focus {
+  background: var(--text-5c);
+}
+
+header#Header .nav_list_wrapper .nav_item {
+  color: var(--text-white-75);
+  fill: var(--text-white-75);
+  font-weight: bold;
+}
+
+header#Header .nav_list_wrapper .nav_item:hover {
+  color: var(--text-white);
+  fill: var(--text-white);
+}
+/*# sourceMappingURL=Header.css.map */
