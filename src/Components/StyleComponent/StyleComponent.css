@@ -24,6 +24,10 @@
   width: 200px;
 }
 
+.nav_list_hover .hover_list.min_width.min_width_lg {
+  width: 250px;
+}
+
 .nav_list_hover .hover_action:hover .hover_list {
   opacity: 1;
   pointer-events: visible;

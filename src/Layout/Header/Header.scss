@@ -1,5 +1,14 @@
 header#Header {
   border-bottom: 1px solid var(--text-26);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .logo_wrapper {
+    @media (max-width: 1300px) {
+      flex-grow: 0 !important;
+    }
+  }
   .searchBox_wrapper {
     position: relative;
     i {
@@ -20,6 +29,29 @@ header#Header {
     input:focus {
       background: var(--text-5c);
     }
+    @media (max-width: 991px) {
+      input {
+        width: 100% !important;
+      }
+    }
+    .btn_toggle_search_box {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2000;
+      display: none;
+      &.is_toggle_open {
+        display: block;
+      }
+      input {
+        height: 75px;
+      }
+      i {
+        left: 20px;
+        cursor: pointer;
+      }
+    }
   }
   .nav_list_wrapper {
     .nav_item {
@@ -38,7 +70,7 @@ header#Header {
     background: var(--text-0f);
     top: 77px !important;
     width: 420px !important;
-    height: calc(100vh - 77px)!important;
+    height: calc(100vh - 77px) !important;
   }
   .NavDrawer {
     overflow: auto;
@@ -85,4 +117,30 @@ header#Header {
       }
     }
   }
+
+  // ............................night_mode_control ......
+  .night_mode_control {
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    border: none;
+    outline: none;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: var(--text-white);
+      border-radius: 50%;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      transition: 0.3s;
+    }
+    &.light_mode::after {
+      right: calc(100% - 22px);
+    }
+  }
+  // ............................night_mode_control ......End
 }

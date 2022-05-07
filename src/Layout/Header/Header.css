@@ -1,5 +1,17 @@
 header#Header {
   border-bottom: 1px solid var(--text-26);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (max-width: 1300px) {
+  header#Header .logo_wrapper {
+    -webkit-box-flex: 0 !important;
+        -ms-flex-positive: 0 !important;
+            flex-grow: 0 !important;
+  }
 }
 
 header#Header .searchBox_wrapper {
@@ -27,6 +39,34 @@ header#Header .searchBox_wrapper input:focus {
 
 header#Header .searchBox_wrapper input:focus {
   background: var(--text-5c);
+}
+
+@media (max-width: 991px) {
+  header#Header .searchBox_wrapper input {
+    width: 100% !important;
+  }
+}
+
+header#Header .searchBox_wrapper .btn_toggle_search_box {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: none;
+}
+
+header#Header .searchBox_wrapper .btn_toggle_search_box.is_toggle_open {
+  display: block;
+}
+
+header#Header .searchBox_wrapper .btn_toggle_search_box input {
+  height: 75px;
+}
+
+header#Header .searchBox_wrapper .btn_toggle_search_box i {
+  left: 20px;
+  cursor: pointer;
 }
 
 header#Header .nav_list_wrapper .nav_item {
@@ -104,5 +144,33 @@ header#Header .NavDrawer .drawer_body .btn_show_more {
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: 0px 0px 20px 20px;
+}
+
+header#Header .night_mode_control {
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+header#Header .night_mode_control::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--text-white);
+  border-radius: 50%;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header#Header .night_mode_control.light_mode::after {
+  right: calc(100% - 22px);
 }
 /*# sourceMappingURL=Header.css.map */

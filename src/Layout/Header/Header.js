@@ -219,8 +219,22 @@ function Header(props) {
   ];
 
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isMobileDrawer, setIsMobileDrawer] = React.useState(false);
+  const [isExploreDrawer, setIsExploreDrawer] = useState(false);
+  const [isStatsDrawer, setIsStatsDrawer] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
+  };
+
+  const toggleMobileDrawer = () => {
+    setIsMobileDrawer((prevState) => !prevState);
+  };
+  const toggleExploreDrawer = () => {
+    setIsExploreDrawer((prevState) => !prevState);
+  };
+
+  const toggleStatsDrawer = () => {
+    setIsStatsDrawer((prevState) => !prevState);
   };
 
   const drawer_body_list_object = [
@@ -338,25 +352,63 @@ function Header(props) {
 
   const [isMoreObject, setIsMoreObject] = useState(false);
 
+  const connectWallet = () => {
+    setIsMobileDrawer(false);
+    setIsOpen(true);
+  };
+
+  // searchbox toggle
+  const [isToggleSearch, setIsTogglSearch] = useState(false);
+
+  // NightModeHandle
+  const [isNight, setIsNight] = useState(true);
+  const NightModeHandle = () => {
+    setIsNight(!isNight);
+  };
   return (
-    <header id="Header">
-      <nav className="d-flex px-3 py-1 bg_1d text-white align-items-center">
+    <header id="Header" className="">
+      <nav className="d-flex px-2 px-sm-3 py-1 bg_1d text-white align-items-center">
         <div className="logo_wrapper flex-grow-1">
           <Link to="/">
             <img src={require("../../Static/img/logo.png")} alt="" />
           </Link>
         </div>
-        <div className="searchBox_wrapper px-3 py-1 flex-grow-1">
-          <i className="fas fa-search    "></i>
+        <div className="searchBox_wrapper px-2 px-sm-3 py-1 flex-grow-1 nav_list_wrapper">
+          <i className="fas fa-search  d-none d-sm-block  "></i>
           <input
             placeholder="Search items, collections, and accounts"
             type="text"
-            className="form-control w-75 p-2 px-5"
+            className="form-control w-75 p-2 px-5 d-none d-sm-block"
           />
+          <button
+            className="border-0 outline-0 m-0 p-0 d-sm-none bg-transparent nav_item"
+            onClick={() => setIsTogglSearch(true)}
+          >
+            <i
+              className="fas fa-search  nav_item "
+              style={{ fontSize: "25px" }}
+            ></i>
+          </button>
+
+          <div
+            className={`btn_toggle_search_box ${
+              isToggleSearch ? "is_toggle_open" : ""
+            }`}
+          >
+            <i
+              className="fas fa-angle-left fa-2x   "
+              onClick={() => setIsTogglSearch(false)}
+            ></i>
+            <input
+              placeholder="Search items, collections, and accounts"
+              type="text"
+              className="form-control w-100 p-2 px-5"
+            />
+          </div>
         </div>
         <div className="nav_list_wrapper">
           <ul className="list-unstyled d-flex align-items-center mb-0">
-            <li className="nav_list_hover">
+            <li className="nav_list_hover d-none d-lg-block">
               <div className="hover_action">
                 <Link className="nav_item px-3 py-1 " to="/">
                   Explore
@@ -387,7 +439,7 @@ function Header(props) {
                 </ul>
               </div>
             </li>
-            <li className="nav_list_hover">
+            <li className="nav_list_hover d-none d-lg-block">
               <div className="hover_action">
                 <Link className="nav_item px-3 py-1 " to="/">
                   Stats
@@ -419,18 +471,21 @@ function Header(props) {
               </div>
             </li>
             <li>
-              <Link className="nav_item px-3 py-1" to="/">
+              <Link
+                className="nav_item px-2 px-sm-3 py-1 d-none d-lg-block"
+                to="/"
+              >
                 Resources
               </Link>
             </li>
 
-            <li>
-              <Link className="nav_item px-3 py-1" to="/">
+            <li className="d-none d-lg-block">
+              <Link className="nav_item px-2 px-sm-3 py-1" to="/">
                 Create
               </Link>
             </li>
 
-            <li className="nav_list_hover px-3 ">
+            <li className="nav_list_hover px-2 px-sm-3 ">
               <div className="hover_action">
                 <button className="btn btn-muted nav_item p-0">
                   <svg
@@ -444,17 +499,32 @@ function Header(props) {
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.51.88 4.93 1.78C15.57 19.36 13.86 20 12 20s-3.57-.64-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z" />
                   </svg>
                 </button>
-                <ul className="list-unstyled hover_list min_width hover_right">
+                <ul className="list-unstyled hover_list min_width min_width_lg hover_right">
                   {user_nav_object.map((v) => {
                     return (
-                      <li key={v.id} className="hover_list_item ">
-                        <Link
-                          to={v.link}
-                          className="hover_list_action border border-dark nav_item d-flex px-3 py-3 align-items-center"
-                        >
-                          {v.icon}
-                          {v.name}
-                        </Link>
+                      <li key={v.id} className="hover_list_item">
+                        {v.name.toLowerCase() === "night mode" ? (
+                          <div className="hover_list_action border border-dark nav_item d-flex px-3 py-3 align-items-center justify-content-between">
+                            <span>
+                              {v.icon}
+                              {v.name}
+                            </span>
+                            <button
+                              onClick={() => NightModeHandle()}
+                              className={`night_mode_control bg-primary rounded-pill ${
+                                isNight ? "" : "light_mode"
+                              }`}
+                            ></button>
+                          </div>
+                        ) : (
+                          <Link
+                            to={v.link}
+                            className="hover_list_action border border-dark nav_item d-flex px-3 py-3 align-items-center"
+                          >
+                            {v.icon}
+                            {v.name}
+                          </Link>
+                        )}
                       </li>
                     );
                   })}
@@ -462,7 +532,7 @@ function Header(props) {
               </div>
             </li>
 
-            <li className="px-3 py-1">
+            <li className="px-2 px-sm-3 py-1">
               <button
                 className="btn btn-muted nav_item p-0"
                 onClick={toggleDrawer}
@@ -478,6 +548,37 @@ function Header(props) {
                   <path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-7V9h7zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z" />
                   <circle cx={16} cy={12} r="1.5" />
                 </svg>
+              </button>
+            </li>
+
+            <li className="px-3 py-1 d-lg-none">
+              <button
+                className="btn btn-muted nav_item p-0"
+                onClick={toggleMobileDrawer}
+              >
+                {isMobileDrawer ? (
+                  <svg
+                    style={{ height: "32px" }}
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    data-testid="CloseOutlinedIcon"
+                  >
+                    <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                  </svg>
+                ) : (
+                  <svg
+                    style={{ height: "32px" }}
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    data-testid="MenuOutlinedIcon"
+                  >
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                  </svg>
+                )}
               </button>
             </li>
           </ul>
@@ -530,7 +631,7 @@ function Header(props) {
                     />
                     <span>{v.name}</span>
                     {v.badge_name !== "" && (
-                      <span class={`custom_badge ${v.badge_name}`}>
+                      <span className={`custom_badge ${v.badge_name}`}>
                         {v.badge_name}
                       </span>
                     )}
@@ -563,7 +664,9 @@ function Header(props) {
                       />
                       <span>{v.name}</span>
                       {v.badge_name !== "" && (
-                        <span class={`custom_badge text-white-50 ${v.badge_name}`}>
+                        <span
+                          className={`custom_badge text-white-50 ${v.badge_name}`}
+                        >
                           {v.badge_name} only
                         </span>
                       )}
@@ -582,6 +685,203 @@ function Header(props) {
               {isMoreObject ? "Show fewer options" : "Show more options"}
             </button>
           </div>
+        </div>
+      </Drawer>
+
+      {/* Nav mobile drawer */}
+      <Drawer
+        open={isMobileDrawer}
+        onClose={toggleMobileDrawer}
+        direction="right"
+        className="NavDrawer"
+      >
+        <div className="drawer_body p-3">
+          <ul className="list-unstyled drawer_body_list mb-0">
+            <li>
+              <button
+                onClick={toggleExploreDrawer}
+                className="ripple justify-content-between d-flex bg-transparent w-100 list_action p-3 border-0 text-light"
+              >
+                <div className="content d-flex align-items-center">
+                  <svg
+                    style={{ height: "32px" }}
+                    className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    data-testid="ExploreOutlinedIcon"
+                    fill="var(--text-white)"
+                  >
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5 7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+                  </svg>
+                  <span>Explore</span>{" "}
+                </div>
+                <i className="fas fa-angle-right    "></i>
+              </button>
+            </li>
+
+            <li>
+              <button
+                onClick={toggleStatsDrawer}
+                className="ripple justify-content-between d-flex bg-transparent w-100 list_action p-3 border-0 text-light"
+              >
+                <div className="content d-flex align-items-center">
+                  <svg
+                    style={{ height: "32px" }}
+                    className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    data-testid="BarChartOutlinedIcon"
+                    fill="var(--text-white)"
+                  >
+                    <path d="M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z" />
+                  </svg>
+                  <span>Stats</span>{" "}
+                </div>
+
+                <i className="fas fa-angle-right    "></i>
+              </button>
+            </li>
+
+            <li>
+              <button className="ripple justify-content-between d-flex bg-transparent w-100 list_action p-3 border-0 text-light">
+                <div className="content d-flex align-items-center">
+                  <svg
+                    style={{ height: "32px" }}
+                    className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    data-testid="LibraryBooksOutlinedIcon"
+                    fill="var(--text-white)"
+                  >
+                    <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z" />
+                  </svg>
+                  <span>Resources</span>{" "}
+                </div>
+              </button>
+            </li>
+
+            <li>
+              <div className=" justify-content-between d-flex bg-transparent w-100 list_action p-3 border-0 text-light">
+                <div className="content d-flex align-items-center">
+                  <svg
+                    style={{ height: "32px" }}
+                    className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    data-testid="BedtimeOutlinedIcon"
+                    fill="var(--text-white)"
+                  >
+                    <path d="M9.27 4.49c-1.63 7.54 3.75 12.41 7.66 13.8C15.54 19.38 13.81 20 12 20c-4.41 0-8-3.59-8-8 0-3.45 2.2-6.4 5.27-7.51m2.72-2.48C6.4 2.01 2 6.54 2 12c0 5.52 4.48 10 10 10 3.71 0 6.93-2.02 8.66-5.02-7.51-.25-12.09-8.43-8.32-14.97h-.35z"></path>
+                  </svg>
+                  <span>Night mode</span>{" "}
+                </div>
+                <button
+                  onClick={() => NightModeHandle()}
+                  className={`night_mode_control bg-primary rounded-pill ${
+                    isNight ? "" : "light_mode"
+                  }`}
+                ></button>
+              </div>
+            </li>
+
+            <li className="my-3 p-3">
+              <button
+                className="btn btn-primary btn-lg"
+                onClick={() => connectWallet()}
+              >
+                Connect wallet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </Drawer>
+
+      {/* Explore Drawer */}
+
+      <Drawer
+        open={isExploreDrawer}
+        onClose={toggleExploreDrawer}
+        direction="right"
+        className="NavDrawer"
+      >
+        <div className="drawer_body">
+          <button
+            onClick={() => setIsExploreDrawer(false)}
+            className="ripple text-start bg-dark w-100 list_action p-3 border-0 text-light"
+          >
+            <i className="fas fa-angle-left   me-2 "></i> Explore
+          </button>
+          <ul className="list-unstyled  p-3">
+            {explore_object.map((v) => {
+              return (
+                <li key={v.id} className="">
+                  <Link
+                    to={v.link}
+                    className="text-light nav_item d-flex px-3 py-3 align-items-center"
+                  >
+                    <svg
+                      className="me-2 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                      focusable="false"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      style={{ height: "20px" }}
+                      fill="var(--text-white)"
+                      data-testid="GridOnOutlinedIcon"
+                    >
+                      <path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-4h4v4zm0-6H4v-4h4v4zm0-6H4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4z" />
+                    </svg>
+                    {v.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </Drawer>
+
+      {/* Stats Drawer */}
+      <Drawer
+        open={isStatsDrawer}
+        onClose={toggleStatsDrawer}
+        direction="right"
+        className="NavDrawer"
+      >
+        <div className="drawer_body">
+          <button
+            onClick={() => setIsStatsDrawer(false)}
+            className="ripple text-start bg-dark w-100 list_action p-3 border-0 text-light"
+          >
+            <i className="fas fa-angle-left   me-2 "></i> Stats
+          </button>
+          <ul className="list-unstyled  p-3">
+            {stats_object.map((v) => {
+              return (
+                <li key={v.id} className="">
+                  <Link
+                    to={v.link}
+                    className="text-light nav_item d-flex px-3 py-3 align-items-center"
+                  >
+                    <svg
+                      className="me-2 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                      focusable="false"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      style={{ height: "20px" }}
+                      fill="var(--text-white)"
+                      data-testid="GridOnOutlinedIcon"
+                    >
+                      <path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-4h4v4zm0-6H4v-4h4v4zm0-6H4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4z" />
+                    </svg>
+                    {v.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </Drawer>
     </header>
