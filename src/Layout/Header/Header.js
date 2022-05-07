@@ -1,6 +1,13 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+
+// import component 👇
+import Drawer from "react-modern-drawer";
+
+//import styles 👇
+import "react-modern-drawer/dist/index.css";
+
 function Header(props) {
   const explore_object = [
     {
@@ -210,6 +217,12 @@ function Header(props) {
       ),
     },
   ];
+
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   return (
     <header id="Header">
       <nav className="d-flex px-3 py-1 bg_1d text-white align-items-center">
@@ -335,7 +348,7 @@ function Header(props) {
             </li>
 
             <li className="px-3 py-1">
-              <button className="btn btn-muted nav_item p-0">
+              <button className="btn btn-muted nav_item p-0" onClick={toggleDrawer}>
                 <svg
                   style={{ height: "32px" }}
                   className="nav_item MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -352,6 +365,16 @@ function Header(props) {
           </ul>
         </div>
       </nav>
+
+      {/* Nav drawer */}
+      <Drawer
+        open={isOpen}
+        onClose={toggleDrawer}
+        direction="right"
+        className="bla bla bla"
+      >
+        <div>Hello World</div>
+      </Drawer>
     </header>
   );
 }

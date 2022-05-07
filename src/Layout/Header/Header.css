@@ -39,4 +39,10 @@ header#Header .nav_list_wrapper .nav_item:hover {
   color: var(--text-white);
   fill: var(--text-white);
 }
+
+header#Header .EZDrawer__container {
+  background: var(--text-0f);
+  top: 77px !important;
+  width: 420px !important;
+}
 /*# sourceMappingURL=Header.css.map */
