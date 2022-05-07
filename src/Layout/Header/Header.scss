@@ -36,7 +36,53 @@ header#Header {
   // EZDrawer__container
   .EZDrawer__container {
     background: var(--text-0f);
-    top: 77px!important;
-    width: 420px!important;
+    top: 77px !important;
+    width: 420px !important;
+    height: calc(100vh - 77px)!important;
+  }
+  .NavDrawer {
+    overflow: auto;
+    color: var(--text-white);
+    .drawer_title {
+      font-weight: bold;
+      border-bottom: 1px solid rgb(21, 27, 34);
+    }
+    .drawer_body {
+      .drawer_body_list {
+        border-radius: 5px;
+        overflow: hidden;
+        .list_action {
+          display: flex;
+          align-items: center;
+          transition: 0.2s;
+          .custom_badge {
+            margin-left: auto;
+            font-size: 12px;
+            background: #2081e2;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 5px;
+            &.Solana {
+              background-color: rgb(229, 232, 235);
+              color: rgb(138, 147, 155);
+            }
+            &.mobile {
+              background: transparent;
+            }
+          }
+          &:hover {
+            box-shadow: var(--text-r49) 0px 0px 8px 0px;
+            background-color: var(--text-r57);
+          }
+        }
+      }
+      .btn_show_more {
+        width: 100%;
+        background: transparent;
+        outline: none;
+        box-shadow: none;
+        border-radius: 0px 0px 20px 20px;
+      }
+    }
   }
 }

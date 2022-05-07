@@ -44,5 +44,65 @@ header#Header .EZDrawer__container {
   background: var(--text-0f);
   top: 77px !important;
   width: 420px !important;
+  height: calc(100vh - 77px) !important;
+}
+
+header#Header .NavDrawer {
+  overflow: auto;
+  color: var(--text-white);
+}
+
+header#Header .NavDrawer .drawer_title {
+  font-weight: bold;
+  border-bottom: 1px solid #151b22;
+}
+
+header#Header .NavDrawer .drawer_body .drawer_body_list {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+header#Header .NavDrawer .drawer_body .drawer_body_list .list_action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header#Header .NavDrawer .drawer_body .drawer_body_list .list_action .custom_badge {
+  margin-left: auto;
+  font-size: 12px;
+  background: #2081e2;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+header#Header .NavDrawer .drawer_body .drawer_body_list .list_action .custom_badge.Solana {
+  background-color: #e5e8eb;
+  color: #8a939b;
+}
+
+header#Header .NavDrawer .drawer_body .drawer_body_list .list_action .custom_badge.mobile {
+  background: transparent;
+}
+
+header#Header .NavDrawer .drawer_body .drawer_body_list .list_action:hover {
+  -webkit-box-shadow: var(--text-r49) 0px 0px 8px 0px;
+          box-shadow: var(--text-r49) 0px 0px 8px 0px;
+  background-color: var(--text-r57);
+}
+
+header#Header .NavDrawer .drawer_body .btn_show_more {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0px 0px 20px 20px;
 }
 /*# sourceMappingURL=Header.css.map */

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
@@ -223,6 +223,121 @@ function Header(props) {
     setIsOpen((prevState) => !prevState);
   };
 
+  const drawer_body_list_object = [
+    {
+      id: 1,
+      name: "MetaMask",
+      img: require("../../Static/img/wallet_img/metamask-alternative.webp"),
+      badge_name: "Popular",
+      link: "#",
+    },
+    {
+      id: 2,
+      name: "Coinbase Wallet",
+      img: require("../../Static/img/wallet_img/walletlink-alternative.webp"),
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 3,
+      name: "WalletConnect",
+      img: require("../../Static/img/wallet_img/walletconnect-alternative.webp"),
+      badge_name: "Solana",
+      link: "#",
+    },
+    {
+      id: 4,
+      name: "Phantom",
+      img: require("../../Static/img/wallet_img/phantom.svg").default,
+      badge_name: "Solana",
+      link: "#",
+    },
+    {
+      id: 5,
+      name: "Glow",
+      img: require("../../Static/img/wallet_img/glow.svg").default,
+      badge_name: "",
+      link: "#",
+    },
+  ];
+
+  const drawer_body_list_more_object = [
+    {
+      id: 1,
+      name: "Fortmatic",
+      img: require("../../Static/img/wallet_img/fortmatic-alternative.webp"),
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 2,
+      name: "Kaikas",
+      img: require("../../Static/img/wallet_img/kaikas-alternative.webp"),
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 3,
+      name: "Bitski",
+      img: require("../../Static/img/wallet_img/bitski-alternative.webp"),
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 4,
+      name: "Venly",
+      img: require("../../Static/img/wallet_img/venly.svg").default,
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 5,
+      name: "Dapper",
+      img: require("../../Static/img/wallet_img/dapper-icon.webp"),
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 6,
+      name: "Authereum",
+      img: require("../../Static/img/wallet_img/authereum-alternative.webp"),
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 7,
+      name: "Torus",
+      img: require("../../Static/img/wallet_img/torus-alternative.webp"),
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 8,
+      name: "Portis",
+      img: require("../../Static/img/wallet_img/portis-alternative.svg")
+        .default,
+      badge_name: "",
+      link: "#",
+    },
+    {
+      id: 9,
+      name: "OperaTouch",
+      img: require("../../Static/img/wallet_img/opera-touch-alternative.svg")
+        .default,
+      badge_name: "mobile",
+      link: "#",
+    },
+    {
+      id: 10,
+      name: "Trust",
+      img: require("../../Static/img/wallet_img/trust-alternative.webp"),
+      badge_name: "mobile",
+      link: "#",
+    },
+  ];
+
+  const [isMoreObject, setIsMoreObject] = useState(false);
+
   return (
     <header id="Header">
       <nav className="d-flex px-3 py-1 bg_1d text-white align-items-center">
@@ -348,7 +463,10 @@ function Header(props) {
             </li>
 
             <li className="px-3 py-1">
-              <button className="btn btn-muted nav_item p-0" onClick={toggleDrawer}>
+              <button
+                className="btn btn-muted nav_item p-0"
+                onClick={toggleDrawer}
+              >
                 <svg
                   style={{ height: "32px" }}
                   className="nav_item MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -371,9 +489,100 @@ function Header(props) {
         open={isOpen}
         onClose={toggleDrawer}
         direction="right"
-        className="bla bla bla"
+        className="NavDrawer"
       >
-        <div>Hello World</div>
+        <div className="drawer_title p-3">
+          <svg
+            className="me-2 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+            focusable="false"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="var(--text-white)"
+            style={{ height: "35px" }}
+            data-testid="AccountCircleOutlinedIcon"
+          >
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.51.88 4.93 1.78C15.57 19.36 13.86 20 12 20s-3.57-.64-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z" />
+          </svg>
+          My wallet
+        </div>
+        <div className="drawer_body p-3">
+          <p className="pera text-white-50">
+            Connect with one of our available{" "}
+            <a href="#" className="text-link">
+              wallet
+            </a>{" "}
+            providers or create a new one.
+          </p>
+
+          <ul className="list-unstyled drawer_body_list mb-0">
+            {drawer_body_list_object.map((v) => {
+              return (
+                <li className="" key={v.id}>
+                  <a
+                    href={v.link}
+                    className="ripple list_action p-3 border border-dark text-light"
+                  >
+                    <img
+                      className="me-2"
+                      style={{ height: "24px" }}
+                      src={v.img}
+                      alt="img"
+                    />
+                    <span>{v.name}</span>
+                    {v.badge_name !== "" && (
+                      <span class={`custom_badge ${v.badge_name}`}>
+                        {v.badge_name}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          {isMoreObject && (
+            <ul className="list-unstyled drawer_body_list">
+              {drawer_body_list_more_object.map((v) => {
+                return (
+                  <li
+                    className=""
+                    key={v.id}
+                    style={{
+                      pointerEvents:
+                        v.badge_name === "mobile" ? "none" : "visible",
+                    }}
+                  >
+                    <a
+                      href={v.link}
+                      className="ripple list_action p-3 border border-dark text-light"
+                    >
+                      <img
+                        className="me-2"
+                        style={{ height: "24px" }}
+                        src={v.img}
+                        alt="img"
+                      />
+                      <span>{v.name}</span>
+                      {v.badge_name !== "" && (
+                        <span class={`custom_badge text-white-50 ${v.badge_name}`}>
+                          {v.badge_name} only
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+
+          <div className="drawer_show_more">
+            <button
+              onClick={() => setIsMoreObject(!isMoreObject)}
+              className="btn_show_more p-3 text-white border-dark not_alpha border outline-0 shadow-0"
+            >
+              {isMoreObject ? "Show fewer options" : "Show more options"}
+            </button>
+          </div>
+        </div>
       </Drawer>
     </header>
   );

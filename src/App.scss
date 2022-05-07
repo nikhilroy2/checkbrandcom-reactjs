@@ -12,8 +12,10 @@
   --text-white-75: rgba(255, 255, 255, 0.75);
   --text-black: #000;
   --text-5c: #4c505c;
-  --text-0f: #0E0F0F;
+  --text-0f: #0e0f0f;
   --text-26: #262626;
+  --text-r49: rgba(4, 17, 29, 0.25);
+  --text-r57: rgb(48, 51, 57);
 }
 html,
 body {
@@ -35,4 +37,7 @@ body {
 // .....................color classes................End
 
 // ....................border classes............
+.border-dark:not(.not_alpha){
+  border-color:rgba(48, 51, 57, 0.5)!important
+}
 // ....................border classes............End
