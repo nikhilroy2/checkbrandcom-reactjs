@@ -1,0 +1,35 @@
+#CollectionAccount .account_wrapper .account_header {
+  height: 220px;
+  position: relative;
+}
+
+#CollectionAccount .account_wrapper .account_header img.user_banner {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#CollectionAccount .account_wrapper .account_header .user_img_btn {
+  background: #353840;
+  border: 1px solid #353840;
+  width: 123px;
+  outline: none;
+  height: 123px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  bottom: -61px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+}
+
+#CollectionAccount .account_wrapper .account_header .user_img_btn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=CollectionAccount.css.map */

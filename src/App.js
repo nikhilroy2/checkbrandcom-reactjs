@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // .....................Pages..................
 import MainPage from "./Pages/MainPage/MainPage";
 import ExplorePage from "./Pages/ExplorePage/ExplorePage";
+import CollectionAccount from "./Pages/CollectionAccount/CollectionAccount";
 // .....................Pages..................End
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainPage />}></Route>
             <Route path="/explore" element={<ExplorePage />}></Route>
+            <Route path="/collection" element={<CollectionAccount />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>

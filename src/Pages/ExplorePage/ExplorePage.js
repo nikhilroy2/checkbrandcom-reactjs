@@ -422,6 +422,7 @@ function ExplorePage(props) {
                   </Link>
                 </li>
               );
+              
             })}
           </ul>
         </div>

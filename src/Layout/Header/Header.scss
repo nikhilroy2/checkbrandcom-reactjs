@@ -4,6 +4,7 @@ header#Header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 500;
   .logo_wrapper {
     @media (max-width: 1300px) {
       flex-grow: 0 !important;
@@ -58,6 +59,7 @@ header#Header {
       color: var(--text-white-75);
       fill: var(--text-white-75);
       font-weight: bold;
+      background: var(--text-1d);
       &:hover {
         color: var(--text-white);
         fill: var(--text-white);

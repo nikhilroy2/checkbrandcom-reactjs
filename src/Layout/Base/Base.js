@@ -5,7 +5,7 @@ function Base(props) {
   return (
     <div id="Base">
       <Header></Header>
-      <main style={{ paddingTop: "120px" }}>{props.children}</main>
+      <main style={{ paddingTop: "77px" }}>{props.children}</main>
       <Footer></Footer>
     </div>
   );
