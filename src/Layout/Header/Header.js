@@ -13,22 +13,22 @@ function Header(props) {
     {
       id: 1,
       name: "Persons",
-      link: "#",
+      link: "explore?tab=persons",
     },
     {
       id: 2,
       name: "Brands",
-      link: "#",
+      link: "explore?tab=brands",
     },
     {
       id: 3,
       name: "Options",
-      link: "#",
+      link: "explore?tab=options",
     },
     {
       id: 4,
       name: "Bonds",
-      link: "#",
+      link: "explore?tab=bonds",
     },
   ];
 

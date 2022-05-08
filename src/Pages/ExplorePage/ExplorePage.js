@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import CollectionsCard from "../../Components/CollectionsCard/CollectionsCard";
 function ExplorePage(props) {
@@ -40,6 +40,7 @@ function ExplorePage(props) {
       isActive: false,
     },
   ];
+
   const [tabName, setTabName] = React.useState(`${window.location.search}`);
   const handleTabActive = () => {
     //console.log(window.location.search)
@@ -67,14 +68,123 @@ function ExplorePage(props) {
       {
         id: 2,
         link: "#",
-        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
-        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
-        cardName: "Tamaki Apes",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
         isCardNameVerified: false,
-        cardNameBy: "TamakiApesOfficial",
+        cardNameBy: "9292Zv",
         cardNameByLink: "#",
-        description:
-          "A collection of 2222 Apes vibing on the Solana Blockchainsdfsdfdsf.",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 3,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 4,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 5,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 6,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 7,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 8,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 9,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 10,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 11,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
+      },
+      {
+        id: 12,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/yaku.png"),
+        smImg: require("../../Static/img/card_img/yaku.png"),
+        cardName: "YAKU X",
+        isCardNameVerified: false,
+        cardNameBy: "9292Zv",
+        cardNameByLink: "#",
+        description: "Explore the YAKU X collection",
       },
     ],
 
@@ -102,6 +212,186 @@ function ExplorePage(props) {
         cardNameByLink: "#",
         description:
           "A collection of 2222 Apes vibing on the Solana Blockchainsdfsdfdsf.",
+      },
+    ],
+
+    brands_collection: [
+      {
+        id: 1,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchain.",
+      },
+      {
+        id: 2,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchainsdfsdfdsf.",
+      },
+      {
+        id: 3,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchainsdfsdfdsf.",
+      },
+    ],
+
+    persons_collection: [
+      {
+        id: 1,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchain.",
+      },
+      {
+        id: 2,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchainsdfsdfdsf.",
+      },
+      {
+        id: 3,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchainsdfsdfdsf.",
+      },
+      {
+        id: 4,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchainsdfsdfdsf.",
+      },
+      {
+        id: 5,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchainsdfsdfdsf.",
+      },
+    ],
+
+    options_collection: [
+      {
+        id: 1,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchain.",
+      },
+    ],
+
+    bonds_collection: [
+      {
+        id: 1,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchain.",
+      },
+      {
+        id: 2,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchain.",
+      },
+      {
+        id: 3,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchain.",
+      },
+      {
+        id: 4,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchain.",
+      },
+      {
+        id: 5,
+        link: "#",
+        largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+        cardName: "Tamaki Apes",
+        isCardNameVerified: false,
+        cardNameBy: "TamakiApesOfficial",
+        cardNameByLink: "#",
+        description:
+          "A collection of 2222 Apes vibing on the Solana Blockchain.",
       },
     ],
   };
@@ -137,30 +427,145 @@ function ExplorePage(props) {
         </div>
 
         <div className="container-fluid">
-          {/* .................for Top collections ......................*/}
           <div className="row gy-4">
-            {explore_collection_object.top_collection.map((v) => {
-              return (
-                <div className="col-sm-6 col-lg-4 col-xl-3" key={v.id}>
-                  <div className="col_wrapper">
-                    <Link to={v.link}>
-                      <CollectionsCard
-                        largeImg={v.largeImg}
-                        smImg={v.smImg}
-                        cardName={v.cardName}
-                        isCardNameVerified={v.isCardNameVerified}
-                        cardNameBy={v.cardNameBy}
-                        cardNameByLink={v.cardNameByLink}
-                        description={v.description}
-                      ></CollectionsCard>
-                    </Link>
+            {/* .................for Top collections ......................*/}
+            {tabName === "?tab=top" &&
+              explore_collection_object.top_collection.map((v) => {
+                return (
+                  <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
+                    <div className="col_wrapper h-100">
+                      <Link to={v.link} className="h-100">
+                        <CollectionsCard
+                          largeImg={v.largeImg}
+                          smImg={v.smImg}
+                          cardName={v.cardName}
+                          isCardNameVerified={v.isCardNameVerified}
+                          cardNameBy={v.cardNameBy}
+                          cardNameByLink={v.cardNameByLink}
+                          description={v.description}
+                        ></CollectionsCard>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            {/* .................for Top collections ......................End*/}
 
-          {/* .................for Top collections ......................End*/}
+            {/* .................for Collectibles collections ......................*/}
+            {tabName === "?tab=collectibles" &&
+              explore_collection_object.collectibles_collection.map((v) => {
+                return (
+                  <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
+                    <div className="col_wrapper h-100">
+                      <Link to={v.link} className="h-100">
+                        <CollectionsCard
+                          largeImg={v.largeImg}
+                          smImg={v.smImg}
+                          cardName={v.cardName}
+                          isCardNameVerified={v.isCardNameVerified}
+                          cardNameBy={v.cardNameBy}
+                          cardNameByLink={v.cardNameByLink}
+                          description={v.description}
+                        ></CollectionsCard>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            {/* .................for Collectibles collections ......................End*/}
+
+            {/* .................for brands collections ......................*/}
+            {tabName === "?tab=brands" &&
+              explore_collection_object.brands_collection.map((v) => {
+                return (
+                  <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
+                    <div className="col_wrapper h-100">
+                      <Link to={v.link} className="h-100">
+                        <CollectionsCard
+                          largeImg={v.largeImg}
+                          smImg={v.smImg}
+                          cardName={v.cardName}
+                          isCardNameVerified={v.isCardNameVerified}
+                          cardNameBy={v.cardNameBy}
+                          cardNameByLink={v.cardNameByLink}
+                          description={v.description}
+                        ></CollectionsCard>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            {/* .................for brands collections ......................End*/}
+
+            {/* .................for persons collections ......................*/}
+            {tabName === "?tab=persons" &&
+              explore_collection_object.persons_collection.map((v) => {
+                return (
+                  <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
+                    <div className="col_wrapper h-100">
+                      <Link to={v.link} className="h-100">
+                        <CollectionsCard
+                          largeImg={v.largeImg}
+                          smImg={v.smImg}
+                          cardName={v.cardName}
+                          isCardNameVerified={v.isCardNameVerified}
+                          cardNameBy={v.cardNameBy}
+                          cardNameByLink={v.cardNameByLink}
+                          description={v.description}
+                        ></CollectionsCard>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            {/* .................for persons collections ......................End*/}
+
+            {/* .................for options collections ......................*/}
+            {tabName === "?tab=options" &&
+              explore_collection_object.options_collection.map((v) => {
+                return (
+                  <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
+                    <div className="col_wrapper h-100">
+                      <Link to={v.link} className="h-100">
+                        <CollectionsCard
+                          largeImg={v.largeImg}
+                          smImg={v.smImg}
+                          cardName={v.cardName}
+                          isCardNameVerified={v.isCardNameVerified}
+                          cardNameBy={v.cardNameBy}
+                          cardNameByLink={v.cardNameByLink}
+                          description={v.description}
+                        ></CollectionsCard>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            {/* .................for options collections ......................End*/}
+
+            {/* .................for bonds collections ......................*/}
+            {tabName === "?tab=bonds" &&
+              explore_collection_object.bonds_collection.map((v) => {
+                return (
+                  <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
+                    <div className="col_wrapper h-100">
+                      <Link to={v.link} className="h-100">
+                        <CollectionsCard
+                          largeImg={v.largeImg}
+                          smImg={v.smImg}
+                          cardName={v.cardName}
+                          isCardNameVerified={v.isCardNameVerified}
+                          cardNameBy={v.cardNameBy}
+                          cardNameByLink={v.cardNameByLink}
+                          description={v.description}
+                        ></CollectionsCard>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            {/* .................for bonds collections ......................End*/}
+          </div>
         </div>
       </section>
     </div>

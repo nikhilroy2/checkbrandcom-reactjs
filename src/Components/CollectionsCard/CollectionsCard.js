@@ -11,7 +11,7 @@ function CollectionsCard({
   description,
 }) {
   return (
-    <div id="CollectionsCard">
+    <div id="CollectionsCard" className="h-100">
       <div className="card_header">
         <img src={largeImg} alt="img" className="large_img" />
         <img src={smImg} alt="img" className="sm_img" />

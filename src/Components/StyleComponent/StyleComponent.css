@@ -36,6 +36,7 @@
 }
 
 .custom_tab .tab_list .tab_list_action.tab_active {
+  color: var(--text-white) !important;
   border-bottom: 6px solid var(--mdb-primary);
 }
 /*# sourceMappingURL=StyleComponent.css.map */
