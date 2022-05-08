@@ -415,7 +415,7 @@ function Header(props) {
           <ul className="list-unstyled d-flex align-items-center mb-0">
             <li className="nav_list_hover d-none d-lg-block">
               <div className="hover_action">
-                <Link className="nav_item px-3 py-1 " to="/explore">
+                <Link className="nav_item px-3 py-1 " to="/explore?tab=top">
                   Explore
                 </Link>
                 <ul className="list-unstyled hover_list min_width">

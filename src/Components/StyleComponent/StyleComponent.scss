@@ -31,4 +31,18 @@
   }
 }
 
+
+// custom tab............
+.custom_tab{
+  .tab_list{
+    .tab_list_action{
+      &.tab_active{
+        border-bottom: 6px solid var(--mdb-primary)
+      }
+    }
+  }
+}
+
+// custom tab............End
+
 // ..................This is for components styles global..........End
