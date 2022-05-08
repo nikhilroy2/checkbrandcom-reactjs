@@ -1,0 +1,35 @@
+#CollectionsCard {
+  border-radius: 10px;
+  border: 1px solid var(--text-r34);
+  background-color: var(--text-r57);
+  overflow: hidden;
+}
+
+#CollectionsCard .card_header {
+  height: 200px;
+  position: relative;
+}
+
+#CollectionsCard .card_header img.large_img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#CollectionsCard .card_header img.sm_img {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px;
+  background-color: var(--text-r57);
+  border: 3px solid var(--text-r57);
+  -webkit-box-shadow: rgba(14, 14, 14, 0.6) 0px 0px 2px 0px;
+          box-shadow: rgba(14, 14, 14, 0.6) 0px 0px 2px 0px;
+}
+/*# sourceMappingURL=CollectionsCard.css.map */

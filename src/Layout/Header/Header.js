@@ -365,8 +365,8 @@ function Header(props) {
   const NightModeHandle = () => {
     setIsNight(!isNight);
     isNight
-      ? document.documentElement.classList.remove("night_mode_on")
-      : document.documentElement.classList.add("night_mode_on");
+      ? document.documentElement.classList.add("light_theme")
+      : document.documentElement.classList.remove("light_theme");
     // after local storage night mode
   };
 
@@ -415,7 +415,7 @@ function Header(props) {
           <ul className="list-unstyled d-flex align-items-center mb-0">
             <li className="nav_list_hover d-none d-lg-block">
               <div className="hover_action">
-                <Link className="nav_item px-3 py-1 " to="/">
+                <Link className="nav_item px-3 py-1 " to="/explore">
                   Explore
                 </Link>
                 <ul className="list-unstyled hover_list min_width">

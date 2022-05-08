@@ -4,6 +4,7 @@ import "./Components/StyleComponent/StyleComponent.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // .....................Pages..................
 import MainPage from "./Pages/MainPage/MainPage";
+import ExplorePage from "./Pages/ExplorePage/ExplorePage";
 // .....................Pages..................End
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Base>
           <Routes>
             <Route path="/" element={<MainPage />}></Route>
+            <Route path="/explore" element={<ExplorePage />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>

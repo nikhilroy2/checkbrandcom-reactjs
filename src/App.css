@@ -16,6 +16,26 @@
   --text-r49: rgba(4, 17, 29, 0.25);
   --text-r57: rgb(48, 51, 57);
   --text-5c: #4c505c;
+  --text-r34: rgb(21, 27, 34);
+  --text-r155: rgb(138, 147, 155);
+}
+
+:root.light_theme {
+  --text-1d: #eee;
+  --text-40: #353840;
+  --text-white: #fff;
+  --text-white-75: rgba(255, 255, 255, 0.75);
+  --text-black: #000;
+  --text-5c: #4c505c;
+  --text-0f: #fff;
+  --text-26: #262626;
+  --text-r49: rgba(4, 17, 29, 0.25);
+  --text-r57: rgb(48, 51, 57);
+}
+
+:root.light_theme .text-white,
+:root.light_theme .text-light {
+  color: #000 !important;
 }
 
 html,
@@ -27,6 +47,10 @@ body {
 
 .text_1d {
   color: var(--text-1d);
+}
+
+.text_r155 {
+  color: var(--text-r155);
 }
 
 .bg_1d {
