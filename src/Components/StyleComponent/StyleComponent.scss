@@ -13,13 +13,13 @@
     transition: 0.3s;
     transform: translateY(50px);
     padding-top: 25px;
-    &.hover_right{
-        left: auto;
-        right: 0px;
+    &.hover_right {
+      left: auto;
+      right: 0px;
     }
     &.min_width {
       width: 200px;
-      &.min_width_lg{
+      &.min_width_lg {
         width: 250px;
       }
     }
@@ -31,14 +31,19 @@
   }
 }
 
-
 // custom tab............
-.custom_tab{
-  .tab_list{
-    .tab_list_action{
-      &.tab_active{
-        color: var(--text-white)!important;
-        border-bottom: 6px solid var(--mdb-primary)
+.custom_tab {
+  .tab_list {
+    &.tab_list_border{
+      border-bottom: 1px solid var(--text-border-bottom);
+    }
+    .tab_list_action {
+      &.tab_active {
+        color: var(--text-white) !important;
+        border-bottom: 6px solid var(--mdb-primary);
+      }
+      &.tab_list_action_hover:hover {
+        color: var(--text-white) !important;
       }
     }
   }

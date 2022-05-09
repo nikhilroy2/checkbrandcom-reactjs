@@ -398,7 +398,7 @@ function ExplorePage(props) {
 
   return (
     <div id="ExplorePage">
-      <section>
+      <section className="mt-5">
         <div className="container-fluid">
           <div className="col-12">
             <h2 className="section_title text-center text-white">

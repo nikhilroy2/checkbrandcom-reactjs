@@ -18,6 +18,10 @@
   --text-5c: #4c505c;
   --text-r34: rgb(21, 27, 34);
   --text-r155: rgb(138, 147, 155);
+  --text-border-bottom: rgba(68, 68, 68, 0.5);
+  --text-r35: rgb(229, 232, 235);
+  --text-white-75: rgba(255, 255, 255, 0.75);
+  --text-white-50: rgba(255, 255, 255, 0.50);
 }
 
 :root.light_theme {
@@ -43,6 +47,7 @@ body {
   padding: 0;
   margin: 0;
   background: var(--text-0f);
+  color: var(--text-r35);
 }
 
 .text_1d {
@@ -53,11 +58,23 @@ body {
   color: var(--text-r155);
 }
 
+.text_white_75 {
+  color: var(--text-white-75);
+}
+
 .bg_1d {
   background: var(--text-1d);
 }
 
 .border-dark:not(.not_alpha) {
   border-color: rgba(48, 51, 57, 0.5) !important;
+}
+
+.border_bottom {
+  border-bottom: 1px solid var(--text-border-bottom);
+}
+
+section .section_description {
+  line-height: 27px;
 }
 /*# sourceMappingURL=App.css.map */

@@ -2,19 +2,56 @@ import React from "react";
 import "./CollectionAccount.css";
 import { Link } from "react-router-dom";
 import CollectionsCard from "../../Components/CollectionsCard/CollectionsCard";
+
+import ReactTooltip from "react-tooltip";
+
 function CollectionAccount(props) {
+  const [isItems, setIsItems] = React.useState(true);
+  const tabHandle = () => {
+    setTimeout(() => {
+      const searchUlr = window.location.search;
+      //console.log(searchUlr);
+      setIsItems(searchUlr === "" ? true : false);
+    }, 0);
+  };
   const tab_list_object = [
     {
       id: 1,
       name: "Items",
-      icon: "",
-      link: "#",
+      icon: (
+        <svg
+          className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          data-testid="GridOnIcon"
+          height="25px"
+          fill="currentColor"
+        >
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-4h4v4zm0-6H4v-4h4v4zm0-6H4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4z" />
+        </svg>
+      ),
+      link: "",
+      activeTab: isItems ? true : false,
     },
     {
       id: 2,
       name: "Activity",
-      icon: "",
-      link: "#",
+      icon: (
+        <svg
+          className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          data-testid="ShowChartIcon"
+          height="25px"
+          fill="currentColor"
+        >
+          <path d="m3.5 18.49 6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" />
+        </svg>
+      ),
+      link: "?tab=Activity",
+      activeTab: isItems ? false : true,
     },
   ];
 
@@ -177,12 +214,23 @@ function CollectionAccount(props) {
                 <div className="col-12">
                   <div className="d-flex align-items-center justify-content-end">
                     <div className="btn-group btn-rounded">
-                      <a href="#" className="btn btn-outline-dark text-white">
+                      <a
+                        href="#"
+                        className="btn btn-outline-dark text-white"
+                        data-tip="Website"
+                      >
                         <i className="fa-2x fa-solid fa-globe"></i>
                       </a>
-                      <a href="#" className="btn btn-outline-dark text-white">
+                      <ReactTooltip place="top" effect="solid" />
+                      <a
+                        href="#"
+                        className="btn btn-outline-dark text-white"
+                        data-tip="Twitter"
+                      >
                         <i className="fa-2x fab fa-reddit    "></i>
                       </a>
+                      <ReactTooltip place="top" effect="solid" />
+
                       <a href="#" className="btn btn-outline-dark text-white">
                         <i className="fa-2x fab fa-instagram    "></i>
                       </a>
@@ -256,15 +304,18 @@ function CollectionAccount(props) {
               <div className="row justify-content-center">
                 <div className="col-12">
                   <div className="custom_tab my-5 pt-4">
-                    <ul className="list-unstyled tab_list d-flex align-items-center justify-content-center">
+                    <ul className="list-unstyled tab_list tab_list_border d-flex align-items-center justify-content-center">
                       {tab_list_object.map((v) => {
                         return (
                           <li className="tab_list_item" key={v.id}>
                             <Link
-                              to={v.icon}
-                              className={`tab_list_action p-3 text-white-50 h5 `}
+                              onClick={tabHandle}
+                              to={v.link}
+                              className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50 h5 d-inline-flex align-items-center ${
+                                v.activeTab ? "tab_active" : ""
+                              } `}
                             >
-                              {v.name}
+                              {v.icon} {v.name}
                             </Link>
                           </li>
                         );
@@ -278,7 +329,7 @@ function CollectionAccount(props) {
             {/* ......................for Items tab....................... */}
             <div className="container-fluid mb-5">
               <div className="row gy-4">
-                {true &&
+                {isItems &&
                   ItemsTab_object.map((v) => {
                     return (
                       <div
