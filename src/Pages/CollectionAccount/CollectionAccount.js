@@ -254,7 +254,7 @@ function CollectionAccount(props) {
                     <i
                       className="fab fa-twitter   me-2 "
                       style={{ color: "#007AD3" }}
-                    ></i>{" "}
+                    ></i>
                     Versacy
                   </button>
                 </div>
@@ -354,7 +354,16 @@ function CollectionAccount(props) {
                   })}
               </div>
             </div>
+
             {/* ......................for Items tab....................... End */}
+
+            {!isItems && (
+              <>
+                {/* ......................for Activity tab.......................  */}
+                <AccountActivity></AccountActivity>
+                {/* ......................for Activity tab....................... End */}
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -363,3 +372,122 @@ function CollectionAccount(props) {
 }
 
 export default CollectionAccount;
+
+const AccountActivity = () => {
+  return (
+    <div id="AccountActivity">
+      <div className="container-fluid mb-5">
+        <div className="row gy-4">
+          <div className="col-12">
+            <div className="custom_table_history">
+              <div className="table-responsive">
+                <table className="table text-white">
+                  <thead>
+                    <tr>
+                      <th className="text-nowrap">Collection</th>
+                      <th className="text-nowrap">Volume</th>
+                      <th className="text-nowrap">24h%</th>
+                      <th className="text-nowrap">7d%</th>
+                      <th className="text-nowrap">Floor Price</th>
+                      <th className="text-nowrap">Owners</th>
+                      <th className="text-nowrap">Items</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="text-nowrap">
+                        1 <span className="globe_box"></span>
+                        World of Women Galaxy
+                      </td>
+                      <td className="text-nowrap">
+                        <img
+                          className="me-2"
+                          style={{ height: "20px" }}
+                          src={require("../../Static/img/eth.svg").default}
+                          alt="img"
+                        />
+                        18,531,52
+                      </td>
+                      <td className="negative_value">-81.93%</td>
+                      <td className="positive_value">+119.08%</td>
+                      <td>
+                        <img
+                          className="me-2"
+                          style={{ height: "20px" }}
+                          src={require("../../Static/img/eth.svg").default}
+                          alt="img"
+                        />
+                        1.45
+                      </td>
+                      <td>10.3K</td>
+                      <td>20.2K</td>
+                    </tr>
+
+                    <tr>
+                      <td className="text-nowrap">
+                        1 <span className="globe_box"></span>
+                        World of Women Galaxy
+                      </td>
+                      <td className="text-nowrap">
+                        <img
+                          className="me-2"
+                          style={{ height: "20px" }}
+                          src={require("../../Static/img/eth.svg").default}
+                          alt="img"
+                        />
+                        18,531,52
+                      </td>
+                      <td className="negative_value">-81.93%</td>
+                      <td className="">---</td>
+                      <td>
+                        <img
+                          className="me-2"
+                          style={{ height: "20px" }}
+                          src={require("../../Static/img/eth.svg").default}
+                          alt="img"
+                        />
+                        1.45
+                      </td>
+                      <td>10.3K</td>
+                      <td>20.2K</td>
+                    </tr>
+
+                    <tr>
+                      <td className="text-nowrap">
+                        1 <span className="globe_box"></span>
+                        World of Women Galaxy
+                      </td>
+                      <td className="text-nowrap">
+                        <img
+                          className="me-2"
+                          style={{ height: "20px" }}
+                          src={require("../../Static/img/eth.svg").default}
+                          alt="img"
+                        />
+                        18,531,52
+                      </td>
+                      <td className="negative_value">-81.93%</td>
+                      <td className="">---</td>
+                      <td>
+                        {" "}
+                        <img
+                          className="me-2"
+                          style={{ height: "20px" }}
+                          src={require("../../Static/img/eth.svg").default}
+                          alt="img"
+                        />
+                        1.45
+                      </td>
+                      <td>10.3K</td>
+                      <td>20.2K</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

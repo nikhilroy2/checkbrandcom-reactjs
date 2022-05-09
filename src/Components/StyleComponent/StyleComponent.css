@@ -47,4 +47,29 @@
 .custom_tab .tab_list .tab_list_action.tab_list_action_hover:hover {
   color: var(--text-white) !important;
 }
+
+.custom_table_history td,
+.custom_table_history th {
+  border-bottom: 1px solid var(--text-border-bottom) !important;
+}
+
+.custom_table_history .globe_box {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fecb43), to(#fe7e54));
+  background: linear-gradient(#fecb43, #fe7e54);
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.custom_table_history .negative_value {
+  color: var(--mdb-danger);
+}
+
+.custom_table_history .positive_value {
+  color: var(--mdb-success);
+}
 /*# sourceMappingURL=StyleComponent.css.map */

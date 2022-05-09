@@ -34,7 +34,7 @@
 // custom tab............
 .custom_tab {
   .tab_list {
-    &.tab_list_border{
+    &.tab_list_border {
       border-bottom: 1px solid var(--text-border-bottom);
     }
     .tab_list_action {
@@ -50,5 +50,30 @@
 }
 
 // custom tab............End
+
+// ..................custom_table_history..........
+.custom_table_history {
+  td,
+  th {
+    border-bottom: 1px solid var(--text-border-bottom) !important;
+  }
+  .globe_box {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(#fecb43, #fe7e54);
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  .negative_value{
+    color: var(--mdb-danger);
+  }
+  .positive_value{
+    color: var(--mdb-success)
+  }
+}
+// ..................custom_table_history..........End
 
 // ..................This is for components styles global..........End
