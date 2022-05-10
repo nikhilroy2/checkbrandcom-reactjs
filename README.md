@@ -1,9 +1,33 @@
 <h1>
     Live demo:
 </h1>
-<a href="https://checkbrandcom-reactjs.netlify.app/">
-    https://checkbrandcom-reactjs.netlify.app/
-</a>
+<ol>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/">
+            https://checkbrandcom-reactjs.netlify.app/
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/explore">
+            https://checkbrandcom-reactjs.netlify.app/explore
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/collection">
+            https://checkbrandcom-reactjs.netlify.app/collection
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/explore_details">
+            https://checkbrandcom-reactjs.netlify.app/explore_details
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/account_user_events">
+            https://checkbrandcom-reactjs.netlify.app/account_user_events
+        </a>
+    </li>
+</ol>
 
 
 
