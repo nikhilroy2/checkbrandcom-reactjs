@@ -51,6 +51,37 @@ function AccountUserEvents(props) {
 export default AccountUserEvents;
 
 const EventsTab = () => {
+  const [tabActiveName, setTabActiveName] = React.useState("Collected");
+
+  let tabActiveValue = "";
+
+  switch (tabActiveName) {
+    case "Collected":
+      tabActiveValue = <EventCards></EventCards>;
+      break;
+    case "Created_Items":
+      tabActiveValue = <EventCreatedItems></EventCreatedItems>;
+      break;
+    case "Created_Collections":
+      tabActiveValue = <EventCreatedCollection></EventCreatedCollection>;
+      break;
+    case "Favorited":
+      tabActiveValue = <EventFavorite></EventFavorite>;
+      break;
+    case "Activity":
+      tabActiveValue = <EventActivity></EventActivity>;
+      break;
+    case "Offers_received":
+      tabActiveValue = <EventOffersReveived></EventOffersReveived>;
+      break;
+    case "Offers_made":
+      tabActiveValue = <EventOffersMade></EventOffersMade>;
+      break;
+    default:
+      tabActiveValue = "not found";
+  }
+
+  //EventOffersReveived
   return (
     <div id="EventsTab">
       <section>
@@ -62,9 +93,12 @@ const EventsTab = () => {
                   {/* Collected tab */}
                   <li className="tab_list_item">
                     <Link
+                      onClick={() => setTabActiveName("Collected")}
                       to="?tab=Collected"
-                      className="tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                           h5 d-inline-flex align-items-center tab_active"
+                      className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
+                      h5 d-inline-flex align-items-center ${
+                        tabActiveName === "Collected" ? "tab_active" : ""
+                      }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -89,8 +123,13 @@ const EventsTab = () => {
                     <Link
                       data-mdb-toggle="dropdown"
                       to="/"
-                      className="tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                           h5 d-inline-flex align-items-center"
+                      className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
+                      h5 d-inline-flex align-items-center ${
+                        tabActiveName === "Created_Items" ||
+                        tabActiveName === "Created_Collections"
+                          ? "tab_active"
+                          : ""
+                      }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -103,7 +142,7 @@ const EventsTab = () => {
                       >
                         <path d="M18 4V3c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V6h1v4H9v11c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-9h8V4h-3z" />
                       </svg>
-                      Collected
+                      Created
                       <svg
                         className="MuiSvgIcon-root ms-3 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
                         focusable="false"
@@ -122,7 +161,11 @@ const EventsTab = () => {
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
-                        <Link className="dropdown-item" to="?tab=items">
+                        <Link
+                          className="dropdown-item"
+                          onClick={() => setTabActiveName("Created_Items")}
+                          to="?tab=items"
+                        >
                           <svg
                             className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
                             focusable="false"
@@ -138,7 +181,13 @@ const EventsTab = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to="?tab=collections">
+                        <Link
+                          className="dropdown-item"
+                          onClick={() =>
+                            setTabActiveName("Created_Collections")
+                          }
+                          to="?tab=collections"
+                        >
                           <svg
                             className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
                             focusable="false"
@@ -161,9 +210,12 @@ const EventsTab = () => {
                   {/* Favorited tab */}
                   <li className="tab_list_item">
                     <Link
+                      onClick={() => setTabActiveName("Favorited")}
                       to="?tab=favorited"
-                      className="tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                           h5 d-inline-flex align-items-center"
+                      className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
+                      h5 d-inline-flex align-items-center ${
+                        tabActiveName === "Favorited" ? "tab_active" : ""
+                      }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -185,9 +237,12 @@ const EventsTab = () => {
                   {/* Activity tab */}
                   <li className="tab_list_item">
                     <Link
+                      onClick={() => setTabActiveName("Activity")}
                       to="?tab=activity"
-                      className="tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                           h5 d-inline-flex align-items-center"
+                      className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
+                      h5 d-inline-flex align-items-center ${
+                        tabActiveName === "Activity" ? "tab_active" : ""
+                      }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2  MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -210,8 +265,13 @@ const EventsTab = () => {
                     <Link
                       data-mdb-toggle="dropdown"
                       to=""
-                      className="tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                           h5 d-inline-flex align-items-center"
+                      className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
+                      h5 d-inline-flex align-items-center ${
+                        tabActiveName === "Offers_received" ||
+                        tabActiveName === "Offers_made"
+                          ? "tab_active"
+                          : ""
+                      }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -243,6 +303,7 @@ const EventsTab = () => {
                     >
                       <li>
                         <Link
+                          onClick={() => setTabActiveName("Offers_received")}
                           className="dropdown-item"
                           to="?tab=offers_received"
                         >
@@ -261,7 +322,11 @@ const EventsTab = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to="?tab=offers_mode">
+                        <Link
+                          className="dropdown-item"
+                          onClick={() => setTabActiveName("Offers_made")}
+                          to="?tab=offers_mode"
+                        >
                           <svg
                             className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
                             focusable="false"
@@ -284,67 +349,464 @@ const EventsTab = () => {
             </div>
           </div>
         </div>
+        {/* tabActiveValue result fromt switch condition */}
+        {tabActiveValue}
+      </section>
+    </div>
+  );
+};
 
-        <div className="container-fluid">
-          <div className="row gy-4">
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div className="col_wrapper">
-                <CollectionsCard2></CollectionsCard2>
-              </div>
-            </div>
+// for tab value
+const EventCards = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row gy-4">
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
           </div>
         </div>
-      </section>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// for tab value
+const EventCreatedItems = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row gy-4">
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// for tab value
+const EventCreatedCollection = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row gy-4">
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// for tab value
+const EventFavorite = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row gy-4">
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// for tab value
+const EventActivity = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row gy-4">
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// for tab value
+const EventOffersReveived = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row gy-4">
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// for tab value
+const EventOffersMade = () => {
+  return (
+    <div className="container-fluid">
+      <div className="row gy-4">
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div className="col_wrapper">
+            <CollectionsCard2></CollectionsCard2>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
