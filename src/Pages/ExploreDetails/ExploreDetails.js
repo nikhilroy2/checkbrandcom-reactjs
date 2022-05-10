@@ -1,8 +1,9 @@
-import React, {  } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ExploreDetails.css";
 import CollectionsCard from "../../Components/CollectionsCard/CollectionsCard";
 function ExploreDetails(props) {
+  const [isExpandDesc, setIsExpandDesc] = useState(false);
   return (
     <div id="ExploreDetails">
       <section>
@@ -20,32 +21,44 @@ function ExploreDetails(props) {
             <div className="row justify-content-center">
               <div className="col-12 col-md-10 col-lg-6">
                 <p className="section_description text_white_75 text-center mt-4 mb-3">
-                  An online communityAn online communityAn online communityAn
+                  {isExpandDesc
+                    ? ` An online communityAn online communityAn online communityAn
                   online An online communityAn online communityAn online
                   communityAn online An online communityAn online communityAn
-                  online communityAn online An online communityAn online
-                  communityAn online communityAn online An online communityAn
-                  online communityAn online communityAn online An online
-                  communityAn online communityAn online communityAn online An
-                  online communityAn online communityAn online communityAn
-                  online
+                  communityAn online An online communityAn online communityAn
+                  communityAn online An online communityAn online communityAn
+                  communityAn online An online communityAn online communityAn
+                  communityAn online An online communityAn online communityAn
+                  online co
+                  communityAn online communityAn online An online communityAn`
+                    : ` An online communityAn online communityAn online communityAn
+                  online An online An An online communityAn online communityAn online communityAn
+                  online An online An`}
                 </p>
               </div>
             </div>
           </div>
 
           <div className="text-center">
-            <svg
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
-              focusable="false"
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              height={"32px"}
-              fill="var(--text-white-50)"
-              data-testid="ArrowDropDownIcon"
+            <button
+              className="btn btn-muted p-0"
+              onClick={() => setIsExpandDesc(!isExpandDesc)}
             >
-              <path d="m7 10 5 5 5-5z" />
-            </svg>
+              <svg
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                focusable="false"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                height={"32px"}
+                fill="var(--text-white-50)"
+                data-testid="ArrowDropDownIcon"
+                style={{
+                  transform: `${isExpandDesc ? "scaleY(-1)" : "scaleY(1)"}`,
+                }}
+              >
+                <path d="m7 10 5 5 5-5z" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>

@@ -1,0 +1,28 @@
+#AccountUserEvents .header_part {
+  position: relative;
+}
+
+#AccountUserEvents .header_part .social_user_box {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 50px;
+}
+
+#AccountUserEvents .header_part .user_box {
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  margin: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ee93d0), to(#584cd4));
+  background: linear-gradient(#ee93d0, #584cd4);
+  padding: 5px;
+}
+
+#AccountUserEvents .header_part .user_box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=AccountUserEvents.css.map */

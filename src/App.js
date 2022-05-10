@@ -7,6 +7,7 @@ import MainPage from "./Pages/MainPage/MainPage";
 import ExplorePage from "./Pages/ExplorePage/ExplorePage";
 import CollectionAccount from "./Pages/CollectionAccount/CollectionAccount";
 import ExploreDetails from "./Pages/ExploreDetails/ExploreDetails";
+import AccountUserEvents from "./Pages/AccountUserEvents/AccountUserEvents";
 // .....................Pages..................End
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/explore" element={<ExplorePage />}></Route>
             <Route path="/collection" element={<CollectionAccount />}></Route>
             <Route path="/explore_details" element={<ExploreDetails />}></Route>
+            <Route path="/account_user_events" element={<AccountUserEvents />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>
