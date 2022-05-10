@@ -73,6 +73,27 @@
   color: var(--mdb-success);
 }
 
+.custom_activity_table td,
+.custom_activity_table th {
+  border-bottom: 1px solid var(--text-border-bottom) !important;
+  vertical-align: middle;
+}
+
+.custom_activity_table tbody tr:hover {
+  background: var(--text-39);
+}
+
+.custom_activity_table .item_box {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+}
+
+.custom_activity_table .item_box img {
+  width: 100%;
+  height: 100%;
+}
+
 #CollectionsCard2 .card_wrapper {
   background: var(--text-39);
   border-radius: 10px;
@@ -98,5 +119,21 @@
 
 #CollectionsCard2 .card_wrapper:hover .buy_now {
   display: block;
+}
+
+.custom_dropdown {
+  background: transparent;
+}
+
+.custom_dropdown .dropdown_action {
+  border-bottom: 1px solid #151b22;
+  background: #4c505c;
+  color: var(--text-r35);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.custom_dropdown .dropdown_action:hover {
+  background: var(--text-39);
 }
 /*# sourceMappingURL=StyleComponent.css.map */

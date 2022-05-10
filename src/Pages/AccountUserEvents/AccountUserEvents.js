@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./AccountUserEvents.css";
 import CollectionsCard2 from "../../Components/CollectionsCard2/CollectionsCard2";
+import CollectionsCard from "../../Components/CollectionsCard/CollectionsCard";
 function AccountUserEvents(props) {
   return (
     <div id="AccountUserEvents">
@@ -89,7 +90,7 @@ const EventsTab = () => {
           <div className="row">
             <div className="col-12">
               <div className="custom_tab my-5 pt-4">
-                <ul className="list-unstyled tab_list tab_list_border d-flex align-items-center justify-content-center">
+                <ul className="list-unstyled tab_list  tab_list_border d-flex align-items-center justify-content-center">
                   {/* Collected tab */}
                   <li className="tab_list_item">
                     <Link
@@ -157,12 +158,12 @@ const EventsTab = () => {
                     </Link>
 
                     <ul
-                      className="dropdown-menu"
+                      className="dropdown-menu custom_dropdown"
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
                         <Link
-                          className="dropdown-item"
+                          className="dropdown-item dropdown_action px-3 py-2"
                           onClick={() => setTabActiveName("Created_Items")}
                           to="?tab=items"
                         >
@@ -182,7 +183,7 @@ const EventsTab = () => {
                       </li>
                       <li>
                         <Link
-                          className="dropdown-item"
+                          className="dropdown-item dropdown_action px-3 py-2"
                           onClick={() =>
                             setTabActiveName("Created_Collections")
                           }
@@ -298,13 +299,13 @@ const EventsTab = () => {
                       </svg>
                     </Link>
                     <ul
-                      className="dropdown-menu"
+                      className="dropdown-menu custom_dropdown"
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
                         <Link
                           onClick={() => setTabActiveName("Offers_received")}
-                          className="dropdown-item"
+                          className="dropdown-item dropdown_action"
                           to="?tab=offers_received"
                         >
                           <svg
@@ -323,7 +324,7 @@ const EventsTab = () => {
                       </li>
                       <li>
                         <Link
-                          className="dropdown-item"
+                          className="dropdown-item dropdown_action"
                           onClick={() => setTabActiveName("Offers_made")}
                           to="?tab=offers_mode"
                         >
@@ -488,64 +489,42 @@ const EventCreatedItems = () => {
 
 // for tab value
 const EventCreatedCollection = () => {
+  const event_collection_object = [
+    {
+      id: 1,
+      link: "#",
+      largeImg: require("../../Static/img/card_img/tamaki_apes.png"),
+      smImg: require("../../Static/img/card_img/tamaki_apes.png"),
+      cardName: "Tamaki Apes",
+      isCardNameVerified: false,
+      cardNameBy: "TamakiApesOfficial",
+      cardNameByLink: "#",
+      description: "A collection of 2222 Apes vibing on the Solana Blockchain.",
+    },
+  ];
   return (
     <div className="container-fluid">
       <div className="row gy-4">
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
+        {true &&
+          event_collection_object.map((v) => {
+            return (
+              <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
+                <div className="col_wrapper h-100">
+                  <Link to={v.link} className="h-100">
+                    <CollectionsCard
+                      largeImg={v.largeImg}
+                      smImg={v.smImg}
+                      cardName={v.cardName}
+                      isCardNameVerified={v.isCardNameVerified}
+                      cardNameBy={v.cardNameBy}
+                      cardNameByLink={v.cardNameByLink}
+                      description={v.description}
+                    ></CollectionsCard>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
@@ -556,60 +535,10 @@ const EventFavorite = () => {
   return (
     <div className="container-fluid">
       <div className="row gy-4">
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
+        <div className="col-12 py-5 my-5">
+          <h2 className="text-center">
+            This user hasn't favorited any items yet
+          </h2>
         </div>
       </div>
     </div>
@@ -620,60 +549,402 @@ const EventFavorite = () => {
 const EventActivity = () => {
   return (
     <div className="container-fluid">
-      <div className="row gy-4">
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
+      <div className="row">
+        <div className="col-12">
+          <div className="table-responsive">
+            <table className="table  text-white custom_activity_table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Item</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <svg
+                      className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                      focusable="false"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      data-testid="ShoppingCartIcon"
+                      fill="currentColor"
+                      height="20px"
+                    >
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
+                    Sale
+                  </td>
+
+                  <td>
+                    <div className="item_td d-flex align-items-center">
+                      <div className="item_box me-3">
+                        <img
+                          src={require("../../Static/img/item_box.png")}
+                          alt="img"
+                        />
+                      </div>
+                      <div className="content">
+                        <span className="text_r155">Collection name</span>
+                        <br />
+                        <span>Token name</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div className="d-flex">
+                      <img
+                        className="me-2"
+                        style={{ height: "20px" }}
+                        src={require("../../Static/img/eth.svg").default}
+                        alt="img"
+                      />
+
+                      <div className="content">
+                        <span>0.05</span>
+                        <br />
+                        <span className="text_r155">$121.19</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>1</td>
+
+                  <td>
+                    <Link to="/">ArowanaHub</Link>
+                  </td>
+
+                  <td>
+                    <Link to="/">DF6DA6</Link>
+                  </td>
+                  <td>
+                    <Link to="/">
+                      6 hours ago
+                      <svg
+                        className="MuiSvgIcon-root ms-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="LaunchIcon"
+                        fill="currentColor"
+                        style={{ height: "20px" }}
+                      >
+                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                      </svg>
+                    </Link>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <svg
+                      className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                      focusable="false"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      data-testid="SwapHorizIcon"
+                      fill="currentColor"
+                      height="20px"
+                    >
+                      <path d="M6.99 11 3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z" />
+                    </svg>
+                    Transfer
+                  </td>
+
+                  <td>
+                    <div className="item_td d-flex align-items-center">
+                      <div className="item_box me-3">
+                        <img
+                          src={require("../../Static/img/item_box.png")}
+                          alt="img"
+                        />
+                      </div>
+                      <div className="content">
+                        <span className="text_r155">Collection name</span>
+                        <br />
+                        <span>Token name</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div className="d-flex">
+                      <img
+                        className="me-2"
+                        style={{ height: "20px" }}
+                        src={require("../../Static/img/eth.svg").default}
+                        alt="img"
+                      />
+
+                      <div className="content">
+                        <span>0.05</span>
+                        <br />
+                        <span className="text_r155">$121.19</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>1</td>
+
+                  <td>
+                    <Link to="/">ArowanaHub</Link>
+                  </td>
+
+                  <td>
+                    <Link to="/">DF6DA6</Link>
+                  </td>
+                  <td>
+                    <Link to="/">
+                      6 hours ago
+                      <svg
+                        className="MuiSvgIcon-root ms-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="LaunchIcon"
+                        fill="currentColor"
+                        style={{ height: "20px" }}
+                      >
+                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                      </svg>
+                    </Link>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <svg
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                      focusable="false"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      data-testid="ShoppingCartIcon"
+                      fill="currentColor"
+                      height="20px"
+                    >
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
+                    Sale
+                  </td>
+
+                  <td>
+                    <div className="item_td d-flex align-items-center">
+                      <div className="item_box me-3">
+                        <img
+                          src={require("../../Static/img/item_box.png")}
+                          alt="img"
+                        />
+                      </div>
+                      <div className="content">
+                        <span className="text_r155">Collection name</span>
+                        <br />
+                        <span>Token name</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div className="d-flex">
+                      <img
+                        className="me-2"
+                        style={{ height: "20px" }}
+                        src={require("../../Static/img/eth.svg").default}
+                        alt="img"
+                      />
+
+                      <div className="content">
+                        <span>0.05</span>
+                        <br />
+                        <span className="text_r155">$121.19</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>1</td>
+
+                  <td>
+                    <Link to="/">ArowanaHub</Link>
+                  </td>
+
+                  <td>
+                    <Link to="/">DF6DA6</Link>
+                  </td>
+                  <td>
+                    <Link to="/">
+                      6 hours ago
+                      <svg
+                        className="MuiSvgIcon-root ms-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="LaunchIcon"
+                        fill="currentColor"
+                        style={{ height: "20px" }}
+                      >
+                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                      </svg>
+                    </Link>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <svg
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                      focusable="false"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      data-testid="ShoppingCartIcon"
+                      fill="currentColor"
+                      height="20px"
+                    >
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
+                    Sale
+                  </td>
+
+                  <td>
+                    <div className="item_td d-flex align-items-center">
+                      <div className="item_box me-3">
+                        <img
+                          src={require("../../Static/img/item_box.png")}
+                          alt="img"
+                        />
+                      </div>
+                      <div className="content">
+                        <span className="text_r155">Collection name</span>
+                        <br />
+                        <span>Token name</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div className="d-flex">
+                      <img
+                        className="me-2"
+                        style={{ height: "20px" }}
+                        src={require("../../Static/img/eth.svg").default}
+                        alt="img"
+                      />
+
+                      <div className="content">
+                        <span>0.05</span>
+                        <br />
+                        <span className="text_r155">$121.19</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>1</td>
+
+                  <td>
+                    <Link to="/">ArowanaHub</Link>
+                  </td>
+
+                  <td>
+                    <Link to="/">DF6DA6</Link>
+                  </td>
+                  <td>
+                    <Link to="/">
+                      6 hours ago
+                      <svg
+                        className="MuiSvgIcon-root ms-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="LaunchIcon"
+                        fill="currentColor"
+                        style={{ height: "20px" }}
+                      >
+                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                      </svg>
+                    </Link>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <svg
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                      focusable="false"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      data-testid="ShoppingCartIcon"
+                      fill="currentColor"
+                      height="20px"
+                    >
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
+                    Sale
+                  </td>
+
+                  <td>
+                    <div className="item_td d-flex align-items-center">
+                      <div className="item_box me-3">
+                        <img
+                          src={require("../../Static/img/item_box.png")}
+                          alt="img"
+                        />
+                      </div>
+                      <div className="content">
+                        <span className="text_r155">Collection name</span>
+                        <br />
+                        <span>Token name</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div className="d-flex">
+                      <img
+                        className="me-2"
+                        style={{ height: "20px" }}
+                        src={require("../../Static/img/eth.svg").default}
+                        alt="img"
+                      />
+
+                      <div className="content">
+                        <span>0.05</span>
+                        <br />
+                        <span className="text_r155">$121.19</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>1</td>
+
+                  <td>
+                    <Link to="/">ArowanaHub</Link>
+                  </td>
+
+                  <td>
+                    <Link to="/">DF6DA6</Link>
+                  </td>
+                  <td>
+                    <Link to="/">
+                      6 hours ago
+                      <svg
+                        className="MuiSvgIcon-root ms-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="LaunchIcon"
+                        fill="currentColor"
+                        style={{ height: "20px" }}
+                      >
+                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                      </svg>
+                    </Link>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
