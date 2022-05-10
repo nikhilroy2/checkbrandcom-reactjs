@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./AccountUserEvents.css";
-
+import CollectionsCard2 from "../../Components/CollectionsCard2/CollectionsCard2";
 function AccountUserEvents(props) {
   return (
     <div id="AccountUserEvents">
@@ -242,7 +242,10 @@ const EventsTab = () => {
                       aria-labelledby="dropdownMenuButton"
                     >
                       <li>
-                        <Link className="dropdown-item" to="?tab=offers_received">
+                        <Link
+                          className="dropdown-item"
+                          to="?tab=offers_received"
+                        >
                           <svg
                             className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
                             focusable="false"
@@ -277,6 +280,66 @@ const EventsTab = () => {
                   </li>
                   {/* Offers tab End  */}
                 </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container-fluid">
+          <div className="row gy-4">
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
               </div>
             </div>
           </div>

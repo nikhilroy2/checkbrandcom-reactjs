@@ -67,13 +67,33 @@
     margin-left: 5px;
     vertical-align: middle;
   }
-  .negative_value{
+  .negative_value {
     color: var(--mdb-danger);
   }
-  .positive_value{
-    color: var(--mdb-success)
+  .positive_value {
+    color: var(--mdb-success);
   }
 }
 // ..................custom_table_history..........End
 
+// ..................CollectionsCard2..............
+#CollectionsCard2 {
+  .card_wrapper {
+    background: var(--text-39);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 15px;
+    transition: 0.1s;
+    &:hover {
+      transform: translateY(-4px);
+    }
+    .card_footer {
+      background: linear-gradient(
+        rgba(21, 27, 34, 0.392) 0%,
+        rgb(48, 51, 57) 20%
+      );
+    }
+  }
+}
+// ..................CollectionsCard2..............End
 // ..................This is for components styles global..........End

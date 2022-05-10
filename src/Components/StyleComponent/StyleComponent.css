@@ -72,4 +72,23 @@
 .custom_table_history .positive_value {
   color: var(--mdb-success);
 }
+
+#CollectionsCard2 .card_wrapper {
+  background: var(--text-39);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 15px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+#CollectionsCard2 .card_wrapper:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+#CollectionsCard2 .card_wrapper .card_footer {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 27, 34, 0.392)), color-stop(20%, #303339));
+  background: linear-gradient(rgba(21, 27, 34, 0.392) 0%, #303339 20%);
+}
 /*# sourceMappingURL=StyleComponent.css.map */

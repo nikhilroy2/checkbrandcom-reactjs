@@ -21,7 +21,9 @@
   --text-border-bottom: rgba(68, 68, 68, 0.5);
   --text-r35: rgb(229, 232, 235);
   --text-white-75: rgba(255, 255, 255, 0.75);
-  --text-white-50: rgba(255, 255, 255, 0.50);
+  --text-white-50: rgba(255, 255, 255, 0.5);
+  --text-39: #303339;
+  --text-r155: rgb(138, 147, 155);
 }
 
 :root.light_theme {
@@ -58,6 +60,10 @@ body {
   color: var(--text-r155);
 }
 
+.text_r35 {
+  color: var(--text-r35);
+}
+
 .text_white_75 {
   color: var(--text-white-75);
 }
@@ -66,12 +72,33 @@ body {
   background: var(--text-1d);
 }
 
+.text_black_hover {
+  color: var(--text-r155);
+}
+
+.text_black_hover:hover {
+  color: var(--text-r35);
+}
+
+.fill_heart_icon {
+  fill: var(--text-r155);
+  height: 18px;
+}
+
+.fill_heart_icon:hover, .fill_heart_icon.active_icon {
+  fill: var(--mdb-danger);
+}
+
 .border-dark:not(.not_alpha) {
   border-color: rgba(48, 51, 57, 0.5) !important;
 }
 
 .border_bottom {
   border-bottom: 1px solid var(--text-border-bottom);
+}
+
+.font_12 {
+  font-size: 12px;
 }
 
 section .section_description {
