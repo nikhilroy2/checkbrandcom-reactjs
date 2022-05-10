@@ -92,6 +92,15 @@
         rgba(21, 27, 34, 0.392) 0%,
         rgb(48, 51, 57) 20%
       );
+     
+    }
+    .buy_now {
+      display: none;
+    }
+    &:hover {
+      .buy_now {
+        display: block;
+      }
     }
   }
 }
