@@ -103,6 +103,9 @@ body {
 .border_all_side {
   border: 1px solid var(--text-border-bottom);
 }
+.border_left {
+  border-left: 1px solid var(--text-border-bottom);
+}
 // ....................border classes............End
 
 // ......................font size ...........

@@ -415,7 +415,96 @@ function AssetsPage(props) {
               </div>
             </div>
             <div className="col-md-7">
-              <div className="assets_right_wrapper"></div>
+              <div className="assets_right_wrapper">
+                <div className="d-flex justify-content-between align-items-center">
+                  <Link to="/" className="user h5">
+                    Solful
+                  </Link>
+                  <div className="btn-group border_all_side radius_10">
+                    <div className="wrapper">
+                      <button
+                        className="btn btn-muted p-2 text-white border_left"
+                        data-mdb-ripple-duration="0"
+                        data-tip="Refresh Metadata"
+                      >
+                        <svg
+                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="RefreshIcon"
+                          fill="currentColor"
+                          height="25px"
+                        >
+                          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+                        </svg>
+                      </button>
+                      <ReactTooltip place="top" effect="solid" />
+                    </div>
+                    <div className="wrapper">
+                      <button
+                        className="btn btn-muted p-2 text-white border_left"
+                        data-mdb-ripple-duration="0"
+                        data-tip="View on Solful"
+                      >
+                        <svg
+                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="OpenInNewIcon"
+                          fill="currentColor"
+                          height="25px"
+                        >
+                          <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                        </svg>
+                      </button>
+                      <ReactTooltip place="top" effect="solid" />
+                    </div>
+                    <div className="wrapper">
+                      <button
+                        className="btn btn-muted p-2 text-white border_left"
+                        data-mdb-ripple-duration="0"
+                        data-tip="Share"
+                      >
+                        <svg
+                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="ShareIcon"
+                          fill="currentColor"
+                          height="25px"
+                        >
+                          <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" />
+                        </svg>
+                      </button>
+                      <ReactTooltip place="top" effect="solid" />
+                    </div>
+                    <div className="wrapper">
+                      <button
+                        className="btn btn-muted p-2 text-white border_left"
+                        data-mdb-ripple-duration="0"
+                        data-tip="More"
+                      >
+                        <svg
+                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="MoreVertIcon"
+                          fill="currentColor"
+                          height="25px"
+                        >
+                          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                        </svg>
+                      </button>
+                      <ReactTooltip place="top" effect="solid" />
+                    </div>
+                  </div>
+                </div>
+                <h3>Token name</h3>
+              </div>
             </div>
           </div>
         </div>

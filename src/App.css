@@ -106,6 +106,10 @@ body {
   border: 1px solid var(--text-border-bottom);
 }
 
+.border_left {
+  border-left: 1px solid var(--text-border-bottom);
+}
+
 .font_12 {
   font-size: 12px;
 }
