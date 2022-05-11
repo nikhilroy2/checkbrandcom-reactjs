@@ -25,6 +25,7 @@
   --text-white-50: rgba(255, 255, 255, 0.5);
   --text-39: #303339;
   --text-r155: rgb(138, 147, 155);
+  --text-12: #121212;
 
   // night
   &.light_theme {
@@ -71,6 +72,9 @@ body {
 .bg_1d {
   background: var(--text-1d);
 }
+.bg_12{
+  background: var(--text-12);
+}
 .text_black_hover {
   color: var(--text-r155);
   &:hover {
@@ -78,13 +82,15 @@ body {
   }
 }
 
-.fill_heart_icon{
+.fill_heart_icon {
   fill: var(--text-r155);
   height: 18px;
-  &:hover, &.active_icon{
+  &:hover,
+  &.active_icon {
     fill: var(--mdb-danger);
   }
 }
+
 // .....................color classes................End
 
 // ....................border classes............
@@ -93,6 +99,9 @@ body {
 }
 .border_bottom {
   border-bottom: 1px solid var(--text-border-bottom);
+}
+.border_all_side {
+  border: 1px solid var(--text-border-bottom);
 }
 // ....................border classes............End
 
@@ -108,3 +117,9 @@ section {
   }
 }
 // ...................Section styles .............End
+
+// ...................border-radius styles ........
+.radius_10 {
+  border-radius: 10px;
+}
+// ...................border-radius styles ........End
