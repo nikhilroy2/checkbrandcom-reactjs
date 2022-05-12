@@ -1,7 +1,7 @@
 #AssetsPage {
   .assets_left_wrapper {
     .assets_card_box {
-    //   background: var(--text-39);
+      //   background: var(--text-39);
       border-radius: 10px;
       overflow: hidden;
       .card_box_img {
@@ -10,13 +10,19 @@
         object-fit: cover;
         cursor: pointer;
       }
-      
     }
-    .assets_collapse_box{
-        .collapse_header{
-            cursor: pointer;
-        }
-    }
+  }
 
+  // collapse style
+  .assets_collapse_box {
+    .collapse_header {
+      cursor: pointer;
+    }
+  }
+
+  // box
+  .SaleEndBox {
+    .sale_header {
+    }
   }
 }

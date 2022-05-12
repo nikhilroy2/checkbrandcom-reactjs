@@ -53,6 +53,10 @@ body {
   color: var(--text-r35);
 }
 
+button:not(.text-capitalize) {
+  text-transform: none !important;
+}
+
 .text_1d {
   color: var(--text-1d);
 }
@@ -100,6 +104,10 @@ body {
 
 .border_bottom {
   border-bottom: 1px solid var(--text-border-bottom);
+}
+
+.border_bottom_0 {
+  border-bottom: none;
 }
 
 .border_all_side {
