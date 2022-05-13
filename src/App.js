@@ -9,6 +9,7 @@ import CollectionAccount from "./Pages/CollectionAccount/CollectionAccount";
 import ExploreDetails from "./Pages/ExploreDetails/ExploreDetails";
 import AccountUserEvents from "./Pages/AccountUserEvents/AccountUserEvents";
 import AssetsPage from "./Pages/AssetsPage/AssetsPage";
+import CreateAccount from "./Pages/CreateAccount/CreateAccount";
 // .....................Pages..................End
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/explore_details" element={<ExploreDetails />}></Route>
             <Route path="/account_user_events" element={<AccountUserEvents />}></Route>
             <Route path="/assets" element={<AssetsPage />}></Route>
+            <Route path="/create_account" element={<CreateAccount />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>

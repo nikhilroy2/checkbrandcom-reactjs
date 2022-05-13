@@ -4,7 +4,7 @@ import ReactTooltip from "react-tooltip";
 import { Link } from "react-router-dom";
 
 import Countdown from "react-countdown";
-
+import CollectionsCard2 from "../../Components/CollectionsCard2/CollectionsCard2";
 function AssetsPage(props) {
   const [isPropertiesExpand, setIsPropertiesExpand] = React.useState(true);
   const [isDatesExpand, setIsDatesExpand] = React.useState(true);
@@ -546,6 +546,9 @@ function AssetsPage(props) {
 
             {/* ItemActivity */}
             <ItemActivity></ItemActivity>
+
+            {/* MoreCollections */}
+            <MoreCollections></MoreCollections>
           </div>
         </div>
       </section>
@@ -1358,6 +1361,96 @@ const ItemActivity = () => {
                   </table>
                 </div>
               </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const MoreCollections = () => {
+  const [isMoreCollectionsExpand, setIsMoreCollectionsExpand] = useState(true);
+  return (
+    <div id="MoreCollections">
+      <div className="wrapper">
+        <div className="assets_collapse_box mt-3 border_all_side radius_10 mb-5">
+          <div className="collapse_item">
+            <div
+              className="collapse_header border_bottom px-3 py-2"
+              onClick={() =>
+                setIsMoreCollectionsExpand(!isMoreCollectionsExpand)
+              }
+            >
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="box">
+                  <svg
+                    className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    data-testid="TocIcon"
+                    fill="currentColor"
+                    height="20px"
+                  >
+                    <path d="M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z" />
+                  </svg>
+                  <strong>More From This Collection</strong>
+                </div>
+                <div className="box">
+                  <svg
+                    className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    data-testid="ArrowDropDownIcon"
+                    fill="currentColor"
+                    height="30px"
+                    style={{
+                      transform: `${
+                        isMoreCollectionsExpand ? "scaleY(-1)" : "scaleY(1)"
+                      }`,
+                    }}
+                  >
+                    <path d="m7 10 5 5 5-5z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            {isMoreCollectionsExpand && (
+              <>
+                <div className="collapse_body border_bottom bg_1d">
+                  <div className="container-fluid my-3">
+                    <div className="row gy-4">
+                      <div className="col-md-6 col-lg-4 col-xxl-3">
+                        <div className="col_wrapper">
+                          <CollectionsCard2></CollectionsCard2>
+                        </div>
+                      </div>
+                      <div className="col-md-6 col-lg-4 col-xxl-3">
+                        <div className="col_wrapper">
+                          <CollectionsCard2></CollectionsCard2>
+                        </div>
+                      </div>
+                      <div className="col-md-6 col-lg-4 col-xxl-3">
+                        <div className="col_wrapper">
+                          <CollectionsCard2></CollectionsCard2>
+                        </div>
+                      </div>
+                      <div className="col-md-6 col-lg-4 col-xxl-3">
+                        <div className="col_wrapper">
+                          <CollectionsCard2></CollectionsCard2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="footer_part text-center py-3 border_bottom bg_1d">
+                  <button className="btn btn-outline-primary btn-lg">
+                    View collection
+                  </button>
+                </div>
+              </>
             )}
           </div>
         </div>
