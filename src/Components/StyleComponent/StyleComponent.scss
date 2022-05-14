@@ -141,4 +141,36 @@
     }
   }
 }
+
+// ........................For form stylesheet ..............
+
+// mixin
+@mixin img_upload_control($size, $radius) {
+  $s: $size;
+  width: $s;
+  height: $s;
+  border-radius: $radius;
+  border: 3px dotted var(--text-white);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    opacity: 0.1;
+  }
+}
+
+.img_upload_control_circle {
+  @include img_upload_control(180px, 50%);
+}
+.img_upload_control_radius {
+  @include img_upload_control(280px, 5%);
+  &.banner_img {
+    min-width: 1000px;
+    border-radius: 1%;
+  }
+}
+
+// ........................For form stylesheet ..............End
+
 // ..................This is for components styles global..........End
