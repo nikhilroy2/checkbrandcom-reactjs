@@ -218,6 +218,39 @@ function Header(props) {
     },
   ];
 
+  const create_nav_object = [
+    {
+      id: 1,
+      name: "Create Account",
+      link: "create_cccount",
+    },
+    {
+      id: 2,
+      name: "Create Collection",
+      link: "create_collection",
+    },
+    {
+      id: 3,
+      name: "Create item",
+      link: "create_item",
+    },
+    {
+      id: 4,
+      name: "Create Pack",
+      link: "create_pack",
+    },
+    {
+      id: 5,
+      name: "Create Options Pack",
+      link: "create_options_pack",
+    },
+    {
+      id: 6,
+      name: "Create Bonds Pack",
+      link: "create_bonds_pack",
+    },
+  ];
+
   const [isOpen, setIsOpen] = React.useState(false);
   const [isMobileDrawer, setIsMobileDrawer] = React.useState(false);
   const [isExploreDrawer, setIsExploreDrawer] = useState(false);
@@ -484,10 +517,27 @@ function Header(props) {
               </Link>
             </li>
 
-            <li className="d-none d-lg-block">
-              <Link className="nav_item px-2 px-sm-3 py-1" to="/">
-                Create
-              </Link>
+            <li className="d-none d-lg-block nav_list_hover">
+              <div className="hover_action">
+                <Link className="nav_item px-2 px-sm-3 py-1" to="/">
+                  Create
+                </Link>
+
+                <ul className="list-unstyled hover_list min_width min_width_lg hover_right">
+                  {create_nav_object.map((v) => {
+                    return (
+                      <li key={v.id} className="hover_list_item">
+                        <Link
+                          to={v.link}
+                          className="hover_list_action border border-dark nav_item d-flex px-3 py-3 align-items-center"
+                        >
+                          {v.name}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </li>
 
             <li className="nav_list_hover px-2 px-sm-3 ">

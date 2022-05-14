@@ -108,13 +108,94 @@ function CreateAccount(props) {
               </label>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="">Name</label>
+            <div className="form-group mt-3">
+              <label htmlFor="" className="text-white">
+                Name
+              </label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Brand / Person name"
               />
+            </div>
+
+            <div className="form-group mt-3">
+              <strong className="text-success d-block">URL</strong>
+              <p className="text-success">
+                Customize your URL on CheckBrandcom. Must only contain lowercase
+                letters, numbers and hyphens.
+              </p>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Brand / Person name"
+              />
+            </div>
+
+            <div className="form-group mt-3">
+              <strong className="text-white d-block">Description</strong>
+              <p className="text-white">
+                Markdown syntax is supported. 0 of 1000 characters used.
+              </p>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+
+            <div className="form-group mt-3">
+              <strong className="text-success d-block">Page</strong>
+              <p className="text-white">
+                Select the page on which the account will be created.
+              </p>
+              <div className="btn_select_box d-flex flex-wrap">
+                <div className="btn_select_box_item">
+                  <button className="btn btn_select">Persons</button>
+                </div>
+
+                <div className="btn_select_box_item">
+                  <button className="btn btn_select">Brands</button>
+                </div>
+
+                <div className="btn_select_box_item">
+                  <button className="btn btn_select">Options</button>
+                </div>
+
+                <div className="btn_select_box_item">
+                  <button className="btn btn_select">Bonds</button>
+                </div>
+              </div>
+            </div>
+            <div className="form-group mt-3">
+              <label htmlFor="" className="text-white">
+                Links
+              </label>
+              <ul className="form_group_list list-unstyled">
+                <li>
+                  <a href="#">yousite.io</a>
+                </li>
+
+                <li>
+                  <a href="#">https://discord.gg/abcdef</a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    https://wwww.instagram.com/YourinstragramHandle
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">https://www.medium.com/@YourMediumHandle</a>
+                </li>
+
+                <li>
+                  <a href="#">https://t.me/abcdef</a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="form-group mt-3">
+              <button className="btn btn-light">
+                Create
+              </button>
             </div>
           </form>
         </div>
