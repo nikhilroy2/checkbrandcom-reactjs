@@ -27,6 +27,16 @@
             https://checkbrandcom-reactjs.netlify.app/account_user_events
         </a>
     </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/assets">
+            https://checkbrandcom-reactjs.netlify.app/assets
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/create_account">
+            https://checkbrandcom-reactjs.netlify.app/create_account
+        </a>
+    </li>
 </ol>
 
 
