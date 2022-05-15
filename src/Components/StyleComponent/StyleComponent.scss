@@ -150,11 +150,14 @@
   width: $s;
   height: $s;
   border-radius: $radius;
-  border: 3px dotted var(--text-white);
+  border: 3px dashed var(--text-white);
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    background: var(--text-black);
+  }
   svg {
     opacity: 0.1;
   }
@@ -168,6 +171,60 @@
   &.banner_img {
     min-width: 1000px;
     border-radius: 1%;
+  }
+}
+.form_custom_control,
+.form_custom_control:focus {
+  background: var(--text-2e)!important;
+  color: var(--text-white)!important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  &::placeholder {
+    color: var(--text-white-75);
+  }
+}
+.btn_type_select {
+  background: var(--text-2e);
+  color: var(--text-white);
+  border: 1px solid transparent;
+  outline: none !important;
+  box-shadow: none !important;
+  display: inline-block;
+  width: 120px;
+  padding: 8px 12px;
+  text-align: left;
+  &.select_type {
+    border: 1px solid var(--mdb-primary);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      top: -5px;
+      right: -5px;
+      display: block;
+      background: var(--mdb-cyan);
+      border: 3px solid var(--text-white);
+    }
+    &::before {
+      content: "\f00c";
+      font-family: "font awesome 5 free";
+      font-weight: bold;
+      position: absolute;
+      top: -4px;
+      right: -1px;
+      z-index: 2;
+      font-size: 11px;
+    }
+  }
+}
+.form_group_list {
+  background: var(--text-2e);
+  a{
+    color: var(--text-white-75);
   }
 }
 

@@ -222,7 +222,7 @@ function Header(props) {
     {
       id: 1,
       name: "Create Account",
-      link: "create_cccount",
+      link: "create_account",
     },
     {
       id: 2,

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CreateAccount.css";
 function CreateAccount(props) {
+  const [pageType, setPageType] = useState("Persons");
   return (
     <div id="CreateAccount" className="my-5">
       <section>
@@ -109,12 +110,12 @@ function CreateAccount(props) {
             </div>
 
             <div className="form-group mt-3">
-              <label htmlFor="" className="text-white">
+              <label htmlFor="" className="text-white mb-2">
                 Name
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control form_custom_control px-3 py-2"
                 placeholder="Brand / Person name"
               />
             </div>
@@ -127,8 +128,8 @@ function CreateAccount(props) {
               </p>
               <input
                 type="text"
-                className="form-control"
-                placeholder="Brand / Person name"
+                className="form-control form_custom_control px-3 py-2"
+                placeholder="https://checkbrand.com/brands/brandname"
               />
             </div>
 
@@ -137,7 +138,11 @@ function CreateAccount(props) {
               <p className="text-white">
                 Markdown syntax is supported. 0 of 1000 characters used.
               </p>
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <textarea
+                name=""
+                className="form_custom_control form-control"
+                rows="5"
+              ></textarea>
             </div>
 
             <div className="form-group mt-3">
@@ -147,55 +152,93 @@ function CreateAccount(props) {
               </p>
               <div className="btn_select_box d-flex flex-wrap">
                 <div className="btn_select_box_item">
-                  <button className="btn btn_select">Persons</button>
+                  <button
+                    type="button"
+                    onClick={() => setPageType("Persons")}
+                    className={`btn_type_select me-3 radius_10 ${
+                      pageType === "Persons" ? "select_type" : ""
+                    }`}
+                  >
+                    Persons
+                  </button>
                 </div>
 
                 <div className="btn_select_box_item">
-                  <button className="btn btn_select">Brands</button>
+                  <button
+                    type="button"
+                    onClick={() => setPageType("Brands")}
+                    className={`btn_type_select me-3 radius_10 ${
+                      pageType === "Brands" ? "select_type" : ""
+                    }`}
+                  >
+                    Brands
+                  </button>
                 </div>
 
                 <div className="btn_select_box_item">
-                  <button className="btn btn_select">Options</button>
+                  <button
+                    type="button"
+                    onClick={() => setPageType("Options")}
+                    className={`btn_type_select me-3 radius_10 ${
+                      pageType === "Options" ? "select_type" : ""
+                    }`}
+                  >
+                    Options
+                  </button>
                 </div>
 
                 <div className="btn_select_box_item">
-                  <button className="btn btn_select">Bonds</button>
+                  <button
+                    type="button"
+                    onClick={() => setPageType("Bonds")}
+                    className={`btn_type_select radius_10 ${
+                      pageType === "Bonds" ? "select_type" : ""
+                    }`}
+                  >
+                    Bonds
+                  </button>
                 </div>
               </div>
             </div>
             <div className="form-group mt-3">
-              <label htmlFor="" className="text-white">
+              <label htmlFor="" className="text-white mb-2">
                 Links
               </label>
-              <ul className="form_group_list list-unstyled">
+              <ul className="form_group_list list-unstyled rounded">
                 <li>
-                  <a href="#">yousite.io</a>
+                  <a className="px-3 py-2 border_bottom d-block" href="#">
+                    yousite.io
+                  </a>
                 </li>
 
                 <li>
-                  <a href="#">https://discord.gg/abcdef</a>
+                  <a className="px-3 py-2 border_bottom d-block" href="#">
+                    https://discord.gg/abcdef
+                  </a>
                 </li>
 
                 <li>
-                  <a href="#">
+                  <a className="px-3 py-2 border_bottom d-block" href="#">
                     https://wwww.instagram.com/YourinstragramHandle
                   </a>
                 </li>
 
                 <li>
-                  <a href="#">https://www.medium.com/@YourMediumHandle</a>
+                  <a className="px-3 py-2 border_bottom d-block" href="#">
+                    https://www.medium.com/@YourMediumHandle
+                  </a>
                 </li>
 
                 <li>
-                  <a href="#">https://t.me/abcdef</a>
+                  <a className="px-3 py-2  d-block" href="#">
+                    https://t.me/abcdef
+                  </a>
                 </li>
               </ul>
             </div>
 
-            <div className="form-group mt-3">
-              <button className="btn btn-light">
-                Create
-              </button>
+            <div className="form-group mt-3 mt-md-5">
+              <button className="btn btn-light form_custom_control btn-lg">Create</button>
             </div>
           </form>
         </div>
