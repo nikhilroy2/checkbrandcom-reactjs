@@ -175,8 +175,8 @@
 }
 .form_custom_control,
 .form_custom_control:focus {
-  background: var(--text-2e)!important;
-  color: var(--text-white)!important;
+  background: var(--text-2e) !important;
+  color: var(--text-white) !important;
   border: 0 !important;
   outline: none !important;
   box-shadow: none !important;
@@ -191,7 +191,7 @@
   outline: none !important;
   box-shadow: none !important;
   display: inline-block;
-  width: 120px;
+  min-width: 120px;
   padding: 8px 12px;
   text-align: left;
   &.select_type {
@@ -223,8 +223,37 @@
 }
 .form_group_list {
   background: var(--text-2e);
-  a{
+  a {
     color: var(--text-white-75);
+  }
+}
+.account_type_list {
+  max-height: 200px;
+  overflow: auto;
+  .search_control {
+  }
+  .list_item {
+    color: var(--text-white-75);
+    cursor: pointer;
+    .circle_box {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(#ffb51a, #ff6845);
+      border: 1px solid white;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .select_circle {
+      $s: 20px;
+      width: $s;
+      height: $s;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      display: inline-block;
+      &.active_select_circle {
+        background: var(--mdb-primary);
+      }
+    }
   }
 }
 

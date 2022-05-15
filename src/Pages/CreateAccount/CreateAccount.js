@@ -77,7 +77,7 @@ function CreateAccount(props) {
               </label>
             </div>
 
-            <div className="form-group text-success mt-3">
+            <div className="form-group mt-3">
               <strong className="d-block text-white">Banner Image</strong>
               <p>
                 This image will apear at the top of account page. 1400 x 400
