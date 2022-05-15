@@ -238,7 +238,9 @@ function CreateAccount(props) {
             </div>
 
             <div className="form-group mt-3 mt-md-5">
-              <button className="btn btn-light form_custom_control btn-lg">Create</button>
+              <button className="btn btn-light form_custom_control btn-lg">
+                Create
+              </button>
             </div>
           </form>
         </div>
