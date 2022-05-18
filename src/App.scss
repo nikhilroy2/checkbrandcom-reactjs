@@ -81,6 +81,9 @@ button:not(.text-capitalize){
 .bg_12 {
   background: var(--text-12);
 }
+.bg_transparent{
+  background: transparent;
+}
 .text_black_hover {
   color: var(--text-r155);
   &:hover {
@@ -133,5 +136,13 @@ section {
 // ...................border-radius styles ........
 .radius_10 {
   border-radius: 10px;
+}
+.circle_box {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(#ffb51a, #ff6845);
+  border: 1px solid white;
+  border-radius: 50%;
+  display: inline-block;
 }
 // ...................border-radius styles ........End

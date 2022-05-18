@@ -11,6 +11,7 @@ import AccountUserEvents from "./Pages/AccountUserEvents/AccountUserEvents";
 import AssetsPage from "./Pages/AssetsPage/AssetsPage";
 import CreateAccount from "./Pages/CreateAccount/CreateAccount";
 import CreateCollection from "./Pages/CreateCollection/CreateCollection";
+import CreateBondsPack from "./Pages/CreateBondsPack/CreateBondsPack";
 // .....................Pages..................End
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/assets" element={<AssetsPage />}></Route>
             <Route path="/create_account" element={<CreateAccount />}></Route>
             <Route path="/create_collection" element={<CreateCollection />}></Route>
+            <Route path="/create_bonds_pack" element={<CreateBondsPack />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>

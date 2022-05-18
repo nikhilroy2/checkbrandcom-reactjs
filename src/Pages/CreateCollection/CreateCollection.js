@@ -4,7 +4,8 @@ function CreateCollection(props) {
   const [pageType, setPageType] = useState("Persons");
 
   const [selectAccountIndex, setSelectAccountIndex] = useState(1);
-
+  const [selectBlockchain, setSelectBlockchain] = useState("Ethereum");
+  const [addToken, setAddToken] = useState("Add token");
   return (
     <div id="CreateCollection" className="my-5">
       <section>
@@ -399,7 +400,7 @@ function CreateCollection(props) {
               <div className="form-group mt-3">
                 <strong className="d-block">Creator Earnings</strong>
 
-                <p className="text-white">
+                <p className="text_white_75">
                   Collect a fee when a user re-sells on item you originally
                   created. This is deducted from the final sale price and paid
                   monthly to a payout address of your choosing.
@@ -416,6 +417,172 @@ function CreateCollection(props) {
                   placeholder="e.g. 2.5"
                 />
               </div>
+
+              <div className="form-group mt-3">
+                <label htmlFor="" className="text-white mb-2">
+                  Blockchain
+                </label>
+                <p className="text_white_75">
+                  Select the blockchain where you'd like new items from this
+                  collection to beadded by default.
+                </p>
+                <div className="dropdown">
+                  <button
+                    className="btn form_custom_control w-100 py-3 text-start d-flex align-items-center"
+                    data-mdb-ripple-duration="0"
+                    data-mdb-toggle="dropdown"
+                  >
+                    <span className="circle_box me-2"></span>
+                    <span className="flex-grow-1">{selectBlockchain}</span>
+                    <i className="fas fa-angle-down    "></i>
+                  </button>
+                  <div className="dropdown-menu form_custom_control w-100 py-0">
+                    <ul className="list-unstyled bg_transparent w-100 py-0">
+                      <li className=" mb-2">
+                        <button
+                          onClick={() => setSelectBlockchain("Ethereum")}
+                          className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                          data-mdb-ripple-duration="0"
+                          data-mdb-toggle="dropdown"
+                        >
+                          <span className="circle_box me-2"></span>
+                          <span className="flex-grow-1">Ethereum</span>
+                        </button>
+                      </li>
+                      <li className=" mb-2">
+                        <button
+                          onClick={() => setSelectBlockchain("Ethereum 2")}
+                          className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                          data-mdb-ripple-duration="0"
+                          data-mdb-toggle="dropdown"
+                        >
+                          <span className="circle_box me-2"></span>
+                          <span className="flex-grow-1">Ethereum 2</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group mt-3">
+                <label htmlFor="" className="text-white mb-2">
+                  Payment tokens
+                </label>
+                <p className="text_white_75">
+                  These tokens can used to buy and sell your items.
+                </p>
+                <div className="btn-group">
+                  <button className="btn form_custom_control me-3 mb-3 radius_10">
+                    <div className="d-flex align-items-center ">
+                      <span className="circle_box me-2"></span>
+                      <div className="content text-center">
+                        <strong>ETH</strong>
+                        <br />
+                        <span>Etherium</span>
+                      </div>
+                    </div>
+                  </button>
+
+                  <button className="btn form_custom_control mb-3 radius_10">
+                    <div className="d-flex align-items-center ">
+                      <span className="circle_box me-2"></span>
+                      <div className="content text-center">
+                        <strong>ETH</strong>
+                        <br />
+                        <span>Etherium</span>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+
+                {/* control */}
+                <div className="dropdown">
+                  <button
+                    className="btn form_custom_control w-100 py-3 text-start d-flex align-items-center"
+                    data-mdb-ripple-duration="0"
+                    data-mdb-toggle="dropdown"
+                  >
+                    <span className="flex-grow-1">{addToken}</span>
+                    <i className="fas fa-angle-down    "></i>
+                  </button>
+                  <div className="dropdown-menu form_custom_control w-100 py-0">
+                    <ul className="list-unstyled bg_transparent w-100 py-0">
+                      <li className=" mb-2">
+                        <button
+                          onClick={() => setAddToken("2")}
+                          className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                          data-mdb-ripple-duration="0"
+                          data-mdb-toggle="dropdown"
+                        >
+                          <span className="flex-grow-1">2</span>
+                        </button>
+                      </li>
+                      <li className=" mb-2">
+                        <button
+                          onClick={() => setAddToken("3")}
+                          className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                          data-mdb-ripple-duration="0"
+                          data-mdb-toggle="dropdown"
+                        >
+                          <span className="flex-grow-1">3</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group mt-3">
+                <label htmlFor="" className="text-white mb-2">
+                  Display theme
+                </label>
+                <div className="d-flex flex-wrap justify-content-between align-items-center">
+                  <p className="text_white_75">
+                    Change how your items are shown.
+                  </p>
+
+                  <div className="form-check form-switch">
+                    <input
+                      className="form-check-input bg-white"
+                      type="checkbox"
+                      role="switch"
+                      id="flexSwitchCheckDefault"
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="flexSwitchCheckDefault"
+                    ></label>
+                  </div>
+                </div>
+
+                {/* theme list here */}
+                {/* <ul className="list-unstyled"></ul> */}
+                {/* I used just add a img, need to discuss before make it functional */}
+                <div className="d-block">
+                  <img
+                    src={require("../../Static/img/theme_img/theme_img.png")}
+                    alt="img"
+                    className="w-75"
+                  />
+                </div>
+                {/* theme list here End */}
+                <label htmlFor="" className="text-white mb-2">
+                  Explicit & sensitive content
+                </label>
+
+                <p className="text_white_75">
+                  Set this collection as explicit and sensitive content
+                </p>
+              </div>
+
+              <div className="form-group mt-3 mt-md-5">
+                <button className="btn btn-light form_custom_control btn-lg">
+                  Create
+                </button>
+              </div>
+
+              
             </div>
           </div>
         </div>

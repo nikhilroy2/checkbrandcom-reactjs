@@ -37,6 +37,11 @@
             https://checkbrandcom-reactjs.netlify.app/create_account
         </a>
     </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/create_collection">
+            https://checkbrandcom-reactjs.netlify.app/create_collection
+        </a>
+    </li>
 </ol>
 
 
