@@ -65,14 +65,12 @@ function CreateBondsPack(props) {
 
                 <div className="form-group mt-3 text-success">
                   <strong className="d-block mb-2">Preview Images</strong>
-
                   <p>
                     Because you've included multimedia, you'll need to provide
                     an image (PNG, JPG, or GIF) for the card display of your{" "}
                     <br />
                     item. For Preview Images pack Bonds you need 1 file.
                   </p>
-
                   <input
                     type="file"
                     name=""
@@ -110,7 +108,7 @@ function CreateBondsPack(props) {
                     etc.)
                   </p>
 
-                  <div className="loading_table_wrapper border_all_side p-2">
+                  <div className="loading_table_wrapper border_all_side p-2 pb-5">
                     <div className="table-responsive">
                       <table className="text-white table table-borderless table-sm">
                         <tbody>
@@ -314,6 +312,265 @@ function CreateBondsPack(props) {
                           </tr>
                         </tfoot>
                       </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group mt-3 text-success mb-4">
+                  <div className="row g-4">
+                    <div className="col-md-6">
+                      <div className="form_wrapper mb-4 mb-sm-5">
+                        <strong className="d-block mb-2">Name</strong>
+                        <p>
+                          Enter a common name for all generated tokens. <br />{" "}
+                          Token names will differ in numbering.
+                        </p>
+                        <input
+                          type="text"
+                          className="form-control form_custom_control px-3 py-2"
+                          placeholder="Common name"
+                        />
+                      </div>
+
+                      <div className="form_wrapper">
+                        <strong className="d-block mb-2">Tokens price</strong>
+                        <p>
+                          The price at which the tokens will be put up for sale.{" "}
+                          <br />
+                          All tokens in the pack will have the some price.
+                        </p>
+                        <div className="d-flex flex-wrap align-items-center">
+                          <div className="form_input_wrapper">
+                            <input
+                              type="number"
+                              style={{ width: "100px" }}
+                              className="form-control form_custom_control px-3 py-2"
+                              placeholder="0.01"
+                            />
+                          </div>
+                          <div className="dropdown">
+                            <button
+                              type="button"
+                              data-mdb-toggle="dropdown"
+                              data-mdb-ripple-duration="0"
+                              style={{ fontSize: "16px" }}
+                              className="btn form_custom_control d-flex justify-content-between align-items-center  form-control ms-3"
+                            >
+                              ETH
+                              <i className="fas fa-angle-down    "></i>
+                            </button>
+                            <ul className="dropdown-menu form_custom_control w-100 py-0">
+                              <li class=" mb-2">
+                                <button
+                                  type="button"
+                                  class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                  data-mdb-ripple-duration="0"
+                                  data-mdb-toggle="dropdown"
+                                >
+                                  <span class="flex-grow-1">Ethereum</span>
+                                </button>
+                              </li>
+                              <li class=" mb-2">
+                                <button
+                                  type="button"
+                                  class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                  data-mdb-ripple-duration="0"
+                                  data-mdb-toggle="dropdown"
+                                >
+                                  <span class="flex-grow-1">Ethereum</span>
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-sm-6">
+                          <strong className="d-block mb-2">Copies</strong>
+                          <p>
+                            Enter how many copies of tokens will be created.
+                          </p>
+                          <input
+                            type="number"
+                            className="form-control form_custom_control px-3 py-2"
+                            placeholder="1000"
+                          />
+                        </div>
+                        <div className="col-sm-6">
+                          <strong className="d-block mb-2">Numbering</strong>
+                          <p>
+                            Enter from which number the numberning will start.
+                          </p>
+                          <input
+                            type="number"
+                            className="form-control form_custom_control px-3 py-2"
+                            placeholder="1"
+                          />
+                        </div>
+
+                        <div className="form_wrapper mt-4 mt-md-5">
+                          <strong className="d-block mb-2">Duration</strong>
+                          <p>
+                            The period during which the sale of the token takes
+                            place. <br />
+                            At the end of the period, the sale is automatically
+                            extended for the some period.
+                          </p>
+                          <div className="d-flex flex-wrap align-items-center">
+                            <div className="form_input_wrapper">
+                              <input
+                                type="number"
+                                style={{ width: "100px" }}
+                                className="form-control form_custom_control px-3 py-2"
+                                value={3}
+                              />
+                            </div>
+                            <div className="dropdown">
+                              <button
+                                style={{ fontSize: "16px" }}
+                                type="button"
+                                data-mdb-toggle="dropdown"
+                                data-mdb-ripple-duration="0"
+                                className="btn form_custom_control d-flex  justify-content-between align-items-center  form-control ms-3"
+                              >
+                                Days
+                              </button>
+                              <ul className="dropdown-menu form_custom_control w-100 py-0">
+                                <li class=" mb-2">
+                                  <button
+                                    type="button"
+                                    class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                    data-mdb-ripple-duration="0"
+                                    data-mdb-toggle="dropdown"
+                                  >
+                                    <span class="flex-grow-1">Days</span>
+                                  </button>
+                                </li>
+                                <li class=" mb-2">
+                                  <button
+                                    type="button"
+                                    class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                    data-mdb-ripple-duration="0"
+                                    data-mdb-toggle="dropdown"
+                                  >
+                                    <span class="flex-grow-1">Weeks</span>
+                                  </button>
+                                </li>
+                                <li class=" mb-2">
+                                  <button
+                                    type="button"
+                                    class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                    data-mdb-ripple-duration="0"
+                                    data-mdb-toggle="dropdown"
+                                  >
+                                    <span class="flex-grow-1">Months</span>
+                                  </button>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-7">
+                      <strong className="d-block text-success mb-2">
+                        Period
+                      </strong>
+                      <p className="text-success small">
+                        The time that must pass after the first purchase before
+                        receiving a reward. After this time, the owner can send
+                        the token to the smart contract and receive a "Ransom"
+                        in response. In days.
+                      </p>
+
+                      <input
+                        type="number"
+                        style={{ width: "150px" }}
+                        className="form-control form_custom_control px-3 py-2"
+                        value={365}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-7">
+                      <strong className="d-block text-success mb-2">
+                        Yield
+                      </strong>
+                      <p className="text-success small">
+                        Percentage of reward from the price of the first
+                        purchase of the token. <br />
+                        In percentages.
+                      </p>
+
+                      <input
+                        type="number"
+                        style={{ width: "150px" }}
+                        className="form-control form_custom_control px-3 py-2"
+                        value={20}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-7">
+                      <strong className="d-block text-success mb-2">
+                        Freeze
+                      </strong>
+                      <p className="text-success small">
+                        Part of the money coming from the sale, which <br />
+                        will be frozen in the smart contract for "Ransom".
+                      </p>
+                      <input
+                        type="number"
+                        style={{ width: "150px" }}
+                        className="form-control form_custom_control px-3 py-2"
+                        value={50}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-9">
+                      <strong className="d-block  mb-2">External Link</strong>
+                      <p className="small">
+                        OpenSea will include a link to this URL on this item's
+                        detail page, so that users can click to learn more about
+                        it. You are welcome to link to your own webpage with
+                        more details.
+                      </p>
+                      <input
+                        type="text"
+                        className="form-control form_custom_control px-3 py-2"
+                        placeholder="https://yoursite.io/item/123"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-9">
+                      <strong className="d-block  mb-2">Description</strong>
+                      <p className="small">
+                        The description will be included on the item's detail
+                        page underneath its image.
+                      </p>
+                      <textarea placeholder="Provide a detailed description of your item." rows="4" 
+                      className="form-control form_custom_control px-3 py-2"></textarea>
                     </div>
                   </div>
                 </div>
