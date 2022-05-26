@@ -1,6 +1,8 @@
 import React from "react";
 
 function CreateBondsPack(props) {
+
+  const [collectionName, setCollectionName] = React.useState('Collection 1');
   return (
     <div id="CreateBondsPack" className="my-5">
       <section>
@@ -360,24 +362,24 @@ function CreateBondsPack(props) {
                               <i className="fas fa-angle-down    "></i>
                             </button>
                             <ul className="dropdown-menu form_custom_control w-100 py-0">
-                              <li class=" mb-2">
+                              <li className=" mb-2">
                                 <button
                                   type="button"
-                                  class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                  className="btn form_custom_control w-100  text-start d-flex align-items-center"
                                   data-mdb-ripple-duration="0"
                                   data-mdb-toggle="dropdown"
                                 >
-                                  <span class="flex-grow-1">Ethereum</span>
+                                  <span className="flex-grow-1">Ethereum</span>
                                 </button>
                               </li>
-                              <li class=" mb-2">
+                              <li className=" mb-2">
                                 <button
                                   type="button"
-                                  class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                  className="btn form_custom_control w-100  text-start d-flex align-items-center"
                                   data-mdb-ripple-duration="0"
                                   data-mdb-toggle="dropdown"
                                 >
-                                  <span class="flex-grow-1">Ethereum</span>
+                                  <span className="flex-grow-1">Ethereum</span>
                                 </button>
                               </li>
                             </ul>
@@ -424,7 +426,7 @@ function CreateBondsPack(props) {
                                 type="number"
                                 style={{ width: "100px" }}
                                 className="form-control form_custom_control px-3 py-2"
-                                value={3}
+                                defaultValue={3}
                               />
                             </div>
                             <div className="dropdown">
@@ -438,34 +440,34 @@ function CreateBondsPack(props) {
                                 Days
                               </button>
                               <ul className="dropdown-menu form_custom_control w-100 py-0">
-                                <li class=" mb-2">
+                                <li className=" mb-2">
                                   <button
                                     type="button"
-                                    class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                    className="btn form_custom_control w-100  text-start d-flex align-items-center"
                                     data-mdb-ripple-duration="0"
                                     data-mdb-toggle="dropdown"
                                   >
-                                    <span class="flex-grow-1">Days</span>
+                                    <span className="flex-grow-1">Days</span>
                                   </button>
                                 </li>
-                                <li class=" mb-2">
+                                <li className=" mb-2">
                                   <button
                                     type="button"
-                                    class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                    className="btn form_custom_control w-100  text-start d-flex align-items-center"
                                     data-mdb-ripple-duration="0"
                                     data-mdb-toggle="dropdown"
                                   >
-                                    <span class="flex-grow-1">Weeks</span>
+                                    <span className="flex-grow-1">Weeks</span>
                                   </button>
                                 </li>
-                                <li class=" mb-2">
+                                <li className=" mb-2">
                                   <button
                                     type="button"
-                                    class="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                    className="btn form_custom_control w-100  text-start d-flex align-items-center"
                                     data-mdb-ripple-duration="0"
                                     data-mdb-toggle="dropdown"
                                   >
-                                    <span class="flex-grow-1">Months</span>
+                                    <span className="flex-grow-1">Months</span>
                                   </button>
                                 </li>
                               </ul>
@@ -494,7 +496,7 @@ function CreateBondsPack(props) {
                         type="number"
                         style={{ width: "150px" }}
                         className="form-control form_custom_control px-3 py-2"
-                        value={365}
+                        defaultValue={365}
                       />
                     </div>
                   </div>
@@ -516,7 +518,7 @@ function CreateBondsPack(props) {
                         type="number"
                         style={{ width: "150px" }}
                         className="form-control form_custom_control px-3 py-2"
-                        value={20}
+                        defaultValue={20}
                       />
                     </div>
                   </div>
@@ -536,7 +538,7 @@ function CreateBondsPack(props) {
                         type="number"
                         style={{ width: "150px" }}
                         className="form-control form_custom_control px-3 py-2"
-                        value={50}
+                        defaultValue={50}
                       />
                     </div>
                   </div>
@@ -569,10 +571,80 @@ function CreateBondsPack(props) {
                         The description will be included on the item's detail
                         page underneath its image.
                       </p>
-                      <textarea placeholder="Provide a detailed description of your item." rows="4" 
-                      className="form-control form_custom_control px-3 py-2"></textarea>
+                      <textarea placeholder="Provide a detailed description of your item." rows="4"
+                        className="form-control form_custom_control px-3 py-2"></textarea>
                     </div>
                   </div>
+                </div>
+
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-9">
+                      <strong className="d-block  mb-2">Collection</strong>
+                      <p className="small">
+                        This is the collection where your item will appear.
+                      </p>
+                      {/* control */}
+                      <div className="dropdown">
+                        <button
+                          className="btn form_custom_control w-100 py-2 text-start d-flex align-items-center "
+                          data-mdb-ripple-duration="0"
+                          data-mdb-toggle="dropdown"
+                        >
+                          <span className="flex-grow-1 d-flex align-items-center">
+                            <span className="circle_box me-2"></span>
+
+                            {collectionName}</span>
+                          <i className="fas fa-angle-down    "></i>
+                        </button>
+                        <div className="dropdown-menu form_custom_control w-100 py-0">
+                          <ul className="list-unstyled bg_transparent w-100 py-0">
+                            <li className=" mb-2">
+                              <button
+                                onClick={() => setCollectionName("Collection 1")}
+                                className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                data-mdb-ripple-duration="0"
+                                data-mdb-toggle="dropdown"
+                              >
+                                <span className="circle_box me-2"></span>
+
+                                <span className="flex-grow-1">Collection 1</span>
+                              </button>
+                            </li>
+                            <li className=" mb-2">
+                              <button
+                                onClick={() => setCollectionName("Collection 2")}
+                                className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                data-mdb-ripple-duration="0"
+                                data-mdb-toggle="dropdown"
+                              >
+                                <span className="circle_box me-2"></span>
+
+                                <span className="flex-grow-1">Collection 2</span>
+                              </button>
+                            </li>
+
+                            <li className=" mb-2">
+                              <button
+                                onClick={() => setCollectionName("Collection 3")}
+                                className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                data-mdb-ripple-duration="0"
+                                data-mdb-toggle="dropdown"
+                              >
+                                <span className="circle_box me-2"></span>
+
+                                <span className="flex-grow-1">Collection 3</span>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+
                 </div>
               </form>
             </div>
