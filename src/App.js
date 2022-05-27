@@ -12,6 +12,7 @@ import AssetsPage from "./Pages/AssetsPage/AssetsPage";
 import CreateAccount from "./Pages/CreateAccount/CreateAccount";
 import CreateCollection from "./Pages/CreateCollection/CreateCollection";
 import CreateBondsPack from "./Pages/CreateBondsPack/CreateBondsPack";
+import CreateOptionsPack from "./Pages/CreateOptionPack/CreateOptionPack";
 // .....................Pages..................End
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/create_account" element={<CreateAccount />}></Route>
             <Route path="/create_collection" element={<CreateCollection />}></Route>
             <Route path="/create_bonds_pack" element={<CreateBondsPack />}></Route>
+            <Route path="/create_options_pack" element={<CreateOptionsPack />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>
