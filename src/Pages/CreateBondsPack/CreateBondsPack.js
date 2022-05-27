@@ -3,6 +3,8 @@ import React from "react";
 function CreateBondsPack(props) {
 
   const [collectionName, setCollectionName] = React.useState('Collection 1');
+
+  const [blockChainSelect, setBlockChainSelect] = React.useState('Ethereum')
   return (
     <div id="CreateBondsPack" className="my-5">
       <section>
@@ -478,7 +480,6 @@ function CreateBondsPack(props) {
                     </div>
                   </div>
                 </div>
-
                 <div className="form-group mt-3 mb-4">
                   <div className="row">
                     <div className="col-md-7">
@@ -501,7 +502,6 @@ function CreateBondsPack(props) {
                     </div>
                   </div>
                 </div>
-
                 <div className="form-group mt-3 mb-4">
                   <div className="row">
                     <div className="col-md-7">
@@ -523,7 +523,6 @@ function CreateBondsPack(props) {
                     </div>
                   </div>
                 </div>
-
                 <div className="form-group mt-3 mb-4">
                   <div className="row">
                     <div className="col-md-7">
@@ -543,7 +542,6 @@ function CreateBondsPack(props) {
                     </div>
                   </div>
                 </div>
-
                 <div className="form-group mt-3 mb-4">
                   <div className="row">
                     <div className="col-md-9">
@@ -562,7 +560,6 @@ function CreateBondsPack(props) {
                     </div>
                   </div>
                 </div>
-
                 <div className="form-group mt-3 mb-4">
                   <div className="row">
                     <div className="col-md-9">
@@ -576,7 +573,6 @@ function CreateBondsPack(props) {
                     </div>
                   </div>
                 </div>
-
                 <div className="form-group mt-3 mb-4">
                   <div className="row">
                     <div className="col-md-9">
@@ -624,7 +620,7 @@ function CreateBondsPack(props) {
                               </button>
                             </li>
 
-                            <li className=" mb-2">
+                            <li className="mb-2">
                               <button
                                 onClick={() => setCollectionName("Collection 3")}
                                 className="btn form_custom_control w-100  text-start d-flex align-items-center"
@@ -636,16 +632,222 @@ function CreateBondsPack(props) {
                                 <span className="flex-grow-1">Collection 3</span>
                               </button>
                             </li>
+
+
                           </ul>
                         </div>
                       </div>
 
                     </div>
                   </div>
-
-
+                </div>
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-9">
+                      <ul className="mb-2 list-unstyled ps-3 ps-md-5">
+                        <li className="mb-4">
+                          <div className="d-flex align-items-center justify-content-between">
+                            <div className="box">
+                              <strong>Properties</strong>
+                              <p className="d-block">
+                                Textual traits that show up as rectangles
+                              </p>
+                            </div>
+                            <div className="box">
+                              <button type="button" className="btn_plus text-white p-2 px-3 rounded-3">
+                                <i className="fas fa-plus    "></i>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li className="mb-4">
+                          <div className="d-flex align-items-center justify-content-between">
+                            <div className="box">
+                              <strong>Levels</strong>
+                              <p className="d-block">
+                                Numerical traits that show as a progress bar
+                              </p>
+                            </div>
+                            <div className="box">
+                              <button type="button" className="btn_plus text-white p-2 px-3 rounded-3">
+                                <i className="fas fa-plus    "></i>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li className="mb-4">
+                          <div className="d-flex align-items-center justify-content-between">
+                            <div className="box">
+                              <strong>Stats</strong>
+                              <p className="d-block">
+                                Numerical traits that just show as numbers
+                              </p>
+                            </div>
+                            <div className="box">
+                              <button type="button" className="btn_plus text-white p-2 px-3 rounded-3">
+                                <i className="fas fa-plus    "></i>
+                              </button>
+                            </div>
+                          </div>
+                        </li>
+                        <li className="mb-4">
+                          <div className="d-flex align-items-center justify-content-between">
+                            <div className="box">
+                              <strong>Unlockable Content</strong>
+                              <p className="d-block">
+                                Include unlockable content that can only be revealed by the owner of the item.
+                              </p>
+                            </div>
+                            <div className="box">
+                              <div className="form-check form-switch">
+                                <input
+                                  className="form-check-input bg-white"
+                                  type="checkbox"
+                                  role="switch"
+                                  id="flexSwitchCheckDefault"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexSwitchCheckDefault"
+                                ></label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li className="mb-4">
+                          <div className="d-flex align-items-center justify-content-between">
+                            <div className="box">
+                              <strong>Explicit & Sensitive Content</strong>
+                              <p className="d-block">
+                                Set this item as explicit and sensitive content
+                              </p>
+                            </div>
+                            <div className="box">
+                              <div className="form-check form-switch">
+                                <input
+                                  className="form-check-input bg-white"
+                                  type="checkbox"
+                                  role="switch"
+                                  id="flexSwitchCheckDefault"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="flexSwitchCheckDefault"
+                                ></label>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
 
                 </div>
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-9">
+                      <strong className="d-block  mb-2">Supply</strong>
+                      <p className="small">
+                        The number of items that can be minted. No gas cost to you!
+                      </p>
+                      <input
+                        type="number"
+                        defaultChecked={1}
+                        className="form-control form_custom_control px-3 py-2"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-9">
+                      <strong className="d-block  mb-2">BlockChain</strong>
+                      {/* control */}
+                      <div className="dropdown">
+                        <button
+                          className="btn form_custom_control w-100 py-2 text-start d-flex align-items-center "
+                          data-mdb-ripple-duration="0"
+                          data-mdb-toggle="dropdown"
+                        >
+                          <span className="flex-grow-1 d-flex align-items-center">
+                            <span className="circle_box me-2"></span>
+
+                            {blockChainSelect}</span>
+                          <i className="fas fa-angle-down    "></i>
+                        </button>
+                        <div className="dropdown-menu form_custom_control w-100 py-0">
+                          <ul className="list-unstyled bg_transparent w-100 py-0">
+                            <li className=" mb-2">
+                              <button
+                                onClick={() => setBlockChainSelect("Ethereum")}
+                                className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                data-mdb-ripple-duration="0"
+                                data-mdb-toggle="dropdown"
+                              >
+                                <span className="circle_box me-2"></span>
+
+                                <span className="flex-grow-1">Ethereum</span>
+                              </button>
+                            </li>
+                            <li className=" mb-2">
+                              <button
+                                onClick={() => setBlockChainSelect("Ethereum 2")}
+                                className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                data-mdb-ripple-duration="0"
+                                data-mdb-toggle="dropdown"
+                              >
+                                <span className="circle_box me-2"></span>
+
+                                <span className="flex-grow-1">Ethereum 2</span>
+                              </button>
+                            </li>
+
+                            <li className="mb-2">
+                              <button
+                                onClick={() => setBlockChainSelect("Ethereum 3")}
+                                className="btn form_custom_control w-100  text-start d-flex align-items-center"
+                                data-mdb-ripple-duration="0"
+                                data-mdb-toggle="dropdown"
+                              >
+                                <span className="circle_box me-2"></span>
+                                <span className="flex-grow-1">Ethereum 3</span>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group mt-3 mb-4">
+                  <div className="row">
+                    <div className="col-md-9">
+                      <strong className="d-block  mb-2">Freeze metadata</strong>
+                      <p className="small">
+                        Freeze your metadata will allow you to permanently lock and store all of this item's
+                        content in decentralized file storage.
+                      </p>
+                      <input
+                        type="number"
+                        placeholder="You can freeze data immediately after uploading tokens to a smart contract."
+                        className="form-control form_custom_control px-3 py-2 text-success" disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="form-group mt-3 mt-md-5">
+                  <button className="btn btn-light form_custom_control btn-lg">
+                    Upload
+                  </button>
+                </div>
+
+
               </form>
             </div>
           </div>

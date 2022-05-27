@@ -1,4 +1,17 @@
 // .......................Global settings ........................
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -26,7 +39,7 @@
   --text-39: #303339;
   --text-r155: rgb(138, 147, 155);
   --text-12: #121212;
-  --text-2e: #2E2E2E;
+  --text-2e: #2e2e2e;
 
   // custom mdb variable changing color
 
@@ -56,8 +69,8 @@ body {
   background: var(--text-0f);
   color: var(--text-r35);
 }
-button:not(.text-capitalize){
-  text-transform: none!important;
+button:not(.text-capitalize) {
+  text-transform: none !important;
 }
 
 // .......................Global settings ........................End
@@ -81,7 +94,7 @@ button:not(.text-capitalize){
 .bg_12 {
   background: var(--text-12);
 }
-.bg_transparent{
+.bg_transparent {
   background: transparent;
 }
 .text_black_hover {
@@ -90,7 +103,6 @@ button:not(.text-capitalize){
     color: var(--text-r35);
   }
 }
-
 .fill_heart_icon {
   fill: var(--text-r155);
   height: 18px;
@@ -99,7 +111,6 @@ button:not(.text-capitalize){
     fill: var(--mdb-danger);
   }
 }
-
 // .....................color classes................End
 
 // ....................border classes............
@@ -109,7 +120,7 @@ button:not(.text-capitalize){
 .border_bottom {
   border-bottom: 1px solid var(--text-border-bottom);
 }
-.border_bottom_0{
+.border_bottom_0 {
   border-bottom: none;
 }
 .border_all_side {
@@ -146,3 +157,9 @@ section {
   display: inline-block;
 }
 // ...................border-radius styles ........End
+
+// ....................Btn ...................
+.btn_plus {
+  background: var(--text-2e);
+  border: 0;
+}

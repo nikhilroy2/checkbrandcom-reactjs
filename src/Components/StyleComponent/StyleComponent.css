@@ -222,6 +222,30 @@
   color: var(--text-white-75);
 }
 
+.form_custom_control.text-success, .form_custom_control.text-success::-webkit-input-placeholder,
+.form_custom_control:focus.text-success,
+.form_custom_control:focus.text-success::-webkit-input-placeholder {
+  color: var(--mdb-success) !important;
+}
+
+.form_custom_control.text-success, .form_custom_control.text-success:-ms-input-placeholder,
+.form_custom_control:focus.text-success,
+.form_custom_control:focus.text-success:-ms-input-placeholder {
+  color: var(--mdb-success) !important;
+}
+
+.form_custom_control.text-success, .form_custom_control.text-success::-ms-input-placeholder,
+.form_custom_control:focus.text-success,
+.form_custom_control:focus.text-success::-ms-input-placeholder {
+  color: var(--mdb-success) !important;
+}
+
+.form_custom_control.text-success, .form_custom_control.text-success::placeholder,
+.form_custom_control:focus.text-success,
+.form_custom_control:focus.text-success::placeholder {
+  color: var(--mdb-success) !important;
+}
+
 .btn_type_select {
   background: var(--text-2e);
   color: var(--text-white);
