@@ -196,7 +196,7 @@
 .form_custom_control:focus {
   background: var(--text-2e) !important;
   color: var(--text-white) !important;
-  border: 0 !important;
+  border: 0;
   outline: none !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -244,6 +244,11 @@
 .form_custom_control:focus.text-success,
 .form_custom_control:focus.text-success::placeholder {
   color: var(--mdb-success) !important;
+}
+
+.form_custom_control.bg-transparent,
+.form_custom_control:focus.bg-transparent {
+  background: transparent !important;
 }
 
 .btn_type_select {

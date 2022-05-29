@@ -13,6 +13,8 @@ import CreateAccount from "./Pages/CreateAccount/CreateAccount";
 import CreateCollection from "./Pages/CreateCollection/CreateCollection";
 import CreateBondsPack from "./Pages/CreateBondsPack/CreateBondsPack";
 import CreateOptionsPack from "./Pages/CreateOptionPack/CreateOptionPack";
+import CreateBrandsPack from "./Pages/CreateBrandsPack/CreateBrandsPack";
+import AllFilters from "./Pages/AllFilters/AllFilters";
 // .....................Pages..................End
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
             <Route path="/create_collection" element={<CreateCollection />}></Route>
             <Route path="/create_bonds_pack" element={<CreateBondsPack />}></Route>
             <Route path="/create_options_pack" element={<CreateOptionsPack />}></Route>
+            <Route path="/create_brands_pack" element={<CreateBrandsPack />}></Route>
+            <Route path="/all_filters" element={<AllFilters />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>

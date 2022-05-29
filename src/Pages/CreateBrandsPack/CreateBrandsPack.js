@@ -11,7 +11,7 @@ function CreateBrandsPack(props) {
                 <div className="container-xxl">
                     <div className="row">
                         <div className="col-12">
-                            <h2 className="section_title mb-3 mb-md-5">Create Bonds Pack</h2>
+                            <h2 className="section_title mb-3 mb-md-5">Create Brands / Persons Pack</h2>
                             <form action="" method="post">
                                 <div className="form-group mt-3">
                                     <p className="text-success small">
@@ -29,16 +29,18 @@ function CreateBrandsPack(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="form-group mt-3 text-success">
+                                <div className="form-group mt-3 mb-5 text-success">
                                     <strong className="d-block mb-2">
                                         Add Image, video, Audio, or 3D Model
                                     </strong>
 
                                     <p>
-                                        File types supported: JPG, PNG, GIF, SVG, Mp4, WEBM, MP3,
-                                        WAV, OGG, GLB,GLTF.
+                                        <small>
+                                            File types supported: JPG, PNG, GIF, SVG, Mp4, WEBM, MP3, WAV, OGG, GLB,
+                                            GLTF. Max 1000 files
+                                        </small>
                                         <br />
-                                        <small>To create pack Bonds you need 1 file.</small>
+                                        <small>Files are sorted by file name.</small>
                                     </p>
 
                                     <input
@@ -67,13 +69,17 @@ function CreateBrandsPack(props) {
                                     </label>
                                 </div>
 
-                                <div className="form-group mt-3 text-success">
+                                <div className="form-group mt-3 mb-5 text-success">
                                     <strong className="d-block mb-2">Preview Images</strong>
                                     <p>
-                                        Because you've included multimedia, you'll need to provide
-                                        an image (PNG, JPG, or GIF) for the card display of your{" "}
+                                        <small>
+                                            Because you've included multimedia, you'll need to provide
+                                            an image (PNG, JPG, or GIF) for the card display of your{" "}
+                                        </small>
                                         <br />
-                                        item. For Preview Images pack Bonds you need 1 file.
+                                        <small>
+                                            Files are sorted by file name.
+                                        </small>
                                     </p>
                                     <input
                                         type="file"
@@ -105,217 +111,161 @@ function CreateBrandsPack(props) {
                                     <strong className="d-block mb-2">Loading table</strong>
 
                                     <p>
-                                        The table shows which files with which name and price will
-                                        be uploaded to the smart contract and readliness for
-                                        uploading. All tokens will have the same characteristics
-                                        (Link, Description, Collection name, Properties, Blockchain,
-                                        etc.)
+                                        <small>
+                                            The table shows which files with which name and price will be uploaded to the
+                                            smart contract and readiness for uploading.
+                                            All tokens will have the some characteristics (Link, Description, Collection name,
+                                            Properties, Blockchain, etc). But you can change the price of tokens in the table.
+                                        </small>
                                     </p>
 
-                                    <div className="loading_table_wrapper border_all_side p-2 pb-5">
+                                    <div className="loading_table_wrapper border_all_side p-2 pt-4 pb-5">
                                         <div className="table-responsive">
-                                            <table className="text-white table table-borderless table-sm">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1.</td>
-                                                        <td>
-                                                            Common name #
-                                                            <span className="text-success">1</span>
-                                                        </td>
+                                            <div className="container-fluid">
+                                                <div className="row">
+                                                    <div className="col-lg-8">
+                                                        <table className="text-white table  table-borderless table-sm">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1.</td>
+                                                                    <td className="text-nowrap">
+                                                                        Common name #
+                                                                        <span className="text-success">1</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">001.mp4</td>
+                                                                    <td className="text-nowrap">001.gif</td>
+                                                                    <td className="text-nowrap">
+                                                                        Price{" "}
+                                                                        <span className="text-success">0.01 ETH</span>{" "}
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        Dur <span className="text-success">3</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        100%
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2.</td>
+                                                                    <td className="text-nowrap">
+                                                                        Common name #
+                                                                        <span className="text-success">2</span>
+                                                                    </td>
 
-                                                        <td>FilenameVideo.mp4</td>
-                                                        <td>FilenamePreview.gif</td>
-                                                        <td>
-                                                            Price{" "}
-                                                            <span className="text-success">0.01ETH</span>{" "}
-                                                        </td>
-                                                        <td>
-                                                            Dur <span className="text-success">3</span>
-                                                        </td>
-                                                        <td>
-                                                            Mat <span className="text-success">365</span>
-                                                        </td>
-                                                        <td>
-                                                            Yield <span className="text-success">20</span>
-                                                        </td>
-                                                        <td>
-                                                            Freeze <span className="text-success">50</span>
-                                                        </td>
-                                                        <td>100%</td>
-                                                    </tr>
+                                                                    <td className="text-nowrap">002.mp4</td>
+                                                                    <td className="text-nowrap">002.gif</td>
+                                                                    <td className="text-nowrap">
+                                                                        Price{" "}
+                                                                        <span className="text-success">0.01 ETH</span>{" "}
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        Dur <span className="text-success">3</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        100%
+                                                                    </td>
+                                                                </tr>
 
-                                                    <tr>
-                                                        <td>2.</td>
-                                                        <td>
-                                                            Common name #
-                                                            <span className="text-success">2</span>
-                                                        </td>
+                                                                <tr>
+                                                                    <td>3.</td>
+                                                                    <td className="text-nowrap">
+                                                                        Common name #
+                                                                        <span className="text-success">3</span>
+                                                                    </td>
 
-                                                        <td>FilenameVideo.mp4</td>
-                                                        <td>FilenamePreview.gif</td>
-                                                        <td>
-                                                            Price{" "}
-                                                            <span className="text-success">0.01ETH</span>{" "}
-                                                        </td>
-                                                        <td>
-                                                            Dur <span className="text-success">3</span>
-                                                        </td>
-                                                        <td>
-                                                            Mat <span className="text-success">365</span>
-                                                        </td>
-                                                        <td>
-                                                            Yield <span className="text-success">20</span>
-                                                        </td>
-                                                        <td>
-                                                            Freeze <span className="text-success">50</span>
-                                                        </td>
-                                                        <td>100%</td>
-                                                    </tr>
+                                                                    <td className="text-nowrap">003.mp4</td>
+                                                                    <td className="text-nowrap">003.gif</td>
+                                                                    <td className="text-nowrap">
+                                                                        Price{" "}
+                                                                        <span className="text-success">0.01 ETH</span>{" "}
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        Dur <span className="text-success">3</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        100%
+                                                                    </td>
+                                                                </tr>
 
-                                                    <tr>
-                                                        <td>3.</td>
-                                                        <td>
-                                                            Common name #
-                                                            <span className="text-success">3</span>
-                                                        </td>
+                                                                <tr>
+                                                                    <td>4.</td>
+                                                                    <td className="text-nowrap">
+                                                                        Common name #
+                                                                        <span className="text-success">4</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">004.mp4</td>
+                                                                    <td className="text-nowrap">004.gif</td>
+                                                                    <td className="text-nowrap">
+                                                                        Price{" "}
+                                                                        <span className="text-success">0.01 ETH</span>{" "}
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        Dur <span className="text-success">3</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        100%
+                                                                    </td>
+                                                                </tr>
 
-                                                        <td>FilenameVideo.mp4</td>
-                                                        <td>FilenamePreview.gif</td>
-                                                        <td>
-                                                            Price{" "}
-                                                            <span className="text-success">0.01ETH</span>{" "}
-                                                        </td>
-                                                        <td>
-                                                            Dur <span className="text-success">3</span>
-                                                        </td>
-                                                        <td>
-                                                            Mat <span className="text-success">365</span>
-                                                        </td>
-                                                        <td>
-                                                            Yield <span className="text-success">20</span>
-                                                        </td>
-                                                        <td>
-                                                            Freeze <span className="text-success">50</span>
-                                                        </td>
-                                                        <td>100%</td>
-                                                    </tr>
 
-                                                    <tr>
-                                                        <td>4.</td>
-                                                        <td>
-                                                            Common name #
-                                                            <span className="text-success">4</span>
-                                                        </td>
+                                                                <tr>
+                                                                    <td>5.</td>
+                                                                    <td className="text-nowrap">
+                                                                        Common name #
+                                                                        <span className="text-success">5</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">005.mp4</td>
+                                                                    <td className="text-nowrap">005.gif</td>
+                                                                    <td className="text-nowrap">
+                                                                        Price{" "}
+                                                                        <span className="text-success">0.01 ETH</span>{" "}
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        Dur <span className="text-success">3</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        100%
+                                                                    </td>
+                                                                </tr>
 
-                                                        <td>FilenameVideo.mp4</td>
-                                                        <td>FilenamePreview.gif</td>
-                                                        <td>
-                                                            Price{" "}
-                                                            <span className="text-success">0.01ETH</span>{" "}
-                                                        </td>
-                                                        <td>
-                                                            Dur <span className="text-success">3</span>
-                                                        </td>
-                                                        <td>
-                                                            Mat <span className="text-success">365</span>
-                                                        </td>
-                                                        <td>
-                                                            Yield <span className="text-success">20</span>
-                                                        </td>
-                                                        <td>
-                                                            Freeze <span className="text-success">50</span>
-                                                        </td>
-                                                        <td>100%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5.</td>
-                                                        <td>
-                                                            Common name #
-                                                            <span className="text-success">5</span>
-                                                        </td>
 
-                                                        <td>FilenameVideo.mp4</td>
-                                                        <td>FilenamePreview.gif</td>
-                                                        <td>
-                                                            Price{" "}
-                                                            <span className="text-success">0.01ETH</span>{" "}
-                                                        </td>
-                                                        <td>
-                                                            Dur <span className="text-success">3</span>
-                                                        </td>
-                                                        <td>
-                                                            Mat <span className="text-success">365</span>
-                                                        </td>
-                                                        <td>
-                                                            Yield <span className="text-success">20</span>
-                                                        </td>
-                                                        <td>
-                                                            Freeze <span className="text-success">50</span>
-                                                        </td>
-                                                        <td>100%</td>
-                                                    </tr>
+                                                                <tr>
+                                                                    <td>6.</td>
+                                                                    <td className="text-nowrap">
+                                                                        Common name #
+                                                                        <span className="text-success">6</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">006.mp4</td>
+                                                                    <td className="text-nowrap">006.gif</td>
+                                                                    <td className="text-nowrap">
+                                                                        Price{" "}
+                                                                        <span className="text-success">0.01 ETH</span>{" "}
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        Dur <span className="text-success">3</span>
+                                                                    </td>
+                                                                    <td className="text-nowrap">
+                                                                        100%
+                                                                    </td>
+                                                                </tr>
 
-                                                    <tr>
-                                                        <td>6.</td>
-                                                        <td>
-                                                            Common name #
-                                                            <span className="text-success">6</span>
-                                                        </td>
+                                                            </tbody>
 
-                                                        <td>FilenameVideo.mp4</td>
-                                                        <td>FilenamePreview.gif</td>
-                                                        <td>
-                                                            Price{" "}
-                                                            <span className="text-success">0.01ETH</span>{" "}
-                                                        </td>
-                                                        <td>
-                                                            Dur <span className="text-success">3</span>
-                                                        </td>
-                                                        <td>
-                                                            Mat <span className="text-success">365</span>
-                                                        </td>
-                                                        <td>
-                                                            Yield <span className="text-success">20</span>
-                                                        </td>
-                                                        <td>
-                                                            Freeze <span className="text-success">50</span>
-                                                        </td>
-                                                        <td>100%</td>
-                                                    </tr>
-                                                </tbody>
+                                                            <tfoot>
 
-                                                <tfoot>
-                                                    <tr>
-                                                        <td>...</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1000</td>
-                                                        <td>
-                                                            Common name #
-                                                            <span className="text-success">1000</span>
-                                                        </td>
-                                                        <td>FilenameVideo.mp4</td>
-                                                        <td>FilenamePreview.gif</td>
-                                                        <td>
-                                                            Price{" "}
-                                                            <span className="text-succes">0.01 ETH</span>
-                                                        </td>
-                                                        <td>
-                                                            Dur <span className="text-success">3</span>
-                                                        </td>
-                                                        <td>
-                                                            Mat <span className="text-success">365</span>
-                                                        </td>
-                                                        <td>
-                                                            Yield <span className="text-success">20</span>
-                                                        </td>
-                                                        <td>
-                                                            Freeze <span className="text-success">50</span>
-                                                        </td>
-                                                        <td>100%</td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+
+                                                    <div className="col-lg-4">
+                                                        <div className="btn_type_select select_type p-0 radius_10">
+                                                        <input type="text"
+                                                        placeholder="Enter common name" className="text-white btn_type_select select_type radius_10 border-0" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
