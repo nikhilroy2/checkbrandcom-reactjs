@@ -177,10 +177,10 @@
 .form_custom_control:focus {
   background: var(--text-2e) !important;
   color: var(--text-white) !important;
-  border: 0 ;
+  border: 0;
   outline: none !important;
   box-shadow: none !important;
- 
+
   &::placeholder {
     color: var(--text-white-75);
   }
@@ -188,8 +188,39 @@
   &.text-success::placeholder {
     color: var(--mdb-success) !important;
   }
-  &.bg-transparent{
-    background: transparent!important;
+  &.bg-transparent {
+    background: transparent !important;
+  }
+}
+.custom_round_checkbox {
+  position: relative;
+  input {
+    display: none;
+    &:checked ~ i {
+      display: block !important;
+    }
+  }
+  i {
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    color: #0394f5;
+    display: none;
+  }
+
+  label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid var(--text-white-75);
+      left: 0;
+    }
   }
 }
 .btn_type_select {

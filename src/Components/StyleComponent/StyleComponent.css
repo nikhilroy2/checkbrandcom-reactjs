@@ -251,6 +251,42 @@
   background: transparent !important;
 }
 
+.custom_round_checkbox {
+  position: relative;
+}
+
+.custom_round_checkbox input {
+  display: none;
+}
+
+.custom_round_checkbox input:checked ~ i {
+  display: block !important;
+}
+
+.custom_round_checkbox i {
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  color: #0394f5;
+  display: none;
+}
+
+.custom_round_checkbox label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.custom_round_checkbox label::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--text-white-75);
+  left: 0;
+}
+
 .btn_type_select {
   background: var(--text-2e);
   color: var(--text-white);
