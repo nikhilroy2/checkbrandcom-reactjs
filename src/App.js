@@ -16,6 +16,8 @@ import CreateOptionsPack from "./Pages/CreateOptionPack/CreateOptionPack";
 import CreateBrandsPack from "./Pages/CreateBrandsPack/CreateBrandsPack";
 import AllFilters from "./Pages/AllFilters/AllFilters";
 import ControlPanel from "./Pages/ControlPanel/ControlPanel";
+import CreateNewItem from "./Pages/CreateNewItem/CreateNewItem";
+
 // .....................Pages..................End
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
             <Route path="/create_brands_pack" element={<CreateBrandsPack />}></Route>
             <Route path="/all_filters" element={<AllFilters />}></Route>
             <Route path="/control_panel" element={<ControlPanel />}></Route>
+            <Route path="/create_new_item" element={<CreateNewItem />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>
