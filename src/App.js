@@ -17,7 +17,7 @@ import CreateBrandsPack from "./Pages/CreateBrandsPack/CreateBrandsPack";
 import AllFilters from "./Pages/AllFilters/AllFilters";
 import ControlPanel from "./Pages/ControlPanel/ControlPanel";
 import CreateNewItem from "./Pages/CreateNewItem/CreateNewItem";
-
+import CollectionAccount2 from "./Pages/CollectionAccount2/CollectionAccount2";
 // .....................Pages..................End
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
             <Route path="/" element={<MainPage />}></Route>
             <Route path="/explore" element={<ExplorePage />}></Route>
             <Route path="/collection" element={<CollectionAccount />}></Route>
+            <Route path="/collection2" element={<CollectionAccount2 />}></Route>
             <Route path="/explore_details" element={<ExploreDetails />}></Route>
             <Route path="/account_user_events" element={<AccountUserEvents />}></Route>
             <Route path="/assets" element={<AssetsPage />}></Route>
@@ -36,9 +37,9 @@ function App() {
             <Route path="/create_bonds_pack" element={<CreateBondsPack />}></Route>
             <Route path="/create_options_pack" element={<CreateOptionsPack />}></Route>
             <Route path="/create_brands_pack" element={<CreateBrandsPack />}></Route>
+            <Route path="/create_new_item" element={<CreateNewItem />}></Route>
             <Route path="/all_filters" element={<AllFilters />}></Route>
             <Route path="/control_panel" element={<ControlPanel />}></Route>
-            <Route path="/create_new_item" element={<CreateNewItem />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>
