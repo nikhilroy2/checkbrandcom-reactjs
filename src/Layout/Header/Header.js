@@ -232,12 +232,12 @@ function Header(props) {
     {
       id: 3,
       name: "Create item",
-      link: "create_item",
+      link: "create_new_item",
     },
     {
       id: 4,
       name: "Create Pack",
-      link: "create_pack",
+      link: "create_brands_pack",
     },
     {
       id: 5,
