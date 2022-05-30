@@ -73,6 +73,9 @@ header#Header {
     top: 77px !important;
     width: 420px !important;
     height: calc(100vh - 77px) !important;
+    @media (max-width: 420px) {
+      width: 100% !important;
+    }
   }
   .NavDrawer {
     overflow: auto;
@@ -141,7 +144,7 @@ header#Header {
       transition: 0.3s;
     }
     &.light_mode {
-      background: var(--text-5c)!important;
+      background: var(--text-5c) !important;
       &::after {
         right: calc(100% - 22px);
       }

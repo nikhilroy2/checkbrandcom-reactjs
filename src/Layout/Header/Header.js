@@ -408,7 +408,7 @@ function Header(props) {
       <nav className="d-flex px-2 px-sm-3 py-1 bg_1d text-white align-items-center">
         <div className="logo_wrapper flex-grow-1">
           <Link to="/">
-            <img src={require("../../Static/img/logo.png")} alt="" />
+            <img src={require('../../Static/img/ch-logo_alt.png')} alt="logo" height={60} />
           </Link>
         </div>
         <div className="searchBox_wrapper px-2 px-sm-3 py-1 flex-grow-1 nav_list_wrapper">
@@ -429,9 +429,8 @@ function Header(props) {
           </button>
 
           <div
-            className={`btn_toggle_search_box ${
-              isToggleSearch ? "is_toggle_open" : ""
-            }`}
+            className={`btn_toggle_search_box ${isToggleSearch ? "is_toggle_open" : ""
+              }`}
           >
             <i
               className="fas fa-angle-left fa-2x   "
@@ -566,9 +565,8 @@ function Header(props) {
                             </span>
                             <button
                               onClick={() => NightModeHandle()}
-                              className={`night_mode_control bg-primary rounded-pill ${
-                                isNight ? "" : "light_mode"
-                              }`}
+                              className={`night_mode_control bg-primary rounded-pill ${isNight ? "" : "light_mode"
+                                }`}
                             ></button>
                           </div>
                         ) : (
@@ -836,9 +834,8 @@ function Header(props) {
                 </div>
                 <button
                   onClick={() => NightModeHandle()}
-                  className={`night_mode_control bg-primary rounded-pill ${
-                    isNight ? "" : "light_mode"
-                  }`}
+                  className={`night_mode_control bg-primary rounded-pill ${isNight ? "" : "light_mode"
+                    }`}
                 ></button>
               </div>
             </li>

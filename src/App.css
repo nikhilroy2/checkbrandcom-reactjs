@@ -14,6 +14,10 @@ input[type="number"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 :root {
@@ -160,5 +164,9 @@ section .section_description {
 .btn_plus {
   background: var(--text-2e);
   border: 0;
+}
+
+.overflow_auto {
+  overflow: auto;
 }
 /*# sourceMappingURL=App.css.map */

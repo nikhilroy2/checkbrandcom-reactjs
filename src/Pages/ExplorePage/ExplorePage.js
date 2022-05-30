@@ -406,23 +406,22 @@ function ExplorePage(props) {
             </h2>
           </div>
         </div>
-        <div className="custom_tab my-5 pt-4">
-          <ul className="list-unstyled tab_list d-flex align-items-center justify-content-center">
+        <div className="custom_tab my-5 pt-4 border_bottom table-responsive-md">
+          <ul className="list-unstyled tab_list d-flex align-items-center justify-content-md-center  ">
             {tab_list_object.map((v) => {
               return (
                 <li className="tab_list_item" key={v.id}>
                   <Link
                     onClick={() => handleTabActive()}
                     to={`/explore?tab=${v.link}`}
-                    className={`tab_list_action p-3 text-white-50 h5 ${
-                      tabName === `?tab=${v.link}` ? "tab_active" : ""
-                    }`}
+                    className={`tab_list_action p-3 text-white-50 h5 ${tabName === `?tab=${v.link}` ? "tab_active" : ""
+                      }`}
                   >
                     {v.name}
                   </Link>
                 </li>
               );
-              
+
             })}
           </ul>
         </div>

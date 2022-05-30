@@ -40,7 +40,7 @@
     .tab_list_action {
       &.tab_active {
         color: var(--text-white) !important;
-        border-bottom: 6px solid var(--mdb-primary);
+        border-bottom: 3px solid var(--mdb-primary);
       }
       &.tab_list_action_hover:hover {
         color: var(--text-white) !important;

@@ -15,6 +15,7 @@ input[type="number"] {
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  user-select: none;
 }
 :root {
   // font for responsive rem
@@ -163,3 +164,10 @@ section {
   background: var(--text-2e);
   border: 0;
 }
+
+
+// ....................Overflow ................
+.overflow_auto{
+  overflow: auto;
+}
+// ....................Overflow ................End
