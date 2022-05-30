@@ -15,6 +15,12 @@ header#Header {
   }
 }
 
+@media (max-width: 600px) {
+  header#Header .logo_wrapper .logo {
+    height: 40px !important;
+  }
+}
+
 header#Header .searchBox_wrapper {
   position: relative;
 }
@@ -62,7 +68,7 @@ header#Header .searchBox_wrapper .btn_toggle_search_box.is_toggle_open {
 }
 
 header#Header .searchBox_wrapper .btn_toggle_search_box input {
-  height: 75px;
+  height: 60px;
 }
 
 header#Header .searchBox_wrapper .btn_toggle_search_box i {

@@ -9,6 +9,11 @@ header#Header {
     @media (max-width: 1300px) {
       flex-grow: 0 !important;
     }
+    @media (max-width: 600px){
+      .logo{
+        height: 40px!important;
+      }
+    }
   }
   .searchBox_wrapper {
     position: relative;
@@ -46,7 +51,7 @@ header#Header {
         display: block;
       }
       input {
-        height: 75px;
+        height: 60px;
       }
       i {
         left: 20px;

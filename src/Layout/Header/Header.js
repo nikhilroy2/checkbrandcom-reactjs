@@ -408,7 +408,7 @@ function Header(props) {
       <nav className="d-flex px-2 px-sm-3 py-1 bg_1d text-white align-items-center">
         <div className="logo_wrapper flex-grow-1">
           <Link to="/">
-            <img src={require('../../Static/img/ch-logo_alt.png')} alt="logo" height={60} />
+            <img src={require('../../Static/img/ch-logo_alt.png')} alt="logo" className="logo" height={60} />
           </Link>
         </div>
         <div className="searchBox_wrapper px-2 px-sm-3 py-1 flex-grow-1 nav_list_wrapper">
