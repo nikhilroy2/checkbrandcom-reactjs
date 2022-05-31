@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./AccountUserEvents.css";
 import CollectionsCard2 from "../../Components/CollectionsCard2/CollectionsCard2";
 import CollectionsCard from "../../Components/CollectionsCard/CollectionsCard";
+import FilterLeftSide from "../../Components/FilterLeftSide/FilterLeftSide";
 function AccountUserEvents(props) {
   return (
     <div id="AccountUserEvents">
@@ -89,17 +90,16 @@ const EventsTab = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-12">
-              <div className="custom_tab my-5 pt-4">
-                <ul className="list-unstyled tab_list  tab_list_border d-flex align-items-center justify-content-center">
+              <div className="custom_tab my-5 pt-4 table-responsive-lg">
+                <ul className="list-unstyled tab_list  tab_list_border d-flex align-items-center justify-content-lg-center">
                   {/* Collected tab */}
                   <li className="tab_list_item">
                     <Link
                       onClick={() => setTabActiveName("Collected")}
                       to="?tab=Collected"
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${
-                        tabActiveName === "Collected" ? "tab_active" : ""
-                      }`}
+                      h5 d-inline-flex align-items-center ${tabActiveName === "Collected" ? "tab_active" : ""
+                        }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -125,12 +125,11 @@ const EventsTab = () => {
                       data-mdb-toggle="dropdown"
                       to="/"
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${
-                        tabActiveName === "Created_Items" ||
-                        tabActiveName === "Created_Collections"
+                      h5 d-inline-flex align-items-center ${tabActiveName === "Created_Items" ||
+                          tabActiveName === "Created_Collections"
                           ? "tab_active"
                           : ""
-                      }`}
+                        }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -214,9 +213,8 @@ const EventsTab = () => {
                       onClick={() => setTabActiveName("Favorited")}
                       to="?tab=favorited"
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${
-                        tabActiveName === "Favorited" ? "tab_active" : ""
-                      }`}
+                      h5 d-inline-flex align-items-center ${tabActiveName === "Favorited" ? "tab_active" : ""
+                        }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -241,9 +239,8 @@ const EventsTab = () => {
                       onClick={() => setTabActiveName("Activity")}
                       to="?tab=activity"
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${
-                        tabActiveName === "Activity" ? "tab_active" : ""
-                      }`}
+                      h5 d-inline-flex align-items-center ${tabActiveName === "Activity" ? "tab_active" : ""
+                        }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2  MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -267,12 +264,11 @@ const EventsTab = () => {
                       data-mdb-toggle="dropdown"
                       to=""
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${
-                        tabActiveName === "Offers_received" ||
-                        tabActiveName === "Offers_made"
+                      h5 d-inline-flex align-items-center ${tabActiveName === "Offers_received" ||
+                          tabActiveName === "Offers_made"
                           ? "tab_active"
                           : ""
-                      }`}
+                        }`}
                     >
                       <svg
                         className="MuiSvgIcon-root me-2 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -361,63 +357,76 @@ const EventsTab = () => {
 const EventCards = () => {
   return (
     <div className="container-fluid">
-      <div className="row gy-4">
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
+
+      <div className="row border_top">
+        <div className="filter_aside_wrapper  p-3">
+          {/* Filter left side */}
+          <FilterLeftSide></FilterLeftSide>
+          {/* Filter left side End */}
         </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
+
+
+        <div className="col flex-grow-1 p-3">
+          <div className="row gy-4">
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   );
 };
@@ -426,63 +435,78 @@ const EventCards = () => {
 const EventCreatedItems = () => {
   return (
     <div className="container-fluid">
-      <div className="row gy-4">
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
+
+      <div className="row border_top">
+        <div className="filter_aside_wrapper  p-3">
+          {/* Filter left side */}
+          <FilterLeftSide></FilterLeftSide>
+          {/* Filter left side End */}
+        </div>
+
+        <div className="col flex-grow-1 p-3">
+          <div className="row gy-4">
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
+
+
+
       </div>
+
     </div>
   );
 };
@@ -504,28 +528,43 @@ const EventCreatedCollection = () => {
   ];
   return (
     <div className="container-fluid">
-      <div className="row gy-4">
-        {true &&
-          event_collection_object.map((v) => {
-            return (
-              <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
-                <div className="col_wrapper h-100">
-                  <Link to={v.link} className="h-100">
-                    <CollectionsCard
-                      largeImg={v.largeImg}
-                      smImg={v.smImg}
-                      cardName={v.cardName}
-                      isCardNameVerified={v.isCardNameVerified}
-                      cardNameBy={v.cardNameBy}
-                      cardNameByLink={v.cardNameByLink}
-                      description={v.description}
-                    ></CollectionsCard>
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
+      <div className="row border_top">
+        <div className="filter_aside_wrapper  p-3">
+          {/* Filter left side */}
+          <FilterLeftSide></FilterLeftSide>
+          {/* Filter left side End */}
+        </div>
+
+        <div className="col flex-grow-1 p-3">
+
+          <div className="row gy-4">
+            {true &&
+              event_collection_object.map((v) => {
+                return (
+                  <div className="col-sm-6 col-lg-4 col-xl-3 h-auto" key={v.id}>
+                    <div className="col_wrapper h-100">
+                      <Link to={v.link} className="h-100">
+                        <CollectionsCard
+                          largeImg={v.largeImg}
+                          smImg={v.smImg}
+                          cardName={v.cardName}
+                          isCardNameVerified={v.isCardNameVerified}
+                          cardNameBy={v.cardNameBy}
+                          cardNameByLink={v.cardNameByLink}
+                          description={v.description}
+                        ></CollectionsCard>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+
+
       </div>
+
+
     </div>
   );
 };
@@ -956,63 +995,78 @@ const EventActivity = () => {
 const EventOffersReveived = () => {
   return (
     <div className="container-fluid">
-      <div className="row gy-4">
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
+
+      <div className="row border_top">
+        <div className="filter_aside_wrapper  p-3">
+          {/* Filter left side */}
+          <FilterLeftSide></FilterLeftSide>
+          {/* Filter left side End */}
+        </div>
+
+        <div className="col flex-grow-1 p-3">
+          <div className="row gy-4">
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
+
+
+
       </div>
+
     </div>
   );
 };
@@ -1021,63 +1075,78 @@ const EventOffersReveived = () => {
 const EventOffersMade = () => {
   return (
     <div className="container-fluid">
-      <div className="row gy-4">
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
+
+      <div className="row border_top">
+        <div className="filter_aside_wrapper  p-3">
+          {/* Filter left side */}
+          <FilterLeftSide></FilterLeftSide>
+          {/* Filter left side End */}
+        </div>
+
+        <div className="col flex-grow-1 p-3">
+          <div className="row gy-4">
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div className="col_wrapper">
+                <CollectionsCard2></CollectionsCard2>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <div className="col_wrapper">
-            <CollectionsCard2></CollectionsCard2>
-          </div>
-        </div>
+
+
+
       </div>
+
     </div>
   );
 };
