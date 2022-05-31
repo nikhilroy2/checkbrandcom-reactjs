@@ -42,6 +42,36 @@
             https://checkbrandcom-reactjs.netlify.app/create_collection
         </a>
     </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/create_bonds_pack">
+            https://checkbrandcom-reactjs.netlify.app/create_bonds_pack
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/create_options_pack">
+            https://checkbrandcom-reactjs.netlify.app/create_options_pack
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/create_brands_pack">
+            https://checkbrandcom-reactjs.netlify.app/create_brands_pack
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/control_panel">
+            https://checkbrandcom-reactjs.netlify.app/control_panel
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/create_new_item">
+            https://checkbrandcom-reactjs.netlify.app/create_new_item
+        </a>
+    </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/all_filters">
+            https://checkbrandcom-reactjs.netlify.app/all_filters
+        </a>
+    </li>
 </ol>
 
 
