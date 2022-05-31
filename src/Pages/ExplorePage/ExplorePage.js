@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import CollectionsCard from "../../Components/CollectionsCard/CollectionsCard";
 function ExplorePage(props) {
@@ -40,15 +41,13 @@ function ExplorePage(props) {
       isActive: false,
     },
   ];
+  const location = useLocation()
 
-  const [tabName, setTabName] = React.useState(`${window.location.search}`);
-  const handleTabActive = () => {
+  const [tabName, setTabName] = React.useState(location.search);
+
+  const handleTabActive = (url) => {
     //console.log(window.location.search)
-    setTimeout(() => {
-      let searchName = window.location.search;
-      setTabName(searchName);
-      console.log(searchName);
-    }, 0);
+    setTabName(url);
   };
 
   const explore_collection_object = {
@@ -396,6 +395,10 @@ function ExplorePage(props) {
     ],
   };
 
+  useEffect(() => {
+    setTabName(location.search)
+  }, [location])
+
   return (
     <div id="ExplorePage">
       <section className="mt-5">
@@ -412,8 +415,8 @@ function ExplorePage(props) {
               return (
                 <li className="tab_list_item" key={v.id}>
                   <Link
-                    onClick={() => handleTabActive()}
                     to={`/explore?tab=${v.link}`}
+                    onClick={() => handleTabActive(`?tab=${v.link}`)}
                     className={`tab_list_action p-3 text-white-50 h5 ${tabName === `?tab=${v.link}` ? "tab_active" : ""
                       }`}
                   >

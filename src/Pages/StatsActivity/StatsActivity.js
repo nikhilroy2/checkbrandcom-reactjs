@@ -25,7 +25,7 @@ function StatsActivity(props) {
         case '?tab=bonds':
             return (<BondsActivityTable></BondsActivityTable>)
         default:
-            <span></span>
+            return <span></span>
     }
 }
 export default StatsActivity;
