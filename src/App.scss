@@ -11,7 +11,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -121,6 +120,9 @@ button:not(.text-capitalize) {
 .border_bottom {
   border-bottom: 1px solid var(--text-border-bottom);
 }
+.border_top {
+  border-top: 1px solid var(--text-border-bottom);
+}
 .border_bottom_0 {
   border-bottom: none;
 }
@@ -165,9 +167,8 @@ section {
   border: 0;
 }
 
-
 // ....................Overflow ................
-.overflow_auto{
+.overflow_auto {
   overflow: auto;
 }
 // ....................Overflow ................End

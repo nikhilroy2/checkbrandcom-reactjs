@@ -127,6 +127,10 @@ button:not(.text-capitalize) {
   border-bottom: 1px solid var(--text-border-bottom);
 }
 
+.border_top {
+  border-top: 1px solid var(--text-border-bottom);
+}
+
 .border_bottom_0 {
   border-bottom: none;
 }
