@@ -13,6 +13,11 @@
         </a>
     </li>
     <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/stats_activity">
+            https://checkbrandcom-reactjs.netlify.app/stats_activity
+        </a>
+    </li>
+    <li>
         <a href="https://checkbrandcom-reactjs.netlify.app/collection">
             https://checkbrandcom-reactjs.netlify.app/collection
         </a>
