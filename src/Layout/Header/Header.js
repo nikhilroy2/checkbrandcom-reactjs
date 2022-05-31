@@ -36,22 +36,22 @@ function Header(props) {
     {
       id: 1,
       name: "Persons",
-      link: '/stats_activity',
+      link: '/stats_activity?tab=persons',
     },
     {
       id: 2,
       name: "Brands",
-      link: '/stats_activity',
+      link: '/stats_activity?tab=brands',
     },
     {
       id: 3,
       name: "Options",
-      link: '/stats_activity',
+      link: '/stats_activity?tab=options',
     },
     {
       id: 4,
       name: " Bonds - Filte",
-      link: '/stats_activity',
+      link: '/stats_activity?tab=bonds',
     },
   ];
 

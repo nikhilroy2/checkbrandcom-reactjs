@@ -2,7 +2,7 @@ import React from 'react';
 // ............Account Activity 1..............
 // you can use account activity components whenver you need this component
 
-// demo: https://prnt.sc/dbLha2ovGMgw
+// 
 
 export const AccountActivity = () => {
     const [activityDuration, setActivityDuration] = React.useState('Last 90 Days')

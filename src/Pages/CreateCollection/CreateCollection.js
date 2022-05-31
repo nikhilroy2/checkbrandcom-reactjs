@@ -192,9 +192,8 @@ function CreateCollection(props) {
                     <button
                       type="button"
                       onClick={() => setPageType("Persons")}
-                      className={`btn_type_select me-3 radius_10 ${
-                        pageType === "Persons" ? "select_type" : ""
-                      }`}
+                      className={`btn_type_select me-3 radius_10 ${pageType === "Persons" ? "select_type" : ""
+                        }`}
                     >
                       Persons
                     </button>
@@ -204,9 +203,8 @@ function CreateCollection(props) {
                     <button
                       type="button"
                       onClick={() => setPageType("Brands")}
-                      className={`btn_type_select me-3 radius_10 ${
-                        pageType === "Brands" ? "select_type" : ""
-                      }`}
+                      className={`btn_type_select me-3 radius_10 ${pageType === "Brands" ? "select_type" : ""
+                        }`}
                     >
                       Brands
                     </button>
@@ -216,9 +214,8 @@ function CreateCollection(props) {
                     <button
                       type="button"
                       onClick={() => setPageType("Options")}
-                      className={`btn_type_select me-3 radius_10 ${
-                        pageType === "Options" ? "select_type" : ""
-                      }`}
+                      className={`btn_type_select me-3 radius_10 ${pageType === "Options" ? "select_type" : ""
+                        }`}
                     >
                       Options
                     </button>
@@ -228,9 +225,8 @@ function CreateCollection(props) {
                     <button
                       type="button"
                       onClick={() => setPageType("Bonds")}
-                      className={`btn_type_select radius_10 ${
-                        pageType === "Bonds" ? "select_type" : ""
-                      }`}
+                      className={`btn_type_select radius_10 ${pageType === "Bonds" ? "select_type" : ""
+                        }`}
                     >
                       Bonds
                     </button>
@@ -267,11 +263,10 @@ function CreateCollection(props) {
                               <span className="name me-2">Person account</span>
                             </div>
                             <div
-                              className={`select_circle ${
-                                selectAccountIndex === 1
+                              className={`select_circle ${selectAccountIndex === 1
                                   ? "active_select_circle"
                                   : ""
-                              }`}
+                                }`}
                             ></div>
                           </div>
                         </li>
@@ -287,11 +282,10 @@ function CreateCollection(props) {
                               <span className="name me-2">Person account</span>
                             </div>
                             <div
-                              className={`select_circle ${
-                                selectAccountIndex === 2
+                              className={`select_circle ${selectAccountIndex === 2
                                   ? "active_select_circle"
                                   : ""
-                              }`}
+                                }`}
                             ></div>
                           </div>
                         </li>
@@ -307,11 +301,10 @@ function CreateCollection(props) {
                               <span className="name me-2">Person account</span>
                             </div>
                             <div
-                              className={`select_circle ${
-                                selectAccountIndex === 3
+                              className={`select_circle ${selectAccountIndex === 3
                                   ? "active_select_circle"
                                   : ""
-                              }`}
+                                }`}
                             ></div>
                           </div>
                         </li>
@@ -327,11 +320,10 @@ function CreateCollection(props) {
                               <span className="name me-2">Person account</span>
                             </div>
                             <div
-                              className={`select_circle ${
-                                selectAccountIndex === 4
+                              className={`select_circle ${selectAccountIndex === 4
                                   ? "active_select_circle"
                                   : ""
-                              }`}
+                                }`}
                             ></div>
                           </div>
                         </li>
@@ -346,11 +338,10 @@ function CreateCollection(props) {
                               <span className="name me-2">Person account</span>
                             </div>
                             <div
-                              className={`select_circle ${
-                                selectAccountIndex === 5
+                              className={`select_circle ${selectAccountIndex === 5
                                   ? "active_select_circle"
                                   : ""
-                              }`}
+                                }`}
                             ></div>
                           </div>
                         </li>
@@ -535,7 +526,7 @@ function CreateCollection(props) {
 
               <div className="form-group mt-3">
                 <label htmlFor="" className="text-white mb-2">
-                  Display theme
+                Display theme
                 </label>
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
                   <p className="text_white_75">
@@ -582,7 +573,7 @@ function CreateCollection(props) {
                 </button>
               </div>
 
-              
+
             </div>
           </div>
         </div>
