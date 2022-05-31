@@ -17,6 +17,7 @@ import CreateBrandsPack from "./Pages/CreateBrandsPack/CreateBrandsPack";
 import AllFilters from "./Pages/AllFilters/AllFilters";
 import ControlPanel from "./Pages/ControlPanel/ControlPanel";
 import CreateNewItem from "./Pages/CreateNewItem/CreateNewItem";
+import StatsActivity from "./Pages/StatsActivity/StatsActivity";
 // .....................Pages..................End
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="/create_new_item" element={<CreateNewItem />}></Route>
             <Route path="/all_filters" element={<AllFilters />}></Route>
             <Route path="/control_panel" element={<ControlPanel />}></Route>
+            <Route path="/stats_activity" element={<StatsActivity />}></Route>
           </Routes>
         </Base>
       </BrowserRouter>

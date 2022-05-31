@@ -127,7 +127,7 @@ button:not(.text-capitalize) {
   border-bottom: none;
 }
 .border_all_side {
-  border: 1px solid var(--text-border-bottom);
+  border: 1px solid var(--text-border-bottom)!important;
 }
 .border_left {
   border-left: 1px solid var(--text-border-bottom);
@@ -152,7 +152,7 @@ section {
   border-radius: 10px;
 }
 .circle_box {
-  width: 30px;
+  min-width: 30px;
   height: 30px;
   background: linear-gradient(#ffb51a, #ff6845);
   border: 1px solid white;
@@ -161,13 +161,13 @@ section {
 }
 
 .token_box {
-  width: 35px;
+  min-width: 35px;
   height: 35px;
   background: linear-gradient(#ffb51a, #ff6845);
   border: 1px solid white;
   display: inline-block;
   border-radius: 4px;
-  img{
+  img {
     width: 100%;
     height: 100%;
   }
@@ -178,6 +178,10 @@ section {
 .btn_plus {
   background: var(--text-2e);
   border: 0;
+}
+.btn-outline-light {
+  color: var(--text-white-75);
+  border-color: var(--text-white-50);
 }
 
 // ....................Overflow ................

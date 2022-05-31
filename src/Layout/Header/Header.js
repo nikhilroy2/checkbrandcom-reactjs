@@ -36,22 +36,22 @@ function Header(props) {
     {
       id: 1,
       name: "Persons",
-      link: "#",
+      link: '/stats_activity',
     },
     {
       id: 2,
       name: "Brands",
-      link: "#",
+      link: '/stats_activity',
     },
     {
       id: 3,
       name: "Options",
-      link: "#",
+      link: '/stats_activity',
     },
     {
       id: 4,
       name: " Bonds - Filte",
-      link: "#",
+      link: '/stats_activity',
     },
   ];
 
@@ -478,7 +478,7 @@ function Header(props) {
             </li>
             <li className="nav_list_hover d-none d-lg-block">
               <div className="hover_action">
-                <Link className="nav_item px-3 py-1 " to="/">
+                <Link className="nav_item px-3 py-1 " to="/stats_activity">
                   Stats
                 </Link>
                 <ul className="list-unstyled hover_list min_width">

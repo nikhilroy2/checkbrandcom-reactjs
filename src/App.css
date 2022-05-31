@@ -136,7 +136,7 @@ button:not(.text-capitalize) {
 }
 
 .border_all_side {
-  border: 1px solid var(--text-border-bottom);
+  border: 1px solid var(--text-border-bottom) !important;
 }
 
 .border_left {
@@ -156,7 +156,7 @@ section .section_description {
 }
 
 .circle_box {
-  width: 30px;
+  min-width: 30px;
   height: 30px;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffb51a), to(#ff6845));
   background: linear-gradient(#ffb51a, #ff6845);
@@ -166,7 +166,7 @@ section .section_description {
 }
 
 .token_box {
-  width: 35px;
+  min-width: 35px;
   height: 35px;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffb51a), to(#ff6845));
   background: linear-gradient(#ffb51a, #ff6845);
@@ -183,6 +183,11 @@ section .section_description {
 .btn_plus {
   background: var(--text-2e);
   border: 0;
+}
+
+.btn-outline-light {
+  color: var(--text-white-75);
+  border-color: var(--text-white-50);
 }
 
 .overflow_auto {
