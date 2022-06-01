@@ -77,6 +77,11 @@
             https://checkbrandcom-reactjs.netlify.app/all_filters
         </a>
     </li>
+    <li>
+        <a href="https://checkbrandcom-reactjs.netlify.app/my-watchlist">
+            https://checkbrandcom-reactjs.netlify.app/my-watchlist
+        </a>
+    </li>
 </ol>
 
 

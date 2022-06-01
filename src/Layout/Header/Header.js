@@ -93,7 +93,7 @@ function Header(props) {
     {
       id: 3,
       name: "Watchlist",
-      link: "#",
+      link: "/my-watchlist",
       icon: (
         <svg
           className="me-2 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
@@ -110,7 +110,7 @@ function Header(props) {
     {
       id: 4,
       name: "My Collections",
-      link: "#",
+      link: "/account_user_events?tab=Collected",
       icon: (
         <svg
           className="me-2 MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc"
