@@ -127,7 +127,7 @@ function Header(props) {
     {
       id: 5,
       name: "Settings",
-      link: "#",
+      link: "/all_filters",
       icon: (
         <svg
           style={{ height: "25px", width: "25px" }}
@@ -518,7 +518,7 @@ function Header(props) {
 
             <li className="d-none d-lg-block nav_list_hover">
               <div className="hover_action">
-                <Link className="nav_item px-2 px-sm-3 py-1" to="/">
+                <Link className="nav_item px-2 px-sm-3 py-1" to="/create_account">
                   Create
                 </Link>
 
