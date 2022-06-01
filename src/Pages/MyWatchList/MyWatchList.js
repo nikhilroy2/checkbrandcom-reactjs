@@ -18,26 +18,26 @@ function MyWatchList(props) {
                             <table className="table text-white">
                                 <thead>
                                     <tr>
-                                        <th>
+                                        <th className='text-white'>
                                             Collection
                                         </th>
-                                        <th>
+                                        <th className='text-white'>
                                             Floor price
                                         </th>
 
-                                        <th>
+                                        <th className='text-white'>
                                             7d Volume
                                         </th>
-                                        <th>
+                                        <th className='text-white'>
                                             24h %
                                         </th>
-                                        <th>
+                                        <th className='text-white'>
                                             7d %
                                         </th>
-                                        <th>
+                                        <th className='text-white'>
                                             Owners
                                         </th>
-                                        <th>
+                                        <th className='text-white'>
                                             Items
                                         </th>
                                     </tr>
