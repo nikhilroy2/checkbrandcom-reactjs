@@ -4,7 +4,7 @@
 
 .nav_list_hover .hover_list {
   position: absolute;
-  top: 100%;
+  top: 57%;
   left: 0;
   opacity: 0;
   pointer-events: none;

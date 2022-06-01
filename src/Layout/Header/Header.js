@@ -13,22 +13,22 @@ function Header(props) {
     {
       id: 1,
       name: "Persons",
-      link: "explore?tab=persons",
+      link: "explore_details?tab=persons",
     },
     {
       id: 2,
       name: "Brands",
-      link: "explore?tab=brands",
+      link: "explore_details?tab=brands",
     },
     {
       id: 3,
       name: "Options",
-      link: "explore?tab=options",
+      link: "explore_details?tab=options",
     },
     {
       id: 4,
       name: "Bonds",
-      link: "explore?tab=bonds",
+      link: "explore_details?tab=bonds",
     },
   ];
 
@@ -403,9 +403,11 @@ function Header(props) {
     // after local storage night mode
   };
 
+  const [navActiveSelect, setNavActiveSelect] = useState('');
+
   return (
     <header id="Header" className="">
-      <nav className="d-flex px-2 px-sm-3 py-1 bg_1d text-white align-items-center">
+      <nav className="d-flex px-2 px-sm-3 py-0 bg_1d text-white align-items-center">
         <div className="logo_wrapper flex-grow-1">
           <Link to="/">
             <img src={require('../../Static/img/ch-logo_alt.png')} alt="logo" className="logo" height={60} />
@@ -447,7 +449,7 @@ function Header(props) {
           <ul className="list-unstyled d-flex align-items-center mb-0">
             <li className="nav_list_hover d-none d-lg-block">
               <div className="hover_action">
-                <Link className="nav_item px-3 py-1 " to="/explore?tab=top">
+                <Link onClick={() => setNavActiveSelect('Explore')} className={`nav_item p-3 d-block ${navActiveSelect === 'Explore' ? 'active_nav' : ''}`} to="/explore?tab=top">
                   Explore
                 </Link>
                 <ul className="list-unstyled hover_list min_width">
@@ -478,7 +480,7 @@ function Header(props) {
             </li>
             <li className="nav_list_hover d-none d-lg-block">
               <div className="hover_action">
-                <Link className="nav_item px-3 py-1 " to="/stats_activity">
+                <Link onClick={() => setNavActiveSelect('Stats')} className={`nav_item p-3 d-block ${navActiveSelect === 'Stats' ? 'active_nav' : ''}`} to="/stats_activity">
                   Stats
                 </Link>
                 <ul className="list-unstyled hover_list min_width">
@@ -508,8 +510,8 @@ function Header(props) {
               </div>
             </li>
             <li>
-              <Link
-                className="nav_item px-2 px-sm-3 py-1 d-none d-lg-block"
+              <Link onClick={() => setNavActiveSelect('Resources')}
+                className={`nav_item p-3 d-none d-lg-block ${navActiveSelect === 'Resources' ? 'active_nav' : ''}`}
                 to="/"
               >
                 Resources
@@ -518,7 +520,9 @@ function Header(props) {
 
             <li className="d-none d-lg-block nav_list_hover">
               <div className="hover_action">
-                <Link className="nav_item px-2 px-sm-3 py-1" to="/create_account">
+                <Link onClick={() => setNavActiveSelect('Create')}
+
+                  className={`nav_item p-3 d-block ${navActiveSelect === 'Create' ? 'active_nav' : ''}`} to="/create_account">
                   Create
                 </Link>
 

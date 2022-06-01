@@ -88,6 +88,21 @@ header#Header .nav_list_wrapper .nav_item:hover {
   fill: var(--text-white);
 }
 
+header#Header .nav_list_wrapper .nav_item.active_nav {
+  position: relative;
+}
+
+header#Header .nav_list_wrapper .nav_item.active_nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--mdb-primary);
+  display: block;
+  left: 0;
+}
+
 header#Header .EZDrawer__container {
   background: var(--text-0f);
   top: 77px !important;

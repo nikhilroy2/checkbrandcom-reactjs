@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./ExploreDetails.css";
 import CollectionsCard from "../../Components/CollectionsCard/CollectionsCard";
 function ExploreDetails(props) {
   const [isExpandDesc, setIsExpandDesc] = useState(false);
+
+  const location = useLocation();
+  const [tabName, setTabName] = useState(location.search.replace('?tab=', ''));
+
+  useEffect(() => {
+    setTabName(location.search.replace('?tab=', ''))
+  }, [location])
   return (
     <div id="ExploreDetails">
       <section>
@@ -14,7 +21,7 @@ function ExploreDetails(props) {
               alt="img"
             />
           </div>
-          <h1 className="section_title text-center my-4">Explore Brands</h1>
+          <h1 className="section_title text-center my-4">Explore <span className="text-capitalize">{tabName}</span> </h1>
         </div>
         <div className="body border_bottom pb-3">
           <div className="container-fluid">
@@ -62,14 +69,14 @@ function ExploreDetails(props) {
           </div>
         </div>
       </section>
-      <TrendingsCard></TrendingsCard>
+      <TrendingsCard tabName={tabName}></TrendingsCard>
     </div>
   );
 }
 
 export default ExploreDetails;
 
-const TrendingsCard = () => {
+const TrendingsCard = ({tabName}) => {
   const trendings_card_object = [
     {
       id: 1,
@@ -210,7 +217,7 @@ const TrendingsCard = () => {
         <div className="row">
           <div className="col-12">
             <div className="col_wrapper">
-              <h3 className="text-center mb-4 mb-md-5">Trending in Brands</h3>
+              <h3 className="text-center mb-4 mb-md-5">Trending in <span className="text-capitalize">{tabName}</span> </h3>
             </div>
           </div>
         </div>
