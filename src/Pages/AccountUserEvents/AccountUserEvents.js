@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./AccountUserEvents.css";
 import CollectionsCard2 from "../../Components/CollectionsCard2/CollectionsCard2";
 import CollectionsCard from "../../Components/CollectionsCard/CollectionsCard";
@@ -54,35 +54,43 @@ function AccountUserEvents(props) {
 export default AccountUserEvents;
 
 const EventsTab = () => {
-  const [tabActiveName, setTabActiveName] = React.useState("Collected");
+  const location = useLocation();
 
-  let tabActiveValue = "";
+  //console.log(location.search)
+  const [tabActiveName, setTabActiveName] = React.useState(location.search);
 
-  switch (tabActiveName) {
-    case "Collected":
-      tabActiveValue = <EventCards></EventCards>;
-      break;
-    case "Created_Items":
-      tabActiveValue = <EventCreatedItems></EventCreatedItems>;
-      break;
-    case "Created_Collections":
-      tabActiveValue = <EventCreatedCollection></EventCreatedCollection>;
-      break;
-    case "Favorited":
-      tabActiveValue = <EventFavorite></EventFavorite>;
-      break;
-    case "Activity":
-      tabActiveValue = <EventActivity></EventActivity>;
-      break;
-    case "Offers_received":
-      tabActiveValue = <EventOffersReveived></EventOffersReveived>;
-      break;
-    case "Offers_made":
-      tabActiveValue = <EventOffersMade></EventOffersMade>;
-      break;
-    default:
-      tabActiveValue = "not found";
-  }
+  
+  //let tabActiveValue = "";
+  const [tabActiveValue, setTabActiveValue] = React.useState('');
+  useEffect(() => {
+    console.log(location.search)
+    switch (location.search) {
+      case "?tab=Collected":
+        setTabActiveValue(<EventCards></EventCards>)
+        break;
+      case "?tab=items":
+        setTabActiveValue(<EventCreatedItems></EventCreatedItems>)
+        break;
+      case "?tab=collections":
+        setTabActiveValue(<EventCreatedCollection></EventCreatedCollection>)
+        break;
+      case "?tab=favorited":
+        setTabActiveValue(<EventFavorite></EventFavorite>)
+        break;
+      case "?tab=activity":
+        setTabActiveValue(<EventActivity></EventActivity>)
+        break;
+      case "?tab=offers_received":
+        setTabActiveValue(<EventOffersReveived></EventOffersReveived>)
+        break;
+      case "?tab=offers_mode":
+        setTabActiveValue(<EventOffersMade></EventOffersMade>)
+        break;
+      default:
+        setTabActiveValue("not found")
+
+    }
+  }, [location])
 
   //EventOffersReveived
   return (
@@ -96,10 +104,10 @@ const EventsTab = () => {
                   {/* Collected tab */}
                   <li className="tab_list_item">
                     <Link
-                      onClick={() => setTabActiveName("Collected")}
+                      onClick={() => setTabActiveName("?tab=Collected")}
                       to="?tab=Collected"
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${tabActiveName === "Collected" ? "tab_active" : ""
+                      h5 d-inline-flex align-items-center ${tabActiveName === "?tab=Collected" ? "tab_active" : ""
                         }`}
                     >
                       <svg
@@ -126,8 +134,8 @@ const EventsTab = () => {
                       data-mdb-toggle="dropdown"
                       to="/"
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${tabActiveName === "Created_Items" ||
-                          tabActiveName === "Created_Collections"
+                      h5 d-inline-flex align-items-center ${tabActiveName === "?tab=items" ||
+                          tabActiveName === "?tab=collections"
                           ? "tab_active"
                           : ""
                         }`}
@@ -164,7 +172,7 @@ const EventsTab = () => {
                       <li>
                         <Link
                           className="dropdown-item dropdown_action px-3 py-2"
-                          onClick={() => setTabActiveName("Created_Items")}
+                          onClick={() => setTabActiveName("?tab=items")}
                           to="?tab=items"
                         >
                           <svg
@@ -185,7 +193,7 @@ const EventsTab = () => {
                         <Link
                           className="dropdown-item dropdown_action px-3 py-2"
                           onClick={() =>
-                            setTabActiveName("Created_Collections")
+                            setTabActiveName("?tab=collections")
                           }
                           to="?tab=collections"
                         >
@@ -211,10 +219,10 @@ const EventsTab = () => {
                   {/* Favorited tab */}
                   <li className="tab_list_item">
                     <Link
-                      onClick={() => setTabActiveName("Favorited")}
+                      onClick={() => setTabActiveName("?tab=favorited")}
                       to="?tab=favorited"
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${tabActiveName === "Favorited" ? "tab_active" : ""
+                      h5 d-inline-flex align-items-center ${tabActiveName === "?tab=favorited" ? "tab_active" : ""
                         }`}
                     >
                       <svg
@@ -237,10 +245,10 @@ const EventsTab = () => {
                   {/* Activity tab */}
                   <li className="tab_list_item">
                     <Link
-                      onClick={() => setTabActiveName("Activity")}
+                      onClick={() => setTabActiveName("?tab=activity")}
                       to="?tab=activity"
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${tabActiveName === "Activity" ? "tab_active" : ""
+                      h5 d-inline-flex align-items-center ${tabActiveName === "?tab=activity" ? "tab_active" : ""
                         }`}
                     >
                       <svg
@@ -265,8 +273,8 @@ const EventsTab = () => {
                       data-mdb-toggle="dropdown"
                       to=""
                       className={`tab_list_action tab_list_action_hover p-3 mb-0 text-white-50
-                      h5 d-inline-flex align-items-center ${tabActiveName === "Offers_received" ||
-                          tabActiveName === "Offers_made"
+                      h5 d-inline-flex align-items-center ${tabActiveName === "?tab=offers_received" ||
+                          tabActiveName === "?tab=offers_mode"
                           ? "tab_active"
                           : ""
                         }`}
@@ -301,7 +309,7 @@ const EventsTab = () => {
                     >
                       <li>
                         <Link
-                          onClick={() => setTabActiveName("Offers_received")}
+                          onClick={() => setTabActiveName("?tab=offers_received")}
                           className="dropdown-item dropdown_action"
                           to="?tab=offers_received"
                         >
@@ -322,7 +330,7 @@ const EventsTab = () => {
                       <li>
                         <Link
                           className="dropdown-item dropdown_action"
-                          onClick={() => setTabActiveName("Offers_made")}
+                          onClick={() => setTabActiveName("?tab=offers_mode")}
                           to="?tab=offers_mode"
                         >
                           <svg
