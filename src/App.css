@@ -170,7 +170,7 @@ section .section_description {
   height: 35px;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffb51a), to(#ff6845));
   background: linear-gradient(#ffb51a, #ff6845);
-  border: 1px solid white;
+  border: 1px solid currentColor;
   display: inline-block;
   border-radius: 4px;
 }
@@ -192,5 +192,9 @@ section .section_description {
 
 .overflow_auto {
   overflow: auto;
+}
+
+.cup {
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */

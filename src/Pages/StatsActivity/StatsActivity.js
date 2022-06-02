@@ -27,7 +27,9 @@ function StatsActivity(props) {
         case '?tab=bonds':
             return (<BondsActivityTable></BondsActivityTable>);
         case '?tab=statistics1':
-            return (<Static1ActivityTable></Static1ActivityTable>)
+            return (<Static1ActivityTable></Static1ActivityTable>);
+        case '?tab=statistics2':
+            return (<Static1ActivityTable></Static1ActivityTable>);
         default:
             return <span></span>
     }
@@ -1417,13 +1419,314 @@ const Static1ActivityTable = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {table_object_state.map(v => {
-                                                return (
-                                                    <tr>
+                                            <tr>
+                                                <td>
+                                                    <div className="d-flex align-items-center text-nowrap">
+                                                        1 <div className="token_box mx-3"></div> 10 twocathreyes A
+                                                    </div>
+                                                </td>
 
-                                                    </tr>
-                                                )
-                                            })}
+                                                <td>
+                                                    <span className="text-success">
+                                                        1000
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" /> 0.01
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div className="d-flex align-items-center text-success">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+
+                                                        18,531.52
+
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    30
+                                                </td>
+                                                <td>
+                                                    365
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">
+                                                        20
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center text-danger">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+                                                        0.012
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div className="d-flex align-items-center text-success">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+                                                        0.012
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <span className="text-danger">
+                                                        50
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    Describe of <br />
+                                                    token123...
+                                                </td>
+
+                                                <td>
+                                                    Type/ <br />
+                                                    Name
+                                                </td>
+                                                <td>
+                                                    Name/
+                                                    Value
+                                                </td>
+                                                <td>
+                                                    TextText <br />
+                                                    TextTe...
+                                                </td>
+                                                <td>
+                                                    <span className="text-danger">
+                                                        No
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>
+                                                    Ethereum
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">
+                                                        Yes
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">Sale</span>
+                                                </td>
+
+                                                <td>
+                                                    <div className="token_box p-1 text-danger cup" style={{ background: 'transparent' }}>
+                                                        Stop
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+
+
+                                            <tr>
+                                                <td>
+                                                    <div className="d-flex align-items-center text-nowrap">
+                                                        2 <div className="token_box mx-3"></div> 10 twocathreyes A
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <span className="text-success">
+                                                        1000
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" /> 0.01
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div className="d-flex align-items-center text-success">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+
+                                                        18,531.52
+
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    30
+                                                </td>
+                                                <td>
+                                                    365
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">
+                                                        20
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center text-danger">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+                                                        0.012
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div className="d-flex align-items-center text-success">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+                                                        0.012
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <span className="text-danger">
+                                                        50
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    Describe of <br />
+                                                    token123...
+                                                </td>
+
+                                                <td>
+                                                    Type/ <br />
+                                                    Name
+                                                </td>
+                                                <td>
+                                                    Name/
+                                                    Value
+                                                </td>
+                                                <td>
+                                                    TextText <br />
+                                                    TextTe...
+                                                </td>
+                                                <td>
+                                                    <span className="text-danger">
+                                                        No
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>
+                                                    Ethereum
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">
+                                                        Yes
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">Sale</span>
+                                                </td>
+
+                                                <td>
+                                                    <div className="token_box p-1 text-white text-center cup" style={{ background: 'transparent' }}>
+                                                        ...
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div className="d-flex align-items-center text-nowrap">
+                                                        1 <div className="token_box mx-3"></div> 10 twocathreyes A
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <span className="text-success">
+                                                        1000
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" /> 0.01
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div className="d-flex align-items-center text-success">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+
+                                                        18,531.52
+
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    30
+                                                </td>
+                                                <td>
+                                                    365
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">
+                                                        20
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center text-danger">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+                                                        0.012
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div className="d-flex align-items-center text-success">
+                                                        <img className='me-2' height="20" src={require('../../Static/img/eth.svg').default} alt="img" />
+                                                        0.012
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <span className="text-danger">
+                                                        50
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    Describe of <br />
+                                                    token123...
+                                                </td>
+
+                                                <td>
+                                                    Type/ <br />
+                                                    Name
+                                                </td>
+                                                <td>
+                                                    Name/
+                                                    Value
+                                                </td>
+                                                <td>
+                                                    TextText <br />
+                                                    TextTe...
+                                                </td>
+                                                <td>
+                                                    <span className="text-danger">
+                                                        No
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>
+                                                    Ethereum
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">
+                                                        Yes
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span className="text-success">Sale</span>
+                                                </td>
+
+                                                <td>
+                                                    <div className="token_box p-1 text-success cup" style={{ background: 'transparent' }}>
+                                                        Sale
+                                                    </div>
+                                                </td>
+                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>

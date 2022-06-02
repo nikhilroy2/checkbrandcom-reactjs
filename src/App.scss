@@ -164,7 +164,7 @@ section {
   min-width: 35px;
   height: 35px;
   background: linear-gradient(#ffb51a, #ff6845);
-  border: 1px solid white;
+  border: 1px solid currentColor;
   display: inline-block;
   border-radius: 4px;
   img {
@@ -189,3 +189,6 @@ section {
   overflow: auto;
 }
 // ....................Overflow ................End
+.cup{
+  cursor: pointer;
+}
