@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Activity.css';
 function Activity(props) {
     const [activityDuration, setActivityDuration] = React.useState('Last 90 Days')
 
@@ -117,6 +117,13 @@ function Activity(props) {
 
                         </div>
                     </div>
+                </div>
+
+                <div className="col-12 d-flex">
+                    <div className="aside_wrapper">
+
+                    </div>
+                    <div className="activity_table_wrapper flex-grow-1"></div>
                 </div>
             </div>
         </div>

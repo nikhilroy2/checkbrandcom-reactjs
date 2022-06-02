@@ -43,7 +43,7 @@ function App() {
             <Route path="/control_panel" element={<ControlPanel />}></Route>
             <Route path="/stats_activity" element={<StatsActivity />}></Route>
             <Route path="/my-watchlist" element={<MyWatchList />}></Route>
-            <Route path="/activity" element={<Activity />}></Route>
+            {/* <Route path="/activity" element={<Activity />}></Route> */}
           </Routes>
         </Base>
       </BrowserRouter>

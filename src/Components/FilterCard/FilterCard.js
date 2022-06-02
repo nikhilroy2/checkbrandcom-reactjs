@@ -5,9 +5,8 @@ function FilterCard(props) {
     const [recentlyList, setRecentlyList] = React.useState('Recently Listed')
     return (
         <div id='FilterCard' className='mb-3'>
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center flex-wrap">
                 <div className="search_control flex-grow-1 border_all_side me-3 d-flex align-items-center form_custom_control p-2 px-3 radius_10 mb-3"><i className="fas fa-search text-white me-2" /><input type="search" className="w-100 form_custom_control" placeholder="Search" /></div>
-
                 {/* control */}
                 <div className="dropdown mb-3 me-3">
                     <button

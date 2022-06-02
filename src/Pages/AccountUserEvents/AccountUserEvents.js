@@ -87,7 +87,7 @@ const EventsTab = () => {
         setTabActiveValue(<EventOffersMade></EventOffersMade>)
         break;
       default:
-        setTabActiveValue("not found")
+        setTabActiveValue(<EventCards></EventCards>)
 
     }
   }, [location])

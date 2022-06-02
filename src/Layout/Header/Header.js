@@ -36,22 +36,22 @@ function Header(props) {
     {
       id: 1,
       name: "Rankings",
-      link: '/stats_activity?tab=persons',
+      link: '/stats_activity?tab=Rankings',
     },
     {
       id: 2,
       name: "Activity",
-      link: '/stats_activity?tab=brands',
+      link: '/stats_activity?tab=Activity',
     },
     {
       id: 3,
       name: "Statistics1",
-      link: '/stats_activity?tab=options',
+      link: '/stats_activity?tab=statistics1',
     },
     {
       id: 4,
       name: "Statistics2",
-      link: '/stats_activity?tab=bonds',
+      link: '/stats_activity?tab=statistics2',
     },
   ];
 

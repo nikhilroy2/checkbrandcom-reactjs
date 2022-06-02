@@ -1,0 +1,6 @@
+#Activity .aside_wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  min-width: 340px;
+}
+/*# sourceMappingURL=Activity.css.map */
