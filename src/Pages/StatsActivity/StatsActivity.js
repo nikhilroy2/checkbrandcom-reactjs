@@ -860,7 +860,9 @@ const BondsActivityTable = () => {
     const [table_object_state, setTable_object_state] = React.useState(table_object)
     const [chains, setChains] = React.useState('All chains');
 
-    const randomPrice = () => setTable_object_state(table_object.sort(function (a, b) { return 0.5 - Math.random() }))
+    function randomPrice() {
+        setTable_object_state(table_object.sort(function (a, b) { return 0.5 - Math.random() }))
+    }
     return (
         <div id='StatsActivity' className='my-5'>
             <div className="container-xxl">
@@ -1024,7 +1026,7 @@ const BondsActivityTable = () => {
                                     <tr>
                                         <th>Bonds Collection</th>
                                         <th>Price
-                                            <svg onClick={randomPrice} height={20} fill="var(--text-white)" style={{ cursor: 'pointer' }} className="MuiSvgIcon-root ps-3 ps-md-4 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDropDownIcon"><path d="m7 10 5 5 5-5z" /></svg>
+                                            <svg onClick={() => randomPrice()} height={20} fill="var(--text-white)" style={{ cursor: 'pointer' }} className="MuiSvgIcon-root ps-3 ps-md-4 MuiSvgIcon-fontSizeMedium MuiBox-root css-1om0hkc" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDropDownIcon"><path d="m7 10 5 5 5-5z" /></svg>
                                         </th>
                                         <th>Yield %</th>
                                         <th>Maturity %</th>
